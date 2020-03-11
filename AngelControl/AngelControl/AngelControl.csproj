@@ -79,7 +79,9 @@
   <ItemGroup>
     <Compile Include="Class\Reg.cs" />
     <Compile Include="Config.cs" />
-    <Compile Include="Database\Ssh.cs" />
+    <Compile Include="Database\Db.cs" />
+    <Compile Include="Database\MySqlConn.cs" />
+    <Compile Include="Database\SshConn.cs" />
     <Compile Include="Reader\Rfid.cs" />
     <Compile Include="Class\USB.cs" />
     <Compile Include="FormRfidConnect.cs">
