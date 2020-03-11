@@ -45,7 +45,7 @@ namespace AngelControl.Database {
             using (DbDataReader reader = cmd.ExecuteReader()) {
                 if (reader.HasRows) {
                     while (reader.Read()) {
-                        if (reader.GetValue(1).ToString().Equals(password)) {
+                        if (Security.Hash.VerifyHashedPassword(reader.GetValue(1).ToString(), password)) {
                             user = new Class.User() {
                                 UserType = Convert.ToByte(reader.GetValue(0)),
                                 UserLogin = login,

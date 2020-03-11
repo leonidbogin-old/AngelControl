@@ -165,11 +165,11 @@
             this.buttonReaderOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReaderOpen.Font = new System.Drawing.Font("Calibri", 12.75F);
             this.buttonReaderOpen.ForeColor = System.Drawing.Color.Black;
-            this.buttonReaderOpen.Location = new System.Drawing.Point(108, 157);
+            this.buttonReaderOpen.Location = new System.Drawing.Point(108, 156);
             this.buttonReaderOpen.Name = "buttonReaderOpen";
             this.buttonReaderOpen.Size = new System.Drawing.Size(289, 30);
             this.buttonReaderOpen.TabIndex = 44;
-            this.buttonReaderOpen.Text = "Открыть порт";
+            this.buttonReaderOpen.Text = "Подключить";
             this.buttonReaderOpen.UseVisualStyleBackColor = false;
             this.buttonReaderOpen.Click += new System.EventHandler(this.buttonReaderOpen_Click);
             // 
@@ -276,11 +276,11 @@
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Calibri", 12.75F);
             this.buttonClose.ForeColor = System.Drawing.Color.Black;
-            this.buttonClose.Location = new System.Drawing.Point(22, 157);
+            this.buttonClose.Location = new System.Drawing.Point(22, 156);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(80, 30);
             this.buttonClose.TabIndex = 53;
-            this.buttonClose.Text = "Закрыть";
+            this.buttonClose.Text = "Отмена";
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
@@ -314,7 +314,7 @@
             this.MinimizeBox = false;
             this.Name = "FormRfidConnect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Подключение RFID";
+            this.Text = "Подключение считывателя RFID";
             this.Load += new System.EventHandler(this.FormRfidConnect_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

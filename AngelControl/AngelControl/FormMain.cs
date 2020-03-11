@@ -30,12 +30,12 @@ namespace AngelControl {
         }
 
         private void FormMain_Load(object sender, EventArgs e) {
-            //if (!Reader.Rfid.OpenLast()) {
-            //    FormRfidConnect formRfidConnect = new FormRfidConnect();
-            //    formRfidConnect.ShowDialog();
-            //}
-            //if (Reader.Rfid.isOpen()) Log.New(labelLog, "RFID подключен");
-            //else Log.New(labelLog, "RFID не удалось подключить");
+            if (!Reader.Rfid.OpenLast()) {
+                FormRfidConnect formRfidConnect = new FormRfidConnect();
+                formRfidConnect.ShowDialog();
+            }
+            if (Reader.Rfid.isOpen()) Log.New(labelLog, "RFID подключен");
+            else Log.New(labelLog, "RFID не удалось подключить");
             
             SshConn.Init(Config.Ssh.Ip, Config.Ssh.Login, Config.Ssh.Password);
             SshConn.Open();
@@ -65,7 +65,7 @@ namespace AngelControl {
             public static void New(Label label, string str) {
                 label.Text = str;
             }
-        }        
+        }
 
         #region MainMenu
         private void LoadMenu() {
