@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AngelControl.Database {
-    public static class Ssh {
+    public static class SshConnect {
         private static SshClient client = new SshClient(Config.Ssh.Ip, Config.Ssh.Login, Config.Ssh.Password);
         private static MySqlConnectionStringBuilder connBuilderIMSoverSSH = new MySqlConnectionStringBuilder();
 

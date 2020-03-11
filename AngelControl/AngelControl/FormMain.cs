@@ -37,7 +37,7 @@ namespace AngelControl {
             if (Reader.Rfid.isOpen()) Log.New(labelLog, "RFID подключен");
             else Log.New(labelLog, "RFID не удалось подключить");
 
-            Ssh.Open();
+            SshConnect.Open();
         }
 
         public static class Log {
