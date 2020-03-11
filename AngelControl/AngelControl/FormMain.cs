@@ -48,13 +48,9 @@ namespace AngelControl {
                 Config.LocalDatabase.Database);
             DatabaseConn database = new DatabaseConn();
             if (database.Open(MySqlConn.GetString())) {
-                DbDataReader reader = database.QueryEmployee("Select * from reg");
-                using (reader) {
-                    if (reader.HasRows) {
-                        while (reader.Read()) {
-                            MessageBox.Show(reader.GetValue(0).ToString() + " " + reader.GetValue(1).ToString() + " " + reader.GetValue(2).ToString() + " " + reader.GetValue(3).ToString());
-                        }
-                    }
+                Class.User user = database.Login("admin", "admin");
+                if (user != null) {
+                    MessageBox.Show(user.UserType.ToString());
                 }
                 database.Close();
             } else {
@@ -125,3 +121,14 @@ namespace AngelControl {
         #endregion
     }
 }
+
+
+
+//DbDataReader reader = database.QueryEmployee("Select * from reg");
+//                using (reader) {
+//                    if (reader.HasRows) {
+//                        while (reader.Read()) {
+//                            MessageBox.Show(reader.GetValue(0).ToString() + " " + reader.GetValue(1).ToString() + " " + reader.GetValue(2).ToString() + " " + reader.GetValue(3).ToString());
+//                        }
+//                    }
+//                }

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using AngelControl.Class;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -7,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AngelControl.Database {
-    public class Db {
+    public class DatabaseConn {
         private MySqlConnection connect;
         public string lastErrorMeassage;
 
@@ -34,6 +35,27 @@ namespace AngelControl.Database {
             cmd.Connection = connect;
             cmd.CommandText = sql;
             return cmd.ExecuteReader();
+        }
+
+        public User Login(string login, string password) {
+            User user = null;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = connect;
+            cmd.CommandText = $@"Select userType, userPassword From user Where userLogin = '{login}'";
+            using (DbDataReader reader = cmd.ExecuteReader()) {
+                if (reader.HasRows) {
+                    while (reader.Read()) {
+                        if (reader.GetValue(1).ToString().Equals(password)) {
+                            user = new Class.User() {
+                                UserType = Convert.ToByte(reader.GetValue(0)),
+                                UserLogin = login,
+                            };
+                            break;
+                        }
+                    }
+                }
+            }
+            return user;
         }
     }
 }

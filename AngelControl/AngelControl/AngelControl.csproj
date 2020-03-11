@@ -78,8 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class\Reg.cs" />
+    <Compile Include="Class\User.cs" />
     <Compile Include="Config.cs" />
-    <Compile Include="Database\Db.cs" />
+    <Compile Include="Database\DatabaseConn.cs" />
     <Compile Include="Database\MySqlConn.cs" />
     <Compile Include="Database\SshConn.cs" />
     <Compile Include="Reader\Rfid.cs" />
