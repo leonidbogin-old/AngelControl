@@ -30,34 +30,37 @@ namespace AngelControl {
         }
 
         private void FormMain_Load(object sender, EventArgs e) {
-            if (!Reader.Rfid.OpenLast()) {
-                FormRfidConnect formRfidConnect = new FormRfidConnect();
-                formRfidConnect.ShowDialog();
-            }
-            if (Reader.Rfid.isOpen()) Log.New(labelLog, "RFID подключен");
-            else Log.New(labelLog, "RFID не удалось подключить");
+            FormSshDatabase formSshDatabase = new FormSshDatabase();
+            formSshDatabase.ShowDialog();
+            this.Close();
+            //if (!Reader.Rfid.OpenLast()) {
+            //    FormRfidConnect formRfidConnect = new FormRfidConnect();
+            //    formRfidConnect.ShowDialog();
+            //}
+            //if (Reader.Rfid.isOpen()) Log.New(labelLog, "RFID подключен");
+            //else Log.New(labelLog, "RFID не удалось подключить");
             
-            SshConn.Init(Config.Ssh.Ip, Config.Ssh.Login, Config.Ssh.Password);
-            SshConn.Open();
+            //SshConn.Init(Config.Ssh.Ip, Config.Ssh.Login, Config.Ssh.Password);
+            //SshConn.Open();
 
-            MySqlConn.Init(
-                Config.LocalDatabase.Server,
-                Config.LocalDatabase.Port,
-                Config.LocalDatabase.UserID,
-                Config.LocalDatabase.Password, 
-                Config.LocalDatabase.Database);
-            DatabaseConn database = new DatabaseConn();
-            if (database.Open(MySqlConn.GetString())) {
-                Class.User user = database.Login("admin", "admin");
-                if (user != null) {
-                    MessageBox.Show(user.UserType.ToString());
-                }
-                database.Close();
-            } else {
-                MessageBox.Show(database.lastErrorMeassage, "Ошибка подключения базы данных");
-            }
+            //MySqlConn.Init(
+            //    Config.LocalDatabase.Server,
+            //    Config.LocalDatabase.Port,
+            //    Config.LocalDatabase.UserID,
+            //    Config.LocalDatabase.Password, 
+            //    Config.LocalDatabase.Database);
+            //DatabaseConn database = new DatabaseConn();
+            //if (database.Open(MySqlConn.GetString())) {
+            //    Class.User user = database.Login("admin", "admin");
+            //    if (user != null) {
+            //        MessageBox.Show(user.UserType.ToString());
+            //    }
+            //    database.Close();
+            //} else {
+            //    MessageBox.Show(database.lastErrorMeassage, "Ошибка подключения базы данных");
+            //}
 
-            SshConn.Close();
+            //SshConn.Close();
             
         }
 
