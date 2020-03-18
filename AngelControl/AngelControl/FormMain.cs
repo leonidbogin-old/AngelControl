@@ -1,4 +1,4 @@
-﻿using AngelControl.Database;
+﻿using AngelControl.Data;
 using AngelControl.Security;
 using MySql.Data.MySqlClient;
 using Renci.SshNet;
@@ -31,6 +31,20 @@ namespace AngelControl {
         }
 
         private void FormMain_Load(object sender, EventArgs e) {
+            Properties.Settings.Default.DatabaseName = Encryption.EncryptString("ff");
+            Properties.Settings.Default.Save();
+            //Test database connect
+            Ssh ssh = new Ssh();
+            Database database = new Database();
+            if (ssh.OpenSave() && database.OpenSave()) {
+
+                ssh.Close();
+                database.Close();
+            } else {
+                FormSshDatabase formSshDatabase = new FormSshDatabase();
+                formSshDatabase.ShowDialog();
+            }
+
 
             //FormSshDatabase formSshDatabase = new FormSshDatabase();
             //formSshDatabase.ShowDialog();

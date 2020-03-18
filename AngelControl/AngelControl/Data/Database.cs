@@ -7,16 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AngelControl.Database {
-    public class DatabaseConn {
-        private MySqlConnection connect;
-        public string lastErrorMeassage;
+namespace AngelControl.Data {
+    public class Database {
 
-        public bool Open(string connectString) {
+        public string lastErrorMeassage = "";
+        private MySqlConnection connect;
+        
+        public bool Open(string server, uint port, string userId, string password, string database) {
+            lastErrorMeassage = "";
+            MySqlConnectionStringBuilder mySqlConnectionBuilder = new MySqlConnectionStringBuilder() {
+                Server = server,
+                Port = port,
+                UserID = userId,
+                Password = password,
+                Database = database,
+            };
             if (connect != null && connect.State == System.Data.ConnectionState.Open) {
                 connect.Close();
             }
-            connect = new MySqlConnection(connectString);
+            connect = new MySqlConnection(mySqlConnectionBuilder.ConnectionString);
             try {
                 connect.Open();
                 return true;
@@ -26,9 +35,19 @@ namespace AngelControl.Database {
             }
         }
 
+        public bool OpenSave() {
+            return Open(Security.Encryption.DecryptString(Properties.Settings.Default.DatabaseServer),
+                        uint.Parse(Security.Encryption.DecryptString(Properties.Settings.Default.DatabasePort)),
+                        Security.Encryption.DecryptString(Properties.Settings.Default.DatabaseUserId),
+                        Security.Encryption.DecryptString(Properties.Settings.Default.DatabasePassword),
+                        Security.Encryption.DecryptString(Properties.Settings.Default.DatabaseName));
+        }
+
         public void Close() {
             connect.Close();
         }
+
+        //Selects//////////////////////////////////////////////////////////////////////////////////////
 
         public DbDataReader QueryEmployee(string sql) {//Select * from reg
             MySqlCommand cmd = new MySqlCommand();

@@ -336,6 +336,7 @@
             this.buttonTest.TabIndex = 11;
             this.buttonTest.Text = "Тест";
             this.buttonTest.UseVisualStyleBackColor = false;
+            this.buttonTest.Click += new System.EventHandler(this.buttonTest_Click);
             // 
             // FormSshDatabase
             // 

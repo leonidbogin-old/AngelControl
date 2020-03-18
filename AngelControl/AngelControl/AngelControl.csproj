@@ -80,9 +80,8 @@
     <Compile Include="Class\Reg.cs" />
     <Compile Include="Class\User.cs" />
     <Compile Include="Config.cs" />
-    <Compile Include="Database\DatabaseConn.cs" />
-    <Compile Include="Database\MySqlConn.cs" />
-    <Compile Include="Database\SshConn.cs" />
+    <Compile Include="Data\Database.cs" />
+    <Compile Include="Data\Ssh.cs" />
     <Compile Include="FormSshDatabase.cs">
       <SubType>Form</SubType>
     </Compile>

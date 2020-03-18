@@ -170,9 +170,9 @@ namespace AngelControl.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int DatabasePort {
+        public string DatabasePort {
             get {
-                return ((int)(this["DatabasePort"]));
+                return ((string)(this["DatabasePort"]));
             }
             set {
                 this["DatabasePort"] = value;

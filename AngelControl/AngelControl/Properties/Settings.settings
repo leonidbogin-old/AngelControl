@@ -38,7 +38,7 @@
     <Setting Name="DatabaseServer" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="DatabasePort" Type="System.Int32" Scope="User">
+    <Setting Name="DatabasePort" Type="System.String" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="DatabaseUserId" Type="System.String" Scope="User">
