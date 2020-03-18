@@ -2,29 +2,53 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AngelControl.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="BaudRate" Type="System.Int32" Scope="User">
+    <Setting Name="RfidBaudRate" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">9600</Value>
     </Setting>
-    <Setting Name="DataBits" Type="System.Int32" Scope="User">
+    <Setting Name="RfidDataBits" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">8</Value>
     </Setting>
-    <Setting Name="ReadTimeout" Type="System.Int32" Scope="User">
+    <Setting Name="RfidReadTimeout" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1000</Value>
     </Setting>
-    <Setting Name="WriteTimeout" Type="System.Int32" Scope="User">
+    <Setting Name="RfidWriteTimeout" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1000</Value>
     </Setting>
-    <Setting Name="Handshake" Type="System.IO.Ports.Handshake" Scope="User">
+    <Setting Name="RfidHandshake" Type="System.IO.Ports.Handshake" Scope="User">
       <Value Profile="(Default)">None</Value>
     </Setting>
-    <Setting Name="Parity" Type="System.IO.Ports.Parity" Scope="User">
+    <Setting Name="RfidParity" Type="System.IO.Ports.Parity" Scope="User">
       <Value Profile="(Default)">None</Value>
     </Setting>
-    <Setting Name="StopBits" Type="System.IO.Ports.StopBits" Scope="User">
+    <Setting Name="RfidStopBits" Type="System.IO.Ports.StopBits" Scope="User">
       <Value Profile="(Default)">One</Value>
     </Setting>
-    <Setting Name="PortName" Type="System.String" Scope="User">
+    <Setting Name="RfidPortName" Type="System.String" Scope="User">
       <Value Profile="(Default)">COM5</Value>
+    </Setting>
+    <Setting Name="SshIp" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SshLogin" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SshPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DatabaseServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DatabasePort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="DatabaseUserId" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DatabasePassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DatabaseName" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

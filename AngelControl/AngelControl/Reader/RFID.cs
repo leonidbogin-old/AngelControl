@@ -39,27 +39,27 @@ namespace AngelControl.Reader {
         }
         public static bool OpenLast() {
             RfidParameters rfid = new RfidParameters() {
-                PortName = Properties.Settings.Default.PortName,
-                BaudRate = Properties.Settings.Default.BaudRate,
-                DataBits = Properties.Settings.Default.DataBits,
-                Handshake = Properties.Settings.Default.Handshake,
-                Parity = Properties.Settings.Default.Parity,
-                StopBits = Properties.Settings.Default.StopBits,
-                ReadTimeout = Properties.Settings.Default.ReadTimeout,
-                WriteTimeout = Properties.Settings.Default.WriteTimeout,
+                PortName = Properties.Settings.Default.RfidPortName,
+                BaudRate = Properties.Settings.Default.RfidBaudRate,
+                DataBits = Properties.Settings.Default.RfidDataBits,
+                Handshake = Properties.Settings.Default.RfidHandshake,
+                Parity = Properties.Settings.Default.RfidParity,
+                StopBits = Properties.Settings.Default.RfidStopBits,
+                ReadTimeout = Properties.Settings.Default.RfidReadTimeout,
+                WriteTimeout = Properties.Settings.Default.RfidWriteTimeout,
             };
             return Open(rfid);
         }
 
         public static void Save(RfidParameters rfid) {
-            Properties.Settings.Default.PortName = rfid.PortName;
-            Properties.Settings.Default.BaudRate = rfid.BaudRate;
-            Properties.Settings.Default.DataBits = rfid.DataBits;
-            Properties.Settings.Default.Handshake = rfid.Handshake;
-            Properties.Settings.Default.Parity = rfid.Parity;
-            Properties.Settings.Default.StopBits = rfid.StopBits;
-            Properties.Settings.Default.ReadTimeout = rfid.ReadTimeout;
-            Properties.Settings.Default.WriteTimeout = rfid.WriteTimeout;
+            Properties.Settings.Default.RfidPortName = rfid.PortName;
+            Properties.Settings.Default.RfidBaudRate = rfid.BaudRate;
+            Properties.Settings.Default.RfidDataBits = rfid.DataBits;
+            Properties.Settings.Default.RfidHandshake = rfid.Handshake;
+            Properties.Settings.Default.RfidParity = rfid.Parity;
+            Properties.Settings.Default.RfidStopBits = rfid.StopBits;
+            Properties.Settings.Default.RfidReadTimeout = rfid.ReadTimeout;
+            Properties.Settings.Default.RfidWriteTimeout = rfid.WriteTimeout;
             Properties.Settings.Default.Save();
         }
 

@@ -17,14 +17,14 @@ namespace AngelControl {
 
         private void FormRfidConnect_Load(object sender, EventArgs e) {
             PortRefresh();
-            comboBoxHandshake.SelectedItem = Properties.Settings.Default.Handshake.ToString();
-            comboBoxParity.SelectedItem = Properties.Settings.Default.Parity.ToString();
-            comboBoxStopBits.SelectedItem = Properties.Settings.Default.StopBits.ToString();
-            comboBoxBaudRate.Text = Properties.Settings.Default.BaudRate.ToString();
-            comboBoxDataBits.Text = Properties.Settings.Default.DataBits.ToString();
-            comboBoxReadTimeout.Text = Properties.Settings.Default.ReadTimeout.ToString();
-            comboBoxWriteTimeout.Text = Properties.Settings.Default.WriteTimeout.ToString();
-            comboBoxBaudRate.SelectedItem = Properties.Settings.Default.PortName;
+            comboBoxHandshake.SelectedItem = Properties.Settings.Default.RfidHandshake.ToString();
+            comboBoxParity.SelectedItem = Properties.Settings.Default.RfidParity.ToString();
+            comboBoxStopBits.SelectedItem = Properties.Settings.Default.RfidStopBits.ToString();
+            comboBoxBaudRate.Text = Properties.Settings.Default.RfidBaudRate.ToString();
+            comboBoxDataBits.Text = Properties.Settings.Default.RfidDataBits.ToString();
+            comboBoxReadTimeout.Text = Properties.Settings.Default.RfidReadTimeout.ToString();
+            comboBoxWriteTimeout.Text = Properties.Settings.Default.RfidWriteTimeout.ToString();
+            comboBoxBaudRate.SelectedItem = Properties.Settings.Default.RfidPortName;
         }
 
         protected override void WndProc(ref Message m) {
