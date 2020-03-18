@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AngelControl.Security;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace AngelControl {
         }
 
         private void buttonSave_Click(object sender, EventArgs e) {
-            //Properties.Settings.Default.SshIp = textBoxSshIp.Text;
+            
         }
     }
 }

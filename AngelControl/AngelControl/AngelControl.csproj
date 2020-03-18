@@ -98,6 +98,7 @@
       <DependentUpon>FormRfidConnect.cs</DependentUpon>
     </Compile>
     <Compile Include="Reader\RfidParameters.cs" />
+    <Compile Include="Security\Encryption.cs" />
     <Compile Include="Security\Hash.cs" />
     <Compile Include="Views\ControlMonitor.cs">
       <SubType>UserControl</SubType>

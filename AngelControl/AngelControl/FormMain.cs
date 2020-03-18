@@ -1,4 +1,5 @@
 ﻿using AngelControl.Database;
+using AngelControl.Security;
 using MySql.Data.MySqlClient;
 using Renci.SshNet;
 using System;
@@ -30,16 +31,18 @@ namespace AngelControl {
         }
 
         private void FormMain_Load(object sender, EventArgs e) {
-            FormSshDatabase formSshDatabase = new FormSshDatabase();
-            formSshDatabase.ShowDialog();
-            this.Close();
+
+            //FormSshDatabase formSshDatabase = new FormSshDatabase();
+            //formSshDatabase.ShowDialog();
+            //this.Close();
+
             //if (!Reader.Rfid.OpenLast()) {
             //    FormRfidConnect formRfidConnect = new FormRfidConnect();
             //    formRfidConnect.ShowDialog();
             //}
             //if (Reader.Rfid.isOpen()) Log.New(labelLog, "RFID подключен");
             //else Log.New(labelLog, "RFID не удалось подключить");
-            
+
             //SshConn.Init(Config.Ssh.Ip, Config.Ssh.Login, Config.Ssh.Password);
             //SshConn.Open();
 
@@ -61,7 +64,7 @@ namespace AngelControl {
             //}
 
             //SshConn.Close();
-            
+
         }
 
         public static class Log {
