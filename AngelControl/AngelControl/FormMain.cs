@@ -31,19 +31,21 @@ namespace AngelControl {
         }
 
         private void FormMain_Load(object sender, EventArgs e) {
-            Properties.Settings.Default.DatabaseName = Encryption.EncryptString("ff");
-            Properties.Settings.Default.Save();
-            //Test database connect
-            Ssh ssh = new Ssh();
-            Database database = new Database();
-            if (ssh.OpenSave() && database.OpenSave()) {
-
-                ssh.Close();
-                database.Close();
+            //Ssh connect
+            if (Ssh.OpenSave()) {
+                //Test database connect
+                Database database = new Database();
+                if (database.OpenSave()) {
+                    database.Close();
+                } else {
+                    FormSshDatabase formSshDatabase = new FormSshDatabase();
+                    formSshDatabase.ShowDialog();
+                }
             } else {
                 FormSshDatabase formSshDatabase = new FormSshDatabase();
                 formSshDatabase.ShowDialog();
             }
+            
 
 
             //FormSshDatabase formSshDatabase = new FormSshDatabase();
@@ -139,6 +141,10 @@ namespace AngelControl {
                 ChangeMenu(AngelControl.Menu.MainMenu.MenuIndex.rfid);
         }
         #endregion
+
+        private void FormMain_FormClosed(object sender, FormClosedEventArgs e) {
+            Ssh.Close();
+        }
     }
 }
 

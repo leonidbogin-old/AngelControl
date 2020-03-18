@@ -5,18 +5,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AngelControl.Data {
-    public class Ssh {
+    public static class Ssh {
 
-        public string lastErrorMeassage = "";
-        private SshClient client;
-        private ForwardedPortLocal localPort;
+        public static string lastErrorMeassage = "";
+        private static SshClient client;
+        private static ForwardedPortLocal localPort;
 
-        public bool Open(string SshIp, string SshLogin, string SshPassword) {
+        public static bool isOpen() {
+            return client.IsConnected;
+        }
+
+        public static bool Open(
+                    string SshIp, string SshLogin, string SshPassword, 
+                    string SshBoundHost, uint SshBoundPort, string SshHost, uint SshPort) {
+
             lastErrorMeassage = "";
-            SshClient client = new SshClient(SshIp, SshLogin, SshPassword);
-            localPort = new ForwardedPortLocal("127.0.0.1", 12140, "127.0.0.1", 3306);
+            client = new SshClient(SshIp, SshLogin, SshPassword);
+            localPort = new ForwardedPortLocal(SshBoundHost, SshBoundPort, SshHost, SshPort);
             try {
                 if (client.IsConnected) {
                     client.Disconnect();
@@ -31,18 +39,21 @@ namespace AngelControl.Data {
             }
         }
 
-        public bool OpenSave() {
+        public static bool OpenSave() {
             return Open(
                     Security.Encryption.DecryptString(Properties.Settings.Default.SshIp),
                     Security.Encryption.DecryptString(Properties.Settings.Default.SshLogin),
-                    Security.Encryption.DecryptString(Properties.Settings.Default.SshPassword));
+                    Security.Encryption.DecryptString(Properties.Settings.Default.SshPassword),
+                    Properties.Settings.Default.SshBoundHost,
+                    Properties.Settings.Default.SshBoundPort,
+                    Properties.Settings.Default.SshHost,
+                    Properties.Settings.Default.SshPort);
         }
 
-        public void Close() {
-            if (!client.IsConnected) {
-                if (localPort.IsStarted) localPort.Stop();
-                client.Disconnect();
-            }
+        public static void Close() {
+            localPort.Stop();
+            localPort.Dispose();
+            client.Disconnect();
         }
     }
 }

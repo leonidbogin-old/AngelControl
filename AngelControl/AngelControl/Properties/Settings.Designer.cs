@@ -214,5 +214,53 @@ namespace AngelControl.Properties {
                 this["DatabaseName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SshBoundHost {
+            get {
+                return ((string)(this["SshBoundHost"]));
+            }
+            set {
+                this["SshBoundHost"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public uint SshBoundPort {
+            get {
+                return ((uint)(this["SshBoundPort"]));
+            }
+            set {
+                this["SshBoundPort"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SshHost {
+            get {
+                return ((string)(this["SshHost"]));
+            }
+            set {
+                this["SshHost"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public uint SshPort {
+            get {
+                return ((uint)(this["SshPort"]));
+            }
+            set {
+                this["SshPort"] = value;
+            }
+        }
     }
 }

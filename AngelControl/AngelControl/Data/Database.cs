@@ -23,7 +23,7 @@ namespace AngelControl.Data {
                 Database = database,
             };
             if (connect != null && connect.State == System.Data.ConnectionState.Open) {
-                connect.Close();
+                Close();
             }
             connect = new MySqlConnection(mySqlConnectionBuilder.ConnectionString);
             try {
@@ -44,7 +44,8 @@ namespace AngelControl.Data {
         }
 
         public void Close() {
-            connect.Close();
+            if (connect != null && connect.State == System.Data.ConnectionState.Open)
+                connect.Close();
         }
 
         //Selects//////////////////////////////////////////////////////////////////////////////////////
