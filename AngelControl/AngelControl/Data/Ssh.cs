@@ -27,7 +27,7 @@ namespace AngelControl.Data {
             localPort = new ForwardedPortLocal(SshBoundHost, SshBoundPort, SshHost, SshPort);
             try {
                 if (client.IsConnected) {
-                    client.Disconnect();
+                    Close();
                 }
                 client.Connect();
                 client.AddForwardedPort(localPort);
@@ -53,6 +53,7 @@ namespace AngelControl.Data {
         public static void Close() {
             localPort.Stop();
             localPort.Dispose();
+
             client.Disconnect();
         }
     }
