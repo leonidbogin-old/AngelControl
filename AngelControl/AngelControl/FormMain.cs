@@ -23,7 +23,7 @@ namespace AngelControl {
 
         public FormMain() {
             InitializeComponent();
-            reg = new Views.ControlReg { Dock = DockStyle.Fill  }; 
+            reg = new Views.ControlReg { Dock = DockStyle.Fill }; 
             rfid = new Views.ControlRfid { Dock = DockStyle.Fill };
             LoadMenu();
         }
@@ -63,7 +63,6 @@ namespace AngelControl {
                 Rfid.CheckOpen();
             }
         }
-
 
         #region MainMenu
         private void LoadMenu() {
@@ -179,9 +178,9 @@ namespace AngelControl {
         }
 
         private void pictureBoxSsh_MouseDown(object sender, MouseEventArgs e) {
-            if (Ssh.isOpen())
-                contextMenuStripSshOpen.Show(pictureBoxSsh, pictureBoxSsh.Location.X+35, pictureBoxSsh.Location.Y-58);
-            else {
+            if (Ssh.isOpen()) {
+                contextMenuStripSshOpen.Show(pictureBoxSsh, pictureBoxSsh.Location.X + 35, pictureBoxSsh.Location.Y - 58);
+            } else {
                 FormSsh formSsh = new FormSsh();
                 formSsh.ShowDialog();
             }
@@ -222,9 +221,9 @@ namespace AngelControl {
         }
 
         private void pictureBoxRfid_MouseDown(object sender, MouseEventArgs e) {
-            if (Rfid.isOpen())
+            if (Rfid.isOpen()) { 
                 contextMenuStripRfidOpen.Show(pictureBoxRfid, pictureBoxRfid.Location.X - 85, pictureBoxRfid.Location.Y - 58);
-            else {
+            } else {
                 FormRfidConnect formRfidConnect = new FormRfidConnect();
                 formRfidConnect.ShowDialog();
             }
