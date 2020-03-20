@@ -75,7 +75,7 @@
             this.comboBoxStopBits.Location = new System.Drawing.Point(170, 95);
             this.comboBoxStopBits.Name = "comboBoxStopBits";
             this.comboBoxStopBits.Size = new System.Drawing.Size(84, 21);
-            this.comboBoxStopBits.TabIndex = 42;
+            this.comboBoxStopBits.TabIndex = 3;
             this.comboBoxStopBits.Visible = false;
             // 
             // comboBoxParity
@@ -93,7 +93,7 @@
             this.comboBoxParity.Name = "comboBoxParity";
             this.comboBoxParity.Size = new System.Drawing.Size(84, 21);
             this.comboBoxParity.Sorted = true;
-            this.comboBoxParity.TabIndex = 40;
+            this.comboBoxParity.TabIndex = 2;
             this.comboBoxParity.Visible = false;
             // 
             // label5
@@ -140,7 +140,7 @@
             this.comboBoxBaudRate.Location = new System.Drawing.Point(169, 164);
             this.comboBoxBaudRate.Name = "comboBoxBaudRate";
             this.comboBoxBaudRate.Size = new System.Drawing.Size(84, 21);
-            this.comboBoxBaudRate.TabIndex = 38;
+            this.comboBoxBaudRate.TabIndex = 5;
             this.comboBoxBaudRate.Visible = false;
             // 
             // comboBoxPortName
@@ -152,7 +152,8 @@
             this.comboBoxPortName.Location = new System.Drawing.Point(106, 24);
             this.comboBoxPortName.Name = "comboBoxPortName";
             this.comboBoxPortName.Size = new System.Drawing.Size(84, 21);
-            this.comboBoxPortName.TabIndex = 36;
+            this.comboBoxPortName.Sorted = true;
+            this.comboBoxPortName.TabIndex = 0;
             this.comboBoxPortName.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.comboBoxReaderPort_MouseDoubleClick);
             // 
             // label1
@@ -176,7 +177,7 @@
             this.buttonReaderOpen.Location = new System.Drawing.Point(106, 68);
             this.buttonReaderOpen.Name = "buttonReaderOpen";
             this.buttonReaderOpen.Size = new System.Drawing.Size(240, 30);
-            this.buttonReaderOpen.TabIndex = 44;
+            this.buttonReaderOpen.TabIndex = 9;
             this.buttonReaderOpen.Text = "Подключить считыватель";
             this.buttonReaderOpen.UseVisualStyleBackColor = false;
             this.buttonReaderOpen.Click += new System.EventHandler(this.buttonReaderOpen_Click);
@@ -202,7 +203,7 @@
             this.comboBoxDataBits.Location = new System.Drawing.Point(169, 198);
             this.comboBoxDataBits.Name = "comboBoxDataBits";
             this.comboBoxDataBits.Size = new System.Drawing.Size(84, 21);
-            this.comboBoxDataBits.TabIndex = 45;
+            this.comboBoxDataBits.TabIndex = 6;
             this.comboBoxDataBits.Visible = false;
             // 
             // label6
@@ -230,7 +231,7 @@
             this.comboBoxHandshake.Location = new System.Drawing.Point(170, 129);
             this.comboBoxHandshake.Name = "comboBoxHandshake";
             this.comboBoxHandshake.Size = new System.Drawing.Size(84, 21);
-            this.comboBoxHandshake.TabIndex = 47;
+            this.comboBoxHandshake.TabIndex = 4;
             this.comboBoxHandshake.Visible = false;
             // 
             // label7
@@ -256,7 +257,7 @@
             this.comboBoxWriteTimeout.Location = new System.Drawing.Point(169, 266);
             this.comboBoxWriteTimeout.Name = "comboBoxWriteTimeout";
             this.comboBoxWriteTimeout.Size = new System.Drawing.Size(84, 21);
-            this.comboBoxWriteTimeout.TabIndex = 51;
+            this.comboBoxWriteTimeout.TabIndex = 8;
             this.comboBoxWriteTimeout.Visible = false;
             // 
             // label8
@@ -282,7 +283,7 @@
             this.comboBoxReadTimeout.Location = new System.Drawing.Point(169, 232);
             this.comboBoxReadTimeout.Name = "comboBoxReadTimeout";
             this.comboBoxReadTimeout.Size = new System.Drawing.Size(84, 21);
-            this.comboBoxReadTimeout.TabIndex = 49;
+            this.comboBoxReadTimeout.TabIndex = 7;
             this.comboBoxReadTimeout.Visible = false;
             // 
             // buttonClose
@@ -295,7 +296,7 @@
             this.buttonClose.Location = new System.Drawing.Point(18, 68);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(80, 30);
-            this.buttonClose.TabIndex = 53;
+            this.buttonClose.TabIndex = 10;
             this.buttonClose.Text = "Отмена";
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
@@ -308,7 +309,7 @@
             this.linkLabelMore.Location = new System.Drawing.Point(208, 28);
             this.linkLabelMore.Name = "linkLabelMore";
             this.linkLabelMore.Size = new System.Drawing.Size(137, 13);
-            this.linkLabelMore.TabIndex = 54;
+            this.linkLabelMore.TabIndex = 1;
             this.linkLabelMore.TabStop = true;
             this.linkLabelMore.Text = "Показать все параметры";
             this.linkLabelMore.VisitedLinkColor = System.Drawing.Color.DimGray;
