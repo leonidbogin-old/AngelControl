@@ -6,9 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AngelControl.Reader {
-    static class Rfid {
+    public static class Rfid {
         private static SerialPort Connect { get; set; }
         public static ModeEnum Mode { get; set; }
+
+        public delegate void MethodContainer(bool open);
+        public static event MethodContainer OnChangeRfid;
 
         static Rfid() {
             Mode = ModeEnum.start;
@@ -16,6 +19,11 @@ namespace AngelControl.Reader {
 
         public static bool isOpen() {
             return Connect.IsOpen;
+        }
+
+        public static void CheckOpen() {
+            if (isOpen()) OnChangeRfid(true);
+            else OnChangeRfid(false);
         }
 
         public static bool Open(RfidParameters rfid) {
@@ -33,9 +41,12 @@ namespace AngelControl.Reader {
                 Connect.DataReceived += new SerialDataReceivedEventHandler(Read);
                 Connect.Open();
                 Save(rfid);
+                OnChangeRfid(true);
                 return true;
+            } catch { 
+                OnChangeRfid(false); 
+                return false; 
             }
-            catch { return false; }
         }
         public static bool OpenLast() {
             RfidParameters rfid = new RfidParameters() {
@@ -64,6 +75,11 @@ namespace AngelControl.Reader {
         }
 
         public static void Close() {
+            Connect.Close();
+            OnChangeRfid(false);
+        }
+
+        public static void AppClose() {
             Connect.Close();
         }
 

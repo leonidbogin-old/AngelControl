@@ -14,8 +14,8 @@ namespace AngelControl.Data {
         private static SshClient client;
         private static ForwardedPortLocal localPort;
 
-        public delegate void MethodContainer();
-        public static event MethodContainer OnChange;
+        public delegate void MethodContainer(bool open);
+        public static event MethodContainer OnChangeSsh;
 
         public static bool isOpen() {
             return client.IsConnected;
@@ -35,11 +35,11 @@ namespace AngelControl.Data {
                 client.Connect();
                 client.AddForwardedPort(localPort);
                 localPort.Start();
-                OnChange();
+                OnChangeSsh(true);
                 return true;
             } catch (Exception err) {
                 lastErrorMeassage = err.Message;
-                OnChange();
+                OnChangeSsh(false);
                 return false;
             }
         }
@@ -58,7 +58,12 @@ namespace AngelControl.Data {
         public static void Close() {
             localPort.Stop();
             client.Disconnect();
-            OnChange();
+            OnChangeSsh(false);
+        }
+
+        public static void AppClose() {
+            localPort.Stop();
+            client.Disconnect();
         }
     }
 }

@@ -93,7 +93,7 @@
             this.labelMonitor.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelMonitor.Location = new System.Drawing.Point(3, 5);
             this.labelMonitor.Name = "labelMonitor";
-            this.labelMonitor.Size = new System.Drawing.Size(174, 24);
+            this.labelMonitor.Size = new System.Drawing.Size(174, 27);
             this.labelMonitor.TabIndex = 1;
             this.labelMonitor.Text = "Монитор";
             this.labelMonitor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -142,7 +142,7 @@
             this.labelStudy.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelStudy.Location = new System.Drawing.Point(3, 5);
             this.labelStudy.Name = "labelStudy";
-            this.labelStudy.Size = new System.Drawing.Size(174, 24);
+            this.labelStudy.Size = new System.Drawing.Size(174, 27);
             this.labelStudy.TabIndex = 1;
             this.labelStudy.Text = "Учёба";
             this.labelStudy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -193,7 +193,7 @@
             this.labelNutrition.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelNutrition.Location = new System.Drawing.Point(3, 5);
             this.labelNutrition.Name = "labelNutrition";
-            this.labelNutrition.Size = new System.Drawing.Size(174, 24);
+            this.labelNutrition.Size = new System.Drawing.Size(174, 27);
             this.labelNutrition.TabIndex = 1;
             this.labelNutrition.Text = "Питание";
             this.labelNutrition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -219,14 +219,14 @@
             this.panelRfidContent.Size = new System.Drawing.Size(703, 393);
             this.panelRfidContent.TabIndex = 1;
             // 
-            // Rfid
+            // ControlRfid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.Controls.Add(this.panelRfidContent);
             this.Controls.Add(this.panelRfidTop);
-            this.Name = "Rfid";
+            this.Name = "ControlRfid";
             this.Size = new System.Drawing.Size(703, 428);
             this.Load += new System.EventHandler(this.Rfid_Load);
             this.panelRfidTop.ResumeLayout(false);

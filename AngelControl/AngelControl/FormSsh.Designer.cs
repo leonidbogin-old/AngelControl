@@ -1,5 +1,5 @@
 ﻿namespace AngelControl {
-    partial class FormSshDatabase {
+    partial class FormSsh {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,7 +23,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSshDatabase));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSsh));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.numericUpDownSshPort = new System.Windows.Forms.NumericUpDown();
@@ -252,7 +252,7 @@
             this.MinimizeBox = false;
             this.Name = "FormSshDatabase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Настройки подключения базы данных через SSH";
+            this.Text = "Настройки туннеля SSH";
             this.Load += new System.EventHandler(this.FormSshDatabase_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

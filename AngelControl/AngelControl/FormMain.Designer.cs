@@ -40,10 +40,20 @@
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelBottom = new System.Windows.Forms.Panel();
-            this.contextMenuStripSshOpen = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripMenuItemClose = new System.Windows.Forms.ToolStripMenuItem();
             this.labelLog = new System.Windows.Forms.Label();
+            this.contextMenuStripSshOpen = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemSshChange = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemSshClose = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTipSsh = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipDatabase = new System.Windows.Forms.ToolTip(this.components);
+            this.contextMenuStripDatabaseOpen = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolTipRfid = new System.Windows.Forms.ToolTip(this.components);
+            this.contextMenuStripRfidOpen = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemRfidChange = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemRfidClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBoxRfid = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDatabase = new System.Windows.Forms.PictureBox();
             this.pictureBoxSsh = new System.Windows.Forms.PictureBox();
             this.pictureBoxMenuRfid = new System.Windows.Forms.PictureBox();
             this.pictureBoxMenuReg = new System.Windows.Forms.PictureBox();
@@ -53,6 +63,10 @@
             this.panelMain.SuspendLayout();
             this.panelBottom.SuspendLayout();
             this.contextMenuStripSshOpen.SuspendLayout();
+            this.contextMenuStripDatabaseOpen.SuspendLayout();
+            this.contextMenuStripRfidOpen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRfid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDatabase)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSsh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuRfid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReg)).BeginInit();
@@ -145,35 +159,21 @@
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContent.Location = new System.Drawing.Point(0, 0);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(720, 375);
+            this.panelContent.Size = new System.Drawing.Size(720, 380);
             this.panelContent.TabIndex = 1;
             // 
             // panelBottom
             // 
             this.panelBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.panelBottom.Controls.Add(this.pictureBoxRfid);
+            this.panelBottom.Controls.Add(this.pictureBoxDatabase);
             this.panelBottom.Controls.Add(this.pictureBoxSsh);
             this.panelBottom.Controls.Add(this.labelLog);
             this.panelBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBottom.Location = new System.Drawing.Point(0, 375);
+            this.panelBottom.Location = new System.Drawing.Point(0, 380);
             this.panelBottom.Name = "panelBottom";
-            this.panelBottom.Size = new System.Drawing.Size(720, 35);
+            this.panelBottom.Size = new System.Drawing.Size(720, 30);
             this.panelBottom.TabIndex = 0;
-            // 
-            // contextMenuStripSshOpen
-            // 
-            this.contextMenuStripSshOpen.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItemClose});
-            this.contextMenuStripSshOpen.Name = "contextMenuStripSsh";
-            this.contextMenuStripSshOpen.ShowImageMargin = false;
-            this.contextMenuStripSshOpen.Size = new System.Drawing.Size(159, 26);
-            // 
-            // toolStripMenuItemClose
-            // 
-            this.toolStripMenuItemClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItemClose.Name = "toolStripMenuItemClose";
-            this.toolStripMenuItemClose.Size = new System.Drawing.Size(158, 22);
-            this.toolStripMenuItemClose.Text = "Отключить туннель";
-            this.toolStripMenuItemClose.Click += new System.EventHandler(this.toolStripMenuItemClose_Click);
             // 
             // labelLog
             // 
@@ -185,24 +185,121 @@
             this.labelLog.Size = new System.Drawing.Size(0, 15);
             this.labelLog.TabIndex = 0;
             // 
+            // contextMenuStripSshOpen
+            // 
+            this.contextMenuStripSshOpen.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemSshChange,
+            this.toolStripMenuItemSshClose});
+            this.contextMenuStripSshOpen.Name = "contextMenuStripSsh";
+            this.contextMenuStripSshOpen.ShowImageMargin = false;
+            this.contextMenuStripSshOpen.Size = new System.Drawing.Size(159, 48);
+            // 
+            // toolStripMenuItemSshChange
+            // 
+            this.toolStripMenuItemSshChange.Name = "toolStripMenuItemSshChange";
+            this.toolStripMenuItemSshChange.Size = new System.Drawing.Size(158, 22);
+            this.toolStripMenuItemSshChange.Text = "Изменить туннель";
+            this.toolStripMenuItemSshChange.Click += new System.EventHandler(this.toolStripMenuItemSshChange_Click);
+            // 
+            // toolStripMenuItemSshClose
+            // 
+            this.toolStripMenuItemSshClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripMenuItemSshClose.Name = "toolStripMenuItemSshClose";
+            this.toolStripMenuItemSshClose.Size = new System.Drawing.Size(158, 22);
+            this.toolStripMenuItemSshClose.Text = "Отключить туннель";
+            this.toolStripMenuItemSshClose.Click += new System.EventHandler(this.toolStripMenuItemSshClose_Click);
+            // 
             // toolTipSsh
             // 
             this.toolTipSsh.ShowAlways = true;
-            this.toolTipSsh.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTipSsh_Popup);
+            this.toolTipSsh.ToolTipTitle = "SSH";
+            // 
+            // toolTipDatabase
+            // 
+            this.toolTipDatabase.ShowAlways = true;
+            this.toolTipDatabase.ToolTipTitle = "Database";
+            // 
+            // contextMenuStripDatabaseOpen
+            // 
+            this.contextMenuStripDatabaseOpen.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemSettings});
+            this.contextMenuStripDatabaseOpen.Name = "contextMenuStripSsh";
+            this.contextMenuStripDatabaseOpen.ShowImageMargin = false;
+            this.contextMenuStripDatabaseOpen.Size = new System.Drawing.Size(318, 26);
+            // 
+            // toolStripMenuItemSettings
+            // 
+            this.toolStripMenuItemSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripMenuItemSettings.Name = "toolStripMenuItemSettings";
+            this.toolStripMenuItemSettings.Size = new System.Drawing.Size(317, 22);
+            this.toolStripMenuItemSettings.Text = "Изменить настройки подключения базы данных";
+            this.toolStripMenuItemSettings.Click += new System.EventHandler(this.toolStripMenuItemSettings_Click);
+            // 
+            // toolTipRfid
+            // 
+            this.toolTipRfid.ShowAlways = true;
+            this.toolTipRfid.ToolTipTitle = "RFID";
+            // 
+            // contextMenuStripRfidOpen
+            // 
+            this.contextMenuStripRfidOpen.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemRfidChange,
+            this.toolStripMenuItemRfidClose});
+            this.contextMenuStripRfidOpen.Name = "contextMenuStripSsh";
+            this.contextMenuStripRfidOpen.ShowImageMargin = false;
+            this.contextMenuStripRfidOpen.Size = new System.Drawing.Size(212, 48);
+            // 
+            // toolStripMenuItemRfidChange
+            // 
+            this.toolStripMenuItemRfidChange.Name = "toolStripMenuItemRfidChange";
+            this.toolStripMenuItemRfidChange.Size = new System.Drawing.Size(211, 22);
+            this.toolStripMenuItemRfidChange.Text = "Изменить RFID подключение";
+            this.toolStripMenuItemRfidChange.Click += new System.EventHandler(this.toolStripMenuItemRfidChange_Click);
+            // 
+            // toolStripMenuItemRfidClose
+            // 
+            this.toolStripMenuItemRfidClose.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripMenuItemRfidClose.Name = "toolStripMenuItemRfidClose";
+            this.toolStripMenuItemRfidClose.Size = new System.Drawing.Size(211, 22);
+            this.toolStripMenuItemRfidClose.Text = "Отключить RFID считыватель";
+            this.toolStripMenuItemRfidClose.Click += new System.EventHandler(this.toolStripMenuItemCloseRfid_Click);
+            // 
+            // pictureBoxRfid
+            // 
+            this.pictureBoxRfid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxRfid.Image = global::AngelControl.Properties.Resources.rfid_close;
+            this.pictureBoxRfid.Location = new System.Drawing.Point(104, 7);
+            this.pictureBoxRfid.Name = "pictureBoxRfid";
+            this.pictureBoxRfid.Size = new System.Drawing.Size(23, 17);
+            this.pictureBoxRfid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxRfid.TabIndex = 3;
+            this.pictureBoxRfid.TabStop = false;
+            this.pictureBoxRfid.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxRfid_MouseDown);
+            // 
+            // pictureBoxDatabase
+            // 
+            this.pictureBoxDatabase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxDatabase.Image = global::AngelControl.Properties.Resources.database_error_icon;
+            this.pictureBoxDatabase.Location = new System.Drawing.Point(71, 6);
+            this.pictureBoxDatabase.Name = "pictureBoxDatabase";
+            this.pictureBoxDatabase.Size = new System.Drawing.Size(25, 20);
+            this.pictureBoxDatabase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDatabase.TabIndex = 2;
+            this.pictureBoxDatabase.TabStop = false;
+            this.pictureBoxDatabase.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDatabase_MouseDown);
             // 
             // pictureBoxSsh
             // 
             this.pictureBoxSsh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSsh.Location = new System.Drawing.Point(8, 7);
+            this.pictureBoxSsh.Image = global::AngelControl.Properties.Resources.ssh_icon_close;
+            this.pictureBoxSsh.Location = new System.Drawing.Point(12, 6);
             this.pictureBoxSsh.Name = "pictureBoxSsh";
-            this.pictureBoxSsh.Size = new System.Drawing.Size(48, 22);
+            this.pictureBoxSsh.Size = new System.Drawing.Size(48, 20);
             this.pictureBoxSsh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSsh.TabIndex = 1;
             this.pictureBoxSsh.TabStop = false;
             this.pictureBoxSsh.Tag = "";
-            this.pictureBoxSsh.Click += new System.EventHandler(this.pictureBoxSsh_Click);
             this.pictureBoxSsh.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSsh_MouseDown);
-            this.pictureBoxSsh.MouseEnter += new System.EventHandler(this.pictureBoxSsh_MouseEnter);
             // 
             // pictureBoxMenuRfid
             // 
@@ -256,6 +353,10 @@
             this.panelBottom.ResumeLayout(false);
             this.panelBottom.PerformLayout();
             this.contextMenuStripSshOpen.ResumeLayout(false);
+            this.contextMenuStripDatabaseOpen.ResumeLayout(false);
+            this.contextMenuStripRfidOpen.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRfid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDatabase)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSsh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuRfid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReg)).EndInit();
@@ -280,7 +381,17 @@
         private System.Windows.Forms.PictureBox pictureBoxSsh;
         private System.Windows.Forms.ToolTip toolTipSsh;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripSshOpen;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemClose;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSshClose;
+        private System.Windows.Forms.PictureBox pictureBoxDatabase;
+        private System.Windows.Forms.ToolTip toolTipDatabase;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripDatabaseOpen;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSettings;
+        private System.Windows.Forms.PictureBox pictureBoxRfid;
+        private System.Windows.Forms.ToolTip toolTipRfid;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripRfidOpen;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemRfidClose;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemSshChange;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemRfidChange;
     }
 }
 

@@ -43,7 +43,7 @@ namespace AngelControl {
             foreach (string portname in System.IO.Ports.SerialPort.GetPortNames()) {
                 comboBoxPortName.Items.Add(portname); //добавить порт в список 
             }
-            if (comboBoxPortName.Items.Count > 0) comboBoxPortName.SelectedIndex = 0;
+            if (comboBoxPortName.Items.Count > 0) comboBoxPortName.SelectedIndex = comboBoxPortName.Items.Count-1;
         }
 
         private void buttonReaderOpen_Click(object sender, EventArgs e) {
@@ -142,6 +142,34 @@ namespace AngelControl {
         private void buttonClose_Click(object sender, EventArgs e) {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        //this 380; 151
+        //b1 18; 68
+        //b2 106; 68
+        //str1 22; 23
+        //str2 106; 24
+        private void linkLabelMore_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            linkLabelMore.Visible = false;
+            this.Height = 395;
+            label1.Location = new Point(86, 25);
+            comboBoxPortName.Location = new Point(170, 26);
+            buttonClose.Location = new Point(18, 310);
+            buttonReaderOpen.Location = new Point(106, 310);
+            label2.Visible = true;
+            label3.Visible = true;
+            label4.Visible = true;
+            label5.Visible = true;
+            label6.Visible = true;
+            label7.Visible = true;
+            label8.Visible = true;
+            comboBoxBaudRate.Visible = true;
+            comboBoxDataBits.Visible = true;
+            comboBoxHandshake.Visible = true;
+            comboBoxParity.Visible = true;
+            comboBoxReadTimeout.Visible = true;
+            comboBoxWriteTimeout.Visible = true;
+            comboBoxStopBits.Visible = true;
         }
     }
 }

@@ -48,6 +48,7 @@ namespace AngelControl {
             Properties.Settings.Default.DatabasePassword = Encryption.EncryptString(textBoxDatabasePassword.Text);
             Properties.Settings.Default.DatabaseName = Encryption.EncryptString(textBoxDatabaseName.Text);
             Properties.Settings.Default.Save();
+            this.Close();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e) {

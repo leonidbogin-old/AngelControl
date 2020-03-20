@@ -11,8 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AngelControl {
-    public partial class FormSshDatabase : Form {
-        public FormSshDatabase() {
+    public partial class FormSsh : Form {
+        public FormSsh() {
             InitializeComponent();
         }
 

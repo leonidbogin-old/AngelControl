@@ -88,11 +88,11 @@
     <Compile Include="FormDatabase.Designer.cs">
       <DependentUpon>FormDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSshDatabase.cs">
+    <Compile Include="FormSsh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSshDatabase.Designer.cs">
-      <DependentUpon>FormSshDatabase.cs</DependentUpon>
+    <Compile Include="FormSsh.Designer.cs">
+      <DependentUpon>FormSsh.cs</DependentUpon>
     </Compile>
     <Compile Include="Reader\Rfid.cs" />
     <Compile Include="Class\USB.cs" />
@@ -151,8 +151,8 @@
     <EmbeddedResource Include="FormRfidConnect.resx">
       <DependentUpon>FormRfidConnect.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSshDatabase.resx">
-      <DependentUpon>FormSshDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="FormSsh.resx">
+      <DependentUpon>FormSsh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ControlMonitor.resx">
       <DependentUpon>ControlMonitor.cs</DependentUpon>
@@ -201,7 +201,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\rfid-close.png" />
+    <None Include="Resources\rfid-open.png" />
     <None Include="Resources\ssh_icon_close.png" />
+    <None Include="Resources\database_search_icon.png" />
+    <None Include="Resources\database_error_icon.png" />
+    <None Include="Resources\database_ok_icon.png" />
+    <None Include="Resources\database-icon.png" />
     <None Include="Resources\ssh_icon.png" />
     <None Include="Resources\Database.png" />
     <None Include="Resources\RfidRed1.png" />

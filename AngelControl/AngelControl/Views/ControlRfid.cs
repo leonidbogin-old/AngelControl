@@ -33,16 +33,21 @@ namespace AngelControl.Views {
         }
 
         private void ChangeRfidMenu(AngelControl.Menu.RfidMenu.MenuRfidIndex index_new) {
+            int newY = 4;
+            int y = 5;
             switch (rfidMenu.index) {
                 case AngelControl.Menu.RfidMenu.MenuRfidIndex.nutrition:
+                    labelNutrition.Location = new Point(labelNutrition.Location.X, newY);
                     panelNutritionActive.Visible = false;
                     panelNutrition.BackColor = rfidMenu.menuColor;
                     break;
                 case AngelControl.Menu.RfidMenu.MenuRfidIndex.study:
+                    labelStudy.Location = new Point(labelStudy.Location.X, newY);
                     panelStudyActive.Visible = false;
                     panelStudy.BackColor = rfidMenu.menuColor;
                     break;
                 case AngelControl.Menu.RfidMenu.MenuRfidIndex.monitor:
+                    labelMonitor.Location = new Point(labelMonitor.Location.X, newY);
                     panelMonitorActive.Visible = false;
                     panelMonitor.BackColor = rfidMenu.menuColor;
                     break;
@@ -50,16 +55,19 @@ namespace AngelControl.Views {
             panelRfidContent.Controls.Clear();
             switch (index_new) {
                 case AngelControl.Menu.RfidMenu.MenuRfidIndex.nutrition:
+                    labelNutrition.Location = new Point(labelNutrition.Location.X, y);
                     panelRfidContent.Controls.Add(nutrition);
                     panelNutritionActive.Visible = true;
                     panelNutrition.BackColor = rfidMenu.menuColorActive;
                     break;
                 case AngelControl.Menu.RfidMenu.MenuRfidIndex.study:
+                    labelStudy.Location = new Point(labelStudy.Location.X, y);
                     panelRfidContent.Controls.Add(study);
                     panelStudyActive.Visible = true;
                     panelStudy.BackColor = rfidMenu.menuColorActive;
                     break;
                 case AngelControl.Menu.RfidMenu.MenuRfidIndex.monitor:
+                    labelMonitor.Location = new Point(labelMonitor.Location.X, y);
                     panelRfidContent.Controls.Add(monitor);
                     panelMonitorActive.Visible = true;
                     panelMonitor.BackColor = rfidMenu.menuColorActive;

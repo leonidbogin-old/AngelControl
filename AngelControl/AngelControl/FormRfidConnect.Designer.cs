@@ -47,18 +47,20 @@
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxReadTimeout = new System.Windows.Forms.ComboBox();
             this.buttonClose = new System.Windows.Forms.Button();
+            this.linkLabelMore = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 11.75F);
+            this.label4.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(37, 82);
+            this.label4.Location = new System.Drawing.Point(99, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 19);
+            this.label4.Size = new System.Drawing.Size(61, 19);
             this.label4.TabIndex = 43;
-            this.label4.Text = "StopBits -";
+            this.label4.Text = "StopBits";
+            this.label4.Visible = false;
             // 
             // comboBoxStopBits
             // 
@@ -70,10 +72,11 @@
             "One",
             "OnePointFive",
             "Two"});
-            this.comboBoxStopBits.Location = new System.Drawing.Point(108, 83);
+            this.comboBoxStopBits.Location = new System.Drawing.Point(170, 95);
             this.comboBoxStopBits.Name = "comboBoxStopBits";
             this.comboBoxStopBits.Size = new System.Drawing.Size(84, 21);
             this.comboBoxStopBits.TabIndex = 42;
+            this.comboBoxStopBits.Visible = false;
             // 
             // comboBoxParity
             // 
@@ -86,33 +89,36 @@
             "None",
             "Odd",
             "Space"});
-            this.comboBoxParity.Location = new System.Drawing.Point(108, 52);
+            this.comboBoxParity.Location = new System.Drawing.Point(170, 61);
             this.comboBoxParity.Name = "comboBoxParity";
             this.comboBoxParity.Size = new System.Drawing.Size(84, 21);
             this.comboBoxParity.Sorted = true;
             this.comboBoxParity.TabIndex = 40;
+            this.comboBoxParity.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 11.75F);
+            this.label5.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(53, 52);
+            this.label5.Location = new System.Drawing.Point(115, 61);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 19);
+            this.label5.Size = new System.Drawing.Size(45, 19);
             this.label5.TabIndex = 41;
-            this.label5.Text = "Parity -";
+            this.label5.Text = "Parity";
+            this.label5.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 11.75F);
+            this.label3.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(231, 20);
+            this.label3.Location = new System.Drawing.Point(87, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 19);
+            this.label3.Size = new System.Drawing.Size(72, 19);
             this.label3.TabIndex = 39;
-            this.label3.Text = "BaudRate -";
+            this.label3.Text = "BaudRate";
+            this.label3.Visible = false;
             // 
             // comboBoxBaudRate
             // 
@@ -131,17 +137,19 @@
             "57600",
             "115200",
             "128000"});
-            this.comboBoxBaudRate.Location = new System.Drawing.Point(313, 21);
+            this.comboBoxBaudRate.Location = new System.Drawing.Point(169, 164);
             this.comboBoxBaudRate.Name = "comboBoxBaudRate";
             this.comboBoxBaudRate.Size = new System.Drawing.Size(84, 21);
             this.comboBoxBaudRate.TabIndex = 38;
+            this.comboBoxBaudRate.Visible = false;
             // 
             // comboBoxPortName
             // 
+            this.comboBoxPortName.BackColor = System.Drawing.Color.White;
             this.comboBoxPortName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPortName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.comboBoxPortName.FormattingEnabled = true;
-            this.comboBoxPortName.Location = new System.Drawing.Point(108, 20);
+            this.comboBoxPortName.Location = new System.Drawing.Point(106, 24);
             this.comboBoxPortName.Name = "comboBoxPortName";
             this.comboBoxPortName.Size = new System.Drawing.Size(84, 21);
             this.comboBoxPortName.TabIndex = 36;
@@ -150,13 +158,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 11.75F);
+            this.label1.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(25, 20);
+            this.label1.Location = new System.Drawing.Point(22, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 19);
+            this.label1.Size = new System.Drawing.Size(76, 19);
             this.label1.TabIndex = 37;
-            this.label1.Text = "PortName -";
+            this.label1.Text = "СOM-порт";
             // 
             // buttonReaderOpen
             // 
@@ -164,25 +172,26 @@
             this.buttonReaderOpen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonReaderOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReaderOpen.Font = new System.Drawing.Font("Calibri", 12.75F);
-            this.buttonReaderOpen.ForeColor = System.Drawing.Color.Black;
-            this.buttonReaderOpen.Location = new System.Drawing.Point(108, 156);
+            this.buttonReaderOpen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.buttonReaderOpen.Location = new System.Drawing.Point(106, 68);
             this.buttonReaderOpen.Name = "buttonReaderOpen";
-            this.buttonReaderOpen.Size = new System.Drawing.Size(289, 30);
+            this.buttonReaderOpen.Size = new System.Drawing.Size(240, 30);
             this.buttonReaderOpen.TabIndex = 44;
-            this.buttonReaderOpen.Text = "Подключить";
+            this.buttonReaderOpen.Text = "Подключить считыватель";
             this.buttonReaderOpen.UseVisualStyleBackColor = false;
             this.buttonReaderOpen.Click += new System.EventHandler(this.buttonReaderOpen_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 11.75F);
+            this.label2.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(238, 51);
+            this.label2.Location = new System.Drawing.Point(94, 197);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 19);
+            this.label2.Size = new System.Drawing.Size(62, 19);
             this.label2.TabIndex = 46;
-            this.label2.Text = "DataBits -";
+            this.label2.Text = "DataBits";
+            this.label2.Visible = false;
             // 
             // comboBoxDataBits
             // 
@@ -190,21 +199,23 @@
             this.comboBoxDataBits.FormattingEnabled = true;
             this.comboBoxDataBits.Items.AddRange(new object[] {
             "8"});
-            this.comboBoxDataBits.Location = new System.Drawing.Point(313, 52);
+            this.comboBoxDataBits.Location = new System.Drawing.Point(169, 198);
             this.comboBoxDataBits.Name = "comboBoxDataBits";
             this.comboBoxDataBits.Size = new System.Drawing.Size(84, 21);
             this.comboBoxDataBits.TabIndex = 45;
+            this.comboBoxDataBits.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 11.75F);
+            this.label6.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(18, 114);
+            this.label6.Location = new System.Drawing.Point(80, 129);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 19);
+            this.label6.Size = new System.Drawing.Size(81, 19);
             this.label6.TabIndex = 48;
-            this.label6.Text = "Handshake -";
+            this.label6.Text = "Handshake";
+            this.label6.Visible = false;
             // 
             // comboBoxHandshake
             // 
@@ -216,21 +227,23 @@
             "RequestToSend",
             "RequestToSendXOnXOff",
             "XOnXOff"});
-            this.comboBoxHandshake.Location = new System.Drawing.Point(108, 114);
+            this.comboBoxHandshake.Location = new System.Drawing.Point(170, 129);
             this.comboBoxHandshake.Name = "comboBoxHandshake";
             this.comboBoxHandshake.Size = new System.Drawing.Size(84, 21);
             this.comboBoxHandshake.TabIndex = 47;
+            this.comboBoxHandshake.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 11.75F);
+            this.label7.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(226, 113);
+            this.label7.Location = new System.Drawing.Point(82, 265);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 19);
+            this.label7.Size = new System.Drawing.Size(73, 19);
             this.label7.TabIndex = 52;
-            this.label7.Text = "WriteTime -";
+            this.label7.Text = "WriteTime";
+            this.label7.Visible = false;
             // 
             // comboBoxWriteTimeout
             // 
@@ -240,21 +253,23 @@
             this.comboBoxWriteTimeout.FormattingEnabled = true;
             this.comboBoxWriteTimeout.Items.AddRange(new object[] {
             "1000"});
-            this.comboBoxWriteTimeout.Location = new System.Drawing.Point(313, 114);
+            this.comboBoxWriteTimeout.Location = new System.Drawing.Point(169, 266);
             this.comboBoxWriteTimeout.Name = "comboBoxWriteTimeout";
             this.comboBoxWriteTimeout.Size = new System.Drawing.Size(84, 21);
             this.comboBoxWriteTimeout.TabIndex = 51;
+            this.comboBoxWriteTimeout.Visible = false;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 11.75F);
+            this.label8.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(230, 82);
+            this.label8.Location = new System.Drawing.Point(86, 231);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 19);
+            this.label8.Size = new System.Drawing.Size(74, 19);
             this.label8.TabIndex = 50;
-            this.label8.Text = "ReadTime -";
+            this.label8.Text = "ReadTime";
+            this.label8.Visible = false;
             // 
             // comboBoxReadTimeout
             // 
@@ -264,10 +279,11 @@
             this.comboBoxReadTimeout.FormattingEnabled = true;
             this.comboBoxReadTimeout.Items.AddRange(new object[] {
             "1000"});
-            this.comboBoxReadTimeout.Location = new System.Drawing.Point(313, 83);
+            this.comboBoxReadTimeout.Location = new System.Drawing.Point(169, 232);
             this.comboBoxReadTimeout.Name = "comboBoxReadTimeout";
             this.comboBoxReadTimeout.Size = new System.Drawing.Size(84, 21);
             this.comboBoxReadTimeout.TabIndex = 49;
+            this.comboBoxReadTimeout.Visible = false;
             // 
             // buttonClose
             // 
@@ -275,8 +291,8 @@
             this.buttonClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Calibri", 12.75F);
-            this.buttonClose.ForeColor = System.Drawing.Color.Black;
-            this.buttonClose.Location = new System.Drawing.Point(22, 156);
+            this.buttonClose.ForeColor = System.Drawing.Color.DimGray;
+            this.buttonClose.Location = new System.Drawing.Point(18, 68);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(80, 30);
             this.buttonClose.TabIndex = 53;
@@ -284,12 +300,27 @@
             this.buttonClose.UseVisualStyleBackColor = false;
             this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
+            // linkLabelMore
+            // 
+            this.linkLabelMore.ActiveLinkColor = System.Drawing.Color.DimGray;
+            this.linkLabelMore.AutoSize = true;
+            this.linkLabelMore.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabelMore.Location = new System.Drawing.Point(208, 28);
+            this.linkLabelMore.Name = "linkLabelMore";
+            this.linkLabelMore.Size = new System.Drawing.Size(137, 13);
+            this.linkLabelMore.TabIndex = 54;
+            this.linkLabelMore.TabStop = true;
+            this.linkLabelMore.Text = "Показать все параметры";
+            this.linkLabelMore.VisitedLinkColor = System.Drawing.Color.DimGray;
+            this.linkLabelMore.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelMore_LinkClicked);
+            // 
             // FormRfidConnect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(417, 201);
+            this.ClientSize = new System.Drawing.Size(364, 112);
+            this.Controls.Add(this.linkLabelMore);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBoxWriteTimeout);
@@ -313,7 +344,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormRfidConnect";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Подключение считывателя RFID";
             this.Load += new System.EventHandler(this.FormRfidConnect_Load);
             this.ResumeLayout(false);
@@ -340,5 +371,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBoxReadTimeout;
         private System.Windows.Forms.Button buttonClose;
+        private System.Windows.Forms.LinkLabel linkLabelMore;
     }
 }

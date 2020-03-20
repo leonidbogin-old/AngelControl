@@ -1,4 +1,5 @@
 ﻿using AngelControl.Data;
+using AngelControl.Reader;
 using AngelControl.Security;
 using MySql.Data.MySqlClient;
 using Renci.SshNet;
@@ -31,7 +32,9 @@ namespace AngelControl {
         }
 
         private void FormMain_Load(object sender, EventArgs e) {
-            Ssh.OnChange += DisplaySsh;
+            Ssh.OnChangeSsh += DisplaySsh;
+            Database.OnChangeDatabase += DisplayDatabase;
+            Rfid.OnChangeRfid += DisplayRfid;
             //Ssh connect
             if (Ssh.OpenSave()) {
                 //Test database connect
@@ -39,56 +42,31 @@ namespace AngelControl {
                 if (database.OpenSave()) {
                     database.Close();
                 } else {
-                    FormSshDatabase formSshDatabase = new FormSshDatabase();
-                    formSshDatabase.ShowDialog();
+                    FormSsh formSsh = new FormSsh();
+                    formSsh.ShowDialog();
                 }
             } else {
-                FormSshDatabase formSshDatabase = new FormSshDatabase();
-                formSshDatabase.ShowDialog();
+                FormSsh formSsh = new FormSsh();
+                formSsh.ShowDialog();
             }
-            
-
-
-            //FormSshDatabase formSshDatabase = new FormSshDatabase();
-            //formSshDatabase.ShowDialog();
-            //this.Close();
-
-            //if (!Reader.Rfid.OpenLast()) {
-            //    FormRfidConnect formRfidConnect = new FormRfidConnect();
-            //    formRfidConnect.ShowDialog();
-            //}
-            //if (Reader.Rfid.isOpen()) Log.New(labelLog, "RFID подключен");
-            //else Log.New(labelLog, "RFID не удалось подключить");
-
-            //SshConn.Init(Config.Ssh.Ip, Config.Ssh.Login, Config.Ssh.Password);
-            //SshConn.Open();
-
-            //MySqlConn.Init(
-            //    Config.LocalDatabase.Server,
-            //    Config.LocalDatabase.Port,
-            //    Config.LocalDatabase.UserID,
-            //    Config.LocalDatabase.Password, 
-            //    Config.LocalDatabase.Database);
-            //DatabaseConn database = new DatabaseConn();
-            //if (database.Open(MySqlConn.GetString())) {
-            //    Class.User user = database.Login("admin", "admin");
-            //    if (user != null) {
-            //        MessageBox.Show(user.UserType.ToString());
-            //    }
-            //    database.Close();
-            //} else {
-            //    MessageBox.Show(database.lastErrorMeassage, "Ошибка подключения базы данных");
-            //}
-
-            //SshConn.Close();
-
-        }
-
-        public static class Log {
-            public static void New(Label label, string str) {
-                label.Text = str;
+            //Rfid connect
+            if (!Reader.Rfid.OpenLast()) {
+                FormRfidConnect formRfidConnect = new FormRfidConnect();
+                formRfidConnect.ShowDialog();
             }
         }
+
+        protected override void WndProc(ref Message m) {
+            base.WndProc(ref m);
+            if (m.WParam.ToInt32() == Class.USB.DBT_DEVICEARRIVAL) {
+                if (!Rfid.isOpen()) Rfid.OpenLast();
+                else Rfid.CheckOpen();
+            }
+            if (m.WParam.ToInt32() == Class.USB.DBT_DEVICEREMOVECOMPLETE) {
+                Rfid.CheckOpen();
+            }
+        }
+
 
         #region MainMenu
         private void LoadMenu() {
@@ -144,45 +122,115 @@ namespace AngelControl {
         #endregion
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e) {
-            Ssh.Close();
+            Ssh.AppClose();
+            Rfid.AppClose();
         }
 
-        private void DisplaySsh() {
-            if (Ssh.isOpen()) {
+        private void DisplaySsh(bool open) {
+            if (open) {
                 pictureBoxSsh.Image = Properties.Resources.ssh_icon;
-                toolTipSsh.ToolTipIcon = ToolTipIcon.None;
-                toolTipSsh.SetToolTip(pictureBoxSsh, "SSH туннель работает");
+                toolTipSsh.ToolTipIcon = ToolTipIcon.Info;
+                toolTipSsh.SetToolTip(pictureBoxSsh, "SSH туннель открыт");
             } else {
                 pictureBoxSsh.Image = Properties.Resources.ssh_icon_close;
                 toolTipSsh.ToolTipIcon = ToolTipIcon.Error;
                 toolTipSsh.SetToolTip(pictureBoxSsh, "SSH туннель отключен");
             }
+            Database database = new Database();
+            if (database.OpenSave()) {
+                database.Close();
+                DisplayDatabase(2);
+            } else {
+                DisplayDatabase(0);
+            }
         }
 
-        private void toolTipSsh_Popup(object sender, PopupEventArgs e) {
-
+        private bool databaseError = false;
+        private void DisplayDatabase(byte status) {
+            switch (status) {
+                case 1:
+                    databaseError = false;
+                    pictureBoxDatabase.Image = Properties.Resources.database_search_icon;
+                    toolTipDatabase.ToolTipIcon = ToolTipIcon.Info;
+                    toolTipDatabase.SetToolTip(pictureBoxDatabase, "База данных работает");
+                    break;
+                case 2:
+                    databaseError = false;
+                    pictureBoxDatabase.Image = Properties.Resources.database_ok_icon;
+                    toolTipDatabase.ToolTipIcon = ToolTipIcon.Info;
+                    toolTipDatabase.SetToolTip(pictureBoxDatabase, "База данных в спящем режиме");
+                    break;
+                default:
+                    databaseError = true;
+                    pictureBoxDatabase.Image = Properties.Resources.database_error_icon;
+                    toolTipDatabase.ToolTipIcon = ToolTipIcon.Error;
+                    toolTipDatabase.SetToolTip(pictureBoxDatabase, "Ошибка базы данных");
+                    break;
+            }
         }
 
-        private void pictureBoxSsh_MouseEnter(object sender, EventArgs e) {
-
-        }
-
-        private void pictureBoxSsh_Click(object sender, EventArgs e) {
-            
+        private void DisplayRfid(bool open) {
+            if (open) {
+                pictureBoxRfid.Image = Properties.Resources.rfid_open;
+                toolTipRfid.ToolTipIcon = ToolTipIcon.Info;
+                toolTipRfid.SetToolTip(pictureBoxRfid, "RFID подключен");
+            } else {
+                pictureBoxRfid.Image = Properties.Resources.rfid_close;
+                toolTipRfid.ToolTipIcon = ToolTipIcon.Error;
+                toolTipRfid.SetToolTip(pictureBoxRfid, "RFID отключен");
+            }
         }
 
         private void pictureBoxSsh_MouseDown(object sender, MouseEventArgs e) {
             if (Ssh.isOpen())
-                contextMenuStripSshOpen.Show(pictureBoxSsh, pictureBoxSsh.Location.X+40, pictureBoxSsh.Location.Y-30);
+                contextMenuStripSshOpen.Show(pictureBoxSsh, pictureBoxSsh.Location.X+35, pictureBoxSsh.Location.Y-58);
             else {
-                FormSshDatabase formSshDatabase = new FormSshDatabase();
-                formSshDatabase.ShowDialog();
+                FormSsh formSsh = new FormSsh();
+                formSsh.ShowDialog();
             }
-                
         }
 
-        private void toolStripMenuItemClose_Click(object sender, EventArgs e) {
+        private void toolStripMenuItemSshChange_Click(object sender, EventArgs e) {
             Ssh.Close();
+            FormSsh formSsh = new FormSsh();
+            formSsh.ShowDialog();
+        }
+
+        private void toolStripMenuItemSshClose_Click(object sender, EventArgs e) {
+            Ssh.Close();
+        }
+
+        private void toolStripMenuItemSettings_Click(object sender, EventArgs e) {
+            FormDatabase formDatabase = new FormDatabase();
+            formDatabase.ShowDialog();
+        }
+
+        private void pictureBoxDatabase_MouseDown(object sender, MouseEventArgs e) {
+            if (databaseError) {
+                FormDatabase formDatabase = new FormDatabase();
+                formDatabase.ShowDialog();
+            } else {
+                contextMenuStripDatabaseOpen.Show(pictureBoxDatabase, pictureBoxDatabase.Location.X - 50, pictureBoxDatabase.Location.Y - 34);
+            }
+        }
+
+        private void toolStripMenuItemRfidChange_Click(object sender, EventArgs e) {
+            Rfid.Close();
+            FormRfidConnect formRfidConnect = new FormRfidConnect();
+            formRfidConnect.ShowDialog();
+        }
+
+        private void toolStripMenuItemCloseRfid_Click(object sender, EventArgs e) {
+            Rfid.Close();
+        }
+
+        private void pictureBoxRfid_MouseDown(object sender, MouseEventArgs e) {
+            if (Rfid.isOpen())
+                contextMenuStripRfidOpen.Show(pictureBoxRfid, pictureBoxRfid.Location.X - 85, pictureBoxRfid.Location.Y - 58);
+            else {
+                FormRfidConnect formRfidConnect = new FormRfidConnect();
+                formRfidConnect.ShowDialog();
+            }
         }
     }
 }

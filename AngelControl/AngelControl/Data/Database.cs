@@ -12,7 +12,10 @@ namespace AngelControl.Data {
 
         public string lastErrorMeassage = "";
         private MySqlConnection connect;
-        
+
+        public delegate void MethodContainer(byte status);
+        public static event MethodContainer OnChangeDatabase;
+
         public bool Open(string server, uint port, string userId, string password, string database) {
             lastErrorMeassage = "";
             MySqlConnectionStringBuilder mySqlConnectionBuilder = new MySqlConnectionStringBuilder() {
@@ -28,9 +31,11 @@ namespace AngelControl.Data {
             connect = new MySqlConnection(mySqlConnectionBuilder.ConnectionString);
             try {
                 connect.Open();
+                OnChangeDatabase(1);
                 return true;
             } catch (Exception err) {
                 lastErrorMeassage =  err.Message;
+                OnChangeDatabase(0);
                 return false;
             }
         }
@@ -44,8 +49,10 @@ namespace AngelControl.Data {
         }
 
         public void Close() {
-            if (connect != null && connect.State == System.Data.ConnectionState.Open)
+            if (connect != null && connect.State == System.Data.ConnectionState.Open) {
                 connect.Close();
+                OnChangeDatabase(2);
+            }
         }
 
         //Selects//////////////////////////////////////////////////////////////////////////////////////
