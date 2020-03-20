@@ -166,6 +166,24 @@ namespace AngelControl {
         private void pictureBoxSsh_MouseEnter(object sender, EventArgs e) {
 
         }
+
+        private void pictureBoxSsh_Click(object sender, EventArgs e) {
+            
+        }
+
+        private void pictureBoxSsh_MouseDown(object sender, MouseEventArgs e) {
+            if (Ssh.isOpen())
+                contextMenuStripSshOpen.Show(pictureBoxSsh, pictureBoxSsh.Location.X+40, pictureBoxSsh.Location.Y-30);
+            else {
+                FormSshDatabase formSshDatabase = new FormSshDatabase();
+                formSshDatabase.ShowDialog();
+            }
+                
+        }
+
+        private void toolStripMenuItemClose_Click(object sender, EventArgs e) {
+            Ssh.Close();
+        }
     }
 }
 

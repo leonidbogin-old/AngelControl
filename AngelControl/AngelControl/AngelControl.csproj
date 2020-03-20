@@ -82,6 +82,12 @@
     <Compile Include="Config.cs" />
     <Compile Include="Data\Database.cs" />
     <Compile Include="Data\Ssh.cs" />
+    <Compile Include="FormDatabase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDatabase.Designer.cs">
+      <DependentUpon>FormDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSshDatabase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     <Compile Include="Views\ControlStudy.Designer.cs">
       <DependentUpon>ControlStudy.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormDatabase.resx">
+      <DependentUpon>FormDatabase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRfidConnect.resx">
       <DependentUpon>FormRfidConnect.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,7 +202,6 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <None Include="Resources\ssh_icon_close.png" />
-    <None Include="Resources\ssh_icon1.png" />
     <None Include="Resources\ssh_icon.png" />
     <None Include="Resources\Database.png" />
     <None Include="Resources\RfidRed1.png" />

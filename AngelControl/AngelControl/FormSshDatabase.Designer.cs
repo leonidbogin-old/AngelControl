@@ -37,23 +37,11 @@
             this.textBoxSshLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxSshIp = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.numericUpDownDatabasePort = new System.Windows.Forms.NumericUpDown();
-            this.textBoxDatabaseName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxDatabasePassword = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBoxDatabaseUserId = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxDatabaseServer = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSshPort)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSshBoundPort)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDatabasePort)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -221,137 +209,13 @@
             this.textBoxSshIp.Size = new System.Drawing.Size(166, 26);
             this.textBoxSshIp.TabIndex = 2;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.numericUpDownDatabasePort);
-            this.groupBox2.Controls.Add(this.textBoxDatabaseName);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBoxDatabasePassword);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBoxDatabaseUserId);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBoxDatabaseServer);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(17, 284);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(424, 230);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "База_данных";
-            // 
-            // numericUpDownDatabasePort
-            // 
-            this.numericUpDownDatabasePort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.numericUpDownDatabasePort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDownDatabasePort.Font = new System.Drawing.Font("Arial Narrow", 11.5F);
-            this.numericUpDownDatabasePort.ForeColor = System.Drawing.SystemColors.Control;
-            this.numericUpDownDatabasePort.Location = new System.Drawing.Point(277, 40);
-            this.numericUpDownDatabasePort.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-            this.numericUpDownDatabasePort.Name = "numericUpDownDatabasePort";
-            this.numericUpDownDatabasePort.Size = new System.Drawing.Size(64, 25);
-            this.numericUpDownDatabasePort.TabIndex = 11;
-            // 
-            // textBoxDatabaseName
-            // 
-            this.textBoxDatabaseName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.textBoxDatabaseName.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxDatabaseName.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBoxDatabaseName.Location = new System.Drawing.Point(175, 173);
-            this.textBoxDatabaseName.MaxLength = 256;
-            this.textBoxDatabaseName.Name = "textBoxDatabaseName";
-            this.textBoxDatabaseName.Size = new System.Drawing.Size(166, 26);
-            this.textBoxDatabaseName.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.Control;
-            this.label7.Location = new System.Drawing.Point(67, 174);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 19);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "База_данных";
-            // 
-            // textBoxDatabasePassword
-            // 
-            this.textBoxDatabasePassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.textBoxDatabasePassword.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxDatabasePassword.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBoxDatabasePassword.Location = new System.Drawing.Point(175, 128);
-            this.textBoxDatabasePassword.MaxLength = 256;
-            this.textBoxDatabasePassword.Name = "textBoxDatabasePassword";
-            this.textBoxDatabasePassword.Size = new System.Drawing.Size(166, 26);
-            this.textBoxDatabasePassword.TabIndex = 8;
-            this.textBoxDatabasePassword.UseSystemPasswordChar = true;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.Control;
-            this.label8.Location = new System.Drawing.Point(66, 129);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 25);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Пароль";
-            // 
-            // textBoxDatabaseUserId
-            // 
-            this.textBoxDatabaseUserId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.textBoxDatabaseUserId.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxDatabaseUserId.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBoxDatabaseUserId.Location = new System.Drawing.Point(175, 84);
-            this.textBoxDatabaseUserId.MaxLength = 256;
-            this.textBoxDatabaseUserId.Name = "textBoxDatabaseUserId";
-            this.textBoxDatabaseUserId.Size = new System.Drawing.Size(166, 26);
-            this.textBoxDatabaseUserId.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(68, 85);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 19);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Логин";
-            // 
-            // textBoxDatabaseServer
-            // 
-            this.textBoxDatabaseServer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.textBoxDatabaseServer.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxDatabaseServer.ForeColor = System.Drawing.SystemColors.Control;
-            this.textBoxDatabaseServer.Location = new System.Drawing.Point(175, 40);
-            this.textBoxDatabaseServer.MaxLength = 256;
-            this.textBoxDatabaseServer.Name = "textBoxDatabaseServer";
-            this.textBoxDatabaseServer.Size = new System.Drawing.Size(101, 26);
-            this.textBoxDatabaseServer.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.Control;
-            this.label6.Location = new System.Drawing.Point(68, 41);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 19);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Сервер";
-            // 
             // buttonSave
             // 
-            this.buttonSave.BackColor = System.Drawing.Color.Gray;
+            this.buttonSave.BackColor = System.Drawing.Color.DarkGray;
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSave.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonSave.Location = new System.Drawing.Point(238, 527);
+            this.buttonSave.Location = new System.Drawing.Point(238, 285);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(203, 33);
             this.buttonSave.TabIndex = 9;
@@ -361,11 +225,11 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.BackColor = System.Drawing.Color.Gray;
+            this.buttonCancel.BackColor = System.Drawing.Color.DarkGray;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCancel.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.buttonCancel.Location = new System.Drawing.Point(17, 527);
+            this.buttonCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.buttonCancel.Location = new System.Drawing.Point(17, 285);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(93, 33);
             this.buttonCancel.TabIndex = 10;
@@ -378,10 +242,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.ClientSize = new System.Drawing.Size(459, 573);
+            this.ClientSize = new System.Drawing.Size(459, 330);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -395,9 +258,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSshPort)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSshBoundPort)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDatabasePort)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -407,21 +267,11 @@
         private System.Windows.Forms.TextBox textBoxSshLogin;
         private System.Windows.Forms.TextBox textBoxSshIp;
         private System.Windows.Forms.TextBox textBoxSshPassword;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBoxDatabaseName;
-        private System.Windows.Forms.TextBox textBoxDatabasePassword;
-        private System.Windows.Forms.TextBox textBoxDatabaseUserId;
-        private System.Windows.Forms.TextBox textBoxDatabaseServer;
-        private System.Windows.Forms.NumericUpDown numericUpDownDatabasePort;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonCancel;
         protected System.Windows.Forms.Label label1;
         protected System.Windows.Forms.Label label2;
         protected System.Windows.Forms.Label label3;
-        protected System.Windows.Forms.Label label7;
-        protected System.Windows.Forms.Label label8;
-        protected System.Windows.Forms.Label label4;
-        protected System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numericUpDownSshBoundPort;
         private System.Windows.Forms.TextBox textBoxSshBoundHost;
         protected System.Windows.Forms.Label label5;
