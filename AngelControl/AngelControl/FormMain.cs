@@ -169,7 +169,7 @@ namespace AngelControl {
             if (open) {
                 pictureBoxRfid.Image = Properties.Resources.rfid_open;
                 toolTipRfid.ToolTipIcon = ToolTipIcon.Info;
-                toolTipRfid.SetToolTip(pictureBoxRfid, "RFID подключен");
+                toolTipRfid.SetToolTip(pictureBoxRfid, "RFID подключен (" + Rfid.GetPortName() + ")");
             } else {
                 pictureBoxRfid.Image = Properties.Resources.rfid_close;
                 toolTipRfid.ToolTipIcon = ToolTipIcon.Error;

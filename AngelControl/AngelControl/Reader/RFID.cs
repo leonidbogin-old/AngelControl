@@ -17,6 +17,9 @@ namespace AngelControl.Reader {
             Mode = ModeEnum.start;
         }
 
+        public static string GetPortName() {
+            return Connect.PortName;
+        }
         public static bool isOpen() {
             return Connect.IsOpen;
         }
