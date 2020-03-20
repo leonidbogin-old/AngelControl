@@ -72,7 +72,7 @@
             // 
             this.numericUpDownDatabasePort.BackColor = System.Drawing.Color.White;
             this.numericUpDownDatabasePort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numericUpDownDatabasePort.Font = new System.Drawing.Font("Arial Narrow", 11.5F);
+            this.numericUpDownDatabasePort.Font = new System.Drawing.Font("Arial Narrow", 12F);
             this.numericUpDownDatabasePort.ForeColor = System.Drawing.SystemColors.WindowText;
             this.numericUpDownDatabasePort.Location = new System.Drawing.Point(244, 25);
             this.numericUpDownDatabasePort.Maximum = new decimal(new int[] {
@@ -81,7 +81,7 @@
             0,
             0});
             this.numericUpDownDatabasePort.Name = "numericUpDownDatabasePort";
-            this.numericUpDownDatabasePort.Size = new System.Drawing.Size(64, 25);
+            this.numericUpDownDatabasePort.Size = new System.Drawing.Size(64, 26);
             this.numericUpDownDatabasePort.TabIndex = 1;
             // 
             // textBoxDatabaseName
