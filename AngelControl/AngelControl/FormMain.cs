@@ -23,11 +23,8 @@ namespace AngelControl {
 
         public FormMain() {
             InitializeComponent();
-            reg = new Views.ControlReg {
-                Dock = DockStyle.Fill
-            }; rfid = new Views.ControlRfid {
-                Dock = DockStyle.Fill
-            };
+            reg = new Views.ControlReg { Dock = DockStyle.Fill  }; 
+            rfid = new Views.ControlRfid { Dock = DockStyle.Fill };
             LoadMenu();
         }
 
@@ -234,14 +231,3 @@ namespace AngelControl {
         }
     }
 }
-
-
-
-//DbDataReader reader = database.QueryEmployee("Select * from reg");
-//                using (reader) {
-//                    if (reader.HasRows) {
-//                        while (reader.Read()) {
-//                            MessageBox.Show(reader.GetValue(0).ToString() + " " + reader.GetValue(1).ToString() + " " + reader.GetValue(2).ToString() + " " + reader.GetValue(3).ToString());
-//                        }
-//                    }
-//                }

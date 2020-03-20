@@ -144,11 +144,6 @@ namespace AngelControl {
             this.Close();
         }
 
-        //this 380; 151
-        //b1 18; 68
-        //b2 106; 68
-        //str1 22; 23
-        //str2 106; 24
         private void linkLabelMore_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             linkLabelMore.Visible = false;
             this.Height = 395;
