@@ -34,25 +34,25 @@
             this.panelMainMenu = new System.Windows.Forms.Panel();
             this.panelBorder3 = new System.Windows.Forms.Panel();
             this.panelMenuRfid = new System.Windows.Forms.Panel();
+            this.pictureBoxMenuRfid = new System.Windows.Forms.PictureBox();
             this.panelBorder2 = new System.Windows.Forms.Panel();
             this.panelMenuReg = new System.Windows.Forms.Panel();
+            this.pictureBoxMenuReg = new System.Windows.Forms.PictureBox();
             this.panelBorder1 = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelBottom = new System.Windows.Forms.Panel();
-            this.labelLog = new System.Windows.Forms.Label();
             this.pictureBoxSsh = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMenuRfid = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMenuReg = new System.Windows.Forms.PictureBox();
+            this.labelLog = new System.Windows.Forms.Label();
             this.toolTipSsh = new System.Windows.Forms.ToolTip(this.components);
             this.panelMainMenu.SuspendLayout();
             this.panelMenuRfid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuRfid)).BeginInit();
             this.panelMenuReg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReg)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSsh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuRfid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReg)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
@@ -97,6 +97,20 @@
             this.panelMenuRfid.Size = new System.Drawing.Size(80, 80);
             this.panelMenuRfid.TabIndex = 3;
             // 
+            // pictureBoxMenuRfid
+            // 
+            this.pictureBoxMenuRfid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxMenuRfid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxMenuRfid.Image = global::AngelControl.Properties.Resources.MenuRfid;
+            this.pictureBoxMenuRfid.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxMenuRfid.Name = "pictureBoxMenuRfid";
+            this.pictureBoxMenuRfid.Size = new System.Drawing.Size(80, 80);
+            this.pictureBoxMenuRfid.TabIndex = 1;
+            this.pictureBoxMenuRfid.TabStop = false;
+            this.pictureBoxMenuRfid.Click += new System.EventHandler(this.pictureBoxMenuRfid_Click);
+            this.pictureBoxMenuRfid.MouseEnter += new System.EventHandler(this.pictureBoxMenuRfid_MouseEnter);
+            this.pictureBoxMenuRfid.MouseLeave += new System.EventHandler(this.pictureBoxMenuRfid_MouseLeave);
+            // 
             // panelBorder2
             // 
             this.panelBorder2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
@@ -115,6 +129,20 @@
             this.panelMenuReg.Name = "panelMenuReg";
             this.panelMenuReg.Size = new System.Drawing.Size(80, 80);
             this.panelMenuReg.TabIndex = 1;
+            // 
+            // pictureBoxMenuReg
+            // 
+            this.pictureBoxMenuReg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxMenuReg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxMenuReg.Image = global::AngelControl.Properties.Resources.MenuProfile;
+            this.pictureBoxMenuReg.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxMenuReg.Name = "pictureBoxMenuReg";
+            this.pictureBoxMenuReg.Size = new System.Drawing.Size(80, 80);
+            this.pictureBoxMenuReg.TabIndex = 0;
+            this.pictureBoxMenuReg.TabStop = false;
+            this.pictureBoxMenuReg.Click += new System.EventHandler(this.pictureBoxMenuReg_Click);
+            this.pictureBoxMenuReg.MouseEnter += new System.EventHandler(this.pictureBoxMenuReg_MouseEnter);
+            this.pictureBoxMenuReg.MouseLeave += new System.EventHandler(this.pictureBoxMenuReg_MouseLeave);
             // 
             // panelBorder1
             // 
@@ -156,16 +184,6 @@
             this.panelBottom.Size = new System.Drawing.Size(720, 35);
             this.panelBottom.TabIndex = 0;
             // 
-            // labelLog
-            // 
-            this.labelLog.AutoSize = true;
-            this.labelLog.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelLog.ForeColor = System.Drawing.Color.DarkGray;
-            this.labelLog.Location = new System.Drawing.Point(7, 10);
-            this.labelLog.Name = "labelLog";
-            this.labelLog.Size = new System.Drawing.Size(0, 15);
-            this.labelLog.TabIndex = 0;
-            // 
             // pictureBoxSsh
             // 
             this.pictureBoxSsh.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -176,37 +194,21 @@
             this.pictureBoxSsh.TabIndex = 1;
             this.pictureBoxSsh.TabStop = false;
             this.pictureBoxSsh.Tag = "";
+            this.pictureBoxSsh.MouseEnter += new System.EventHandler(this.pictureBoxSsh_MouseEnter);
             // 
-            // pictureBoxMenuRfid
+            // labelLog
             // 
-            this.pictureBoxMenuRfid.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxMenuRfid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxMenuRfid.Image = global::AngelControl.Properties.Resources.MenuRfid;
-            this.pictureBoxMenuRfid.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxMenuRfid.Name = "pictureBoxMenuRfid";
-            this.pictureBoxMenuRfid.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxMenuRfid.TabIndex = 1;
-            this.pictureBoxMenuRfid.TabStop = false;
-            this.pictureBoxMenuRfid.Click += new System.EventHandler(this.pictureBoxMenuRfid_Click);
-            this.pictureBoxMenuRfid.MouseEnter += new System.EventHandler(this.pictureBoxMenuRfid_MouseEnter);
-            this.pictureBoxMenuRfid.MouseLeave += new System.EventHandler(this.pictureBoxMenuRfid_MouseLeave);
-            // 
-            // pictureBoxMenuReg
-            // 
-            this.pictureBoxMenuReg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxMenuReg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxMenuReg.Image = global::AngelControl.Properties.Resources.MenuProfile;
-            this.pictureBoxMenuReg.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxMenuReg.Name = "pictureBoxMenuReg";
-            this.pictureBoxMenuReg.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxMenuReg.TabIndex = 0;
-            this.pictureBoxMenuReg.TabStop = false;
-            this.pictureBoxMenuReg.Click += new System.EventHandler(this.pictureBoxMenuReg_Click);
-            this.pictureBoxMenuReg.MouseEnter += new System.EventHandler(this.pictureBoxMenuReg_MouseEnter);
-            this.pictureBoxMenuReg.MouseLeave += new System.EventHandler(this.pictureBoxMenuReg_MouseLeave);
+            this.labelLog.AutoSize = true;
+            this.labelLog.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelLog.ForeColor = System.Drawing.Color.DarkGray;
+            this.labelLog.Location = new System.Drawing.Point(7, 10);
+            this.labelLog.Name = "labelLog";
+            this.labelLog.Size = new System.Drawing.Size(0, 15);
+            this.labelLog.TabIndex = 0;
             // 
             // toolTipSsh
             // 
+            this.toolTipSsh.ShowAlways = true;
             this.toolTipSsh.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTipSsh_Popup);
             // 
             // FormMain
@@ -228,13 +230,13 @@
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.panelMainMenu.ResumeLayout(false);
             this.panelMenuRfid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuRfid)).EndInit();
             this.panelMenuReg.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReg)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);
             this.panelBottom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSsh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuRfid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReg)).EndInit();
             this.ResumeLayout(false);
 
         }

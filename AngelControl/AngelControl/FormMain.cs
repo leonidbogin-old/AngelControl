@@ -150,16 +150,20 @@ namespace AngelControl {
         private void DisplaySsh() {
             if (Ssh.isOpen()) {
                 pictureBoxSsh.Image = Properties.Resources.ssh_icon;
-                toolTipSsh.ToolTipTitle = "Работает";
                 toolTipSsh.ToolTipIcon = ToolTipIcon.None;
+                toolTipSsh.SetToolTip(pictureBoxSsh, "SSH туннель работает");
             } else {
                 pictureBoxSsh.Image = Properties.Resources.ssh_icon_close;
-                toolTipSsh.ToolTipTitle = "Отключено";
                 toolTipSsh.ToolTipIcon = ToolTipIcon.Error;
+                toolTipSsh.SetToolTip(pictureBoxSsh, "SSH туннель отключен");
             }
         }
 
         private void toolTipSsh_Popup(object sender, PopupEventArgs e) {
+
+        }
+
+        private void pictureBoxSsh_MouseEnter(object sender, EventArgs e) {
 
         }
     }
