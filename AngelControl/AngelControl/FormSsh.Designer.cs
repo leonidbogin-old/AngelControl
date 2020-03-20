@@ -52,7 +52,7 @@
             this.buttonSave.Location = new System.Drawing.Point(104, 249);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(240, 30);
-            this.buttonSave.TabIndex = 9;
+            this.buttonSave.TabIndex = 7;
             this.buttonSave.Text = "Сохранить настройки";
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -67,7 +67,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(18, 249);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(80, 30);
-            this.buttonCancel.TabIndex = 10;
+            this.buttonCancel.TabIndex = 8;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -86,7 +86,7 @@
             0});
             this.numericUpDownSshPort.Name = "numericUpDownSshPort";
             this.numericUpDownSshPort.Size = new System.Drawing.Size(64, 26);
-            this.numericUpDownSshPort.TabIndex = 29;
+            this.numericUpDownSshPort.TabIndex = 4;
             // 
             // textBoxSshHost
             // 
@@ -97,7 +97,7 @@
             this.textBoxSshHost.MaxLength = 256;
             this.textBoxSshHost.Name = "textBoxSshHost";
             this.textBoxSshHost.Size = new System.Drawing.Size(101, 26);
-            this.textBoxSshHost.TabIndex = 28;
+            this.textBoxSshHost.TabIndex = 3;
             // 
             // label9
             // 
@@ -124,7 +124,7 @@
             0});
             this.numericUpDownSshBoundPort.Name = "numericUpDownSshBoundPort";
             this.numericUpDownSshBoundPort.Size = new System.Drawing.Size(64, 26);
-            this.numericUpDownSshBoundPort.TabIndex = 26;
+            this.numericUpDownSshBoundPort.TabIndex = 6;
             // 
             // textBoxSshPassword
             // 
@@ -135,7 +135,7 @@
             this.textBoxSshPassword.MaxLength = 256;
             this.textBoxSshPassword.Name = "textBoxSshPassword";
             this.textBoxSshPassword.Size = new System.Drawing.Size(166, 26);
-            this.textBoxSshPassword.TabIndex = 23;
+            this.textBoxSshPassword.TabIndex = 2;
             this.textBoxSshPassword.UseSystemPasswordChar = true;
             // 
             // textBoxSshBoundHost
@@ -147,7 +147,7 @@
             this.textBoxSshBoundHost.MaxLength = 256;
             this.textBoxSshBoundHost.Name = "textBoxSshBoundHost";
             this.textBoxSshBoundHost.Size = new System.Drawing.Size(101, 26);
-            this.textBoxSshBoundHost.TabIndex = 25;
+            this.textBoxSshBoundHost.TabIndex = 5;
             // 
             // label5
             // 
@@ -180,7 +180,7 @@
             this.textBoxSshLogin.MaxLength = 256;
             this.textBoxSshLogin.Name = "textBoxSshLogin";
             this.textBoxSshLogin.Size = new System.Drawing.Size(166, 26);
-            this.textBoxSshLogin.TabIndex = 21;
+            this.textBoxSshLogin.TabIndex = 1;
             // 
             // label2
             // 
@@ -201,7 +201,7 @@
             this.textBoxSshIp.MaxLength = 256;
             this.textBoxSshIp.Name = "textBoxSshIp";
             this.textBoxSshIp.Size = new System.Drawing.Size(166, 26);
-            this.textBoxSshIp.TabIndex = 19;
+            this.textBoxSshIp.TabIndex = 0;
             // 
             // label1
             // 
