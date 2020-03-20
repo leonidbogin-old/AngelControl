@@ -192,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\ssh_icon_close.png" />
+    <None Include="Resources\ssh_icon1.png" />
+    <None Include="Resources\ssh_icon.png" />
     <None Include="Resources\Database.png" />
     <None Include="Resources\RfidRed1.png" />
     <None Include="Resources\RfidRed.png" />

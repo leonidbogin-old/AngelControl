@@ -31,6 +31,7 @@ namespace AngelControl {
         }
 
         private void FormMain_Load(object sender, EventArgs e) {
+            Ssh.OnChange += DisplaySsh;
             //Ssh connect
             if (Ssh.OpenSave()) {
                 //Test database connect
@@ -144,6 +145,22 @@ namespace AngelControl {
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e) {
             Ssh.Close();
+        }
+
+        private void DisplaySsh() {
+            if (Ssh.isOpen()) {
+                pictureBoxSsh.Image = Properties.Resources.ssh_icon;
+                toolTipSsh.ToolTipTitle = "Работает";
+                toolTipSsh.ToolTipIcon = ToolTipIcon.None;
+            } else {
+                pictureBoxSsh.Image = Properties.Resources.ssh_icon_close;
+                toolTipSsh.ToolTipTitle = "Отключено";
+                toolTipSsh.ToolTipIcon = ToolTipIcon.Error;
+            }
+        }
+
+        private void toolTipSsh_Popup(object sender, PopupEventArgs e) {
+
         }
     }
 }
