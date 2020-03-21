@@ -24,15 +24,15 @@ namespace AngelControl {
 
         public FormMain() {
             InitializeComponent();
+            Ssh.OnChangeSsh += DisplaySsh;
+            Database.OnChangeDatabase += DisplayDatabase;
+            Rfid.OnChangeRfid += DisplayRfid;
             controlReg = new Views.ControlReg { Dock = DockStyle.Fill };
             controlRfid = new Views.ControlRfid { Dock = DockStyle.Fill };
             LoadMenu();
         }
 
         private void FormMain_Load(object sender, EventArgs e) {
-            Ssh.OnChangeSsh += DisplaySsh;
-            Database.OnChangeDatabase += DisplayDatabase;
-            Rfid.OnChangeRfid += DisplayRfid;
             //Ssh connect
             if (Ssh.OpenSave()) {
                 //Test database connect
@@ -51,6 +51,7 @@ namespace AngelControl {
                 FormRfidConnect formRfidConnect = new FormRfidConnect();
                 formRfidConnect.ShowDialog();
             }
+            controlReg.Select();
 
             //test select
             using (Database database = new Database()) {

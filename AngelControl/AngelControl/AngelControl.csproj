@@ -104,17 +104,17 @@
     <Compile Include="Reader\RfidParameters.cs" />
     <Compile Include="Security\Encryption.cs" />
     <Compile Include="Security\Hash.cs" />
-    <Compile Include="Views\ControlMonitor.cs">
+    <Compile Include="Views\ControlRfidMonitor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ControlMonitor.Designer.cs">
-      <DependentUpon>ControlMonitor.cs</DependentUpon>
+    <Compile Include="Views\ControlRfidMonitor.Designer.cs">
+      <DependentUpon>ControlRfidMonitor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ControlNutrition.cs">
+    <Compile Include="Views\ControlRfidNutrition.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ControlNutrition.Designer.cs">
-      <DependentUpon>ControlNutrition.cs</DependentUpon>
+    <Compile Include="Views\ControlRfidNutrition.Designer.cs">
+      <DependentUpon>ControlRfidNutrition.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\ControlReg.cs">
       <SubType>UserControl</SubType>
@@ -138,11 +138,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Menu\MainMenu.cs" />
-    <Compile Include="Views\ControlStudy.cs">
+    <Compile Include="Views\ControlRfidStudy.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\ControlStudy.Designer.cs">
-      <DependentUpon>ControlStudy.cs</DependentUpon>
+    <Compile Include="Views\ControlRfidStudy.Designer.cs">
+      <DependentUpon>ControlRfidStudy.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FormDatabase.resx">
       <DependentUpon>FormDatabase.cs</DependentUpon>
@@ -153,11 +153,11 @@
     <EmbeddedResource Include="FormSsh.resx">
       <DependentUpon>FormSsh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ControlMonitor.resx">
-      <DependentUpon>ControlMonitor.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ControlRfidMonitor.resx">
+      <DependentUpon>ControlRfidMonitor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\ControlNutrition.resx">
-      <DependentUpon>ControlNutrition.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ControlRfidNutrition.resx">
+      <DependentUpon>ControlRfidNutrition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\ControlReg.resx">
       <DependentUpon>ControlReg.cs</DependentUpon>
@@ -178,8 +178,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\ControlStudy.resx">
-      <DependentUpon>ControlStudy.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ControlRfidStudy.resx">
+      <DependentUpon>ControlRfidStudy.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -200,6 +200,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\edit-icon15.png" />
+    <None Include="Resources\edit-icon.png" />
     <None Include="Resources\rfid-close.png" />
     <None Include="Resources\rfid-open.png" />
     <None Include="Resources\ssh_icon_close.png" />

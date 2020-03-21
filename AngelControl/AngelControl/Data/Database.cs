@@ -1,4 +1,5 @@
 ﻿using AngelControl.Class;
+using AngelControl.Data.Class;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,8 @@ namespace AngelControl.Data {
         public string lastErrorMeassage = "";
         private MySqlConnection connect;
 
-        public delegate void MethodContainer(byte status);
-        public static event MethodContainer OnChangeDatabase;
+        public delegate void MethodContainerDabase(byte status);
+        public static event MethodContainerDabase OnChangeDatabase;
 
         public bool Open(string server, uint port, string userId, string password, string database) {
             lastErrorMeassage = "";
@@ -67,7 +68,7 @@ namespace AngelControl.Data {
         protected virtual void Dispose(bool disposing) {
             if (!disposed) {
                 if (disposing) {
-                    if (connect.State == System.Data.ConnectionState.Open) connect.Close();
+                    if (connect.State == System.Data.ConnectionState.Open) Close();
                     connect.Dispose();
                 }
                 // освобождаем неуправляемые объекты
@@ -81,8 +82,8 @@ namespace AngelControl.Data {
         }
 
         //Selects////////////////////////////////////////////////////////////////////////////////////// 
-        public Data.Class.Reg GetRegByNumcard (string whereNumcard) {
-            Data.Class.Reg reg = null;
+        public Reg GetRegByNumcard (string whereNumcard) {
+            Reg reg = null;
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = connect;
             cmd.CommandText = $@"SELECT id, lname, fname, pname FROM reg WHERE numcard = '{whereNumcard}'";
@@ -92,13 +93,41 @@ namespace AngelControl.Data {
                     reg = new Data.Class.Reg() {
                         Id = reader.GetInt32(0),
                         Numcard = whereNumcard,
-                        Lname = reader.GetString(1),
-                        Fname = reader.GetString(2),
-                        Pname = reader.GetString(3),
+                        Lname = reader.GetValue(1).ToString(),
+                        Fname = reader.GetValue(2).ToString(),
+                        Pname = reader.GetValue(3).ToString(),
                     };
                 }
             }
             return reg;
+        }
+
+        public List<Reg> GetRegs(Reg selectParameters) {
+            string where = "";
+            if (selectParameters.Lname != null) where += $@" UPPER(lname) LIKE '{selectParameters.Lname.ToUpper()}%'";
+            if (selectParameters.Fname != null) where += $@" UPPER(fname) LIKE '{selectParameters.Fname.ToUpper()}%'";
+            if (selectParameters.Pname != null) where += $@" UPPER(pname) LIKE '{selectParameters.Pname.ToUpper()}%'";
+            if (where.Length > 0) where = "WHERE " + where;
+
+            List<Reg> regs = new List<Reg>();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = connect;
+            cmd.CommandText = $@"SELECT id, numcard, lname, fname, pname FROM reg " + where;
+            using (DbDataReader reader = cmd.ExecuteReader()) {
+                if (reader.HasRows) {
+                    while (reader.Read()) {
+                        Reg reg = new Reg() {
+                            Id = reader.GetInt32(0),
+                            Numcard = reader.GetValue(1).ToString(),
+                            Lname = reader.GetValue(2).ToString(),
+                            Fname = reader.GetValue(3).ToString(),
+                            Pname = reader.GetValue(4).ToString(),  //gc
+                        };
+                        regs.Add(reg);
+                    }
+                }
+            }
+            return regs;
         }
 
         public DbDataReader QueryEmployee(string sql) {//Select * from reg
