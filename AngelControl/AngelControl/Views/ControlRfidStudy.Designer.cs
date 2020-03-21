@@ -1,6 +1,6 @@
 ﻿namespace AngelControl.Views
 {
-    partial class ControlMonitor
+    partial class ControlRfidStudy
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Monitor
+            // Study
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.Name = "Monitor";
-            this.Size = new System.Drawing.Size(646, 388);
+            this.Name = "Study";
+            this.Size = new System.Drawing.Size(700, 466);
             this.ResumeLayout(false);
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace AngelControl.Views
 {
-    partial class ControlStudy
+    partial class ControlRfidNutrition
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // Study
+            // Nutrition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.Name = "Study";
-            this.Size = new System.Drawing.Size(700, 466);
+            this.Name = "Nutrition";
+            this.Size = new System.Drawing.Size(716, 475);
             this.ResumeLayout(false);
 
         }

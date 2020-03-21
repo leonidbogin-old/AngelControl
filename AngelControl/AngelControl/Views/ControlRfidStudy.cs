@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AngelControl.Views {
-    public partial class ControlStudy : UserControl {
-        public ControlStudy() {
+    public partial class ControlRfidStudy : UserControl {
+        public ControlRfidStudy() {
             InitializeComponent();
         }
     }

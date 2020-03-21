@@ -11,15 +11,15 @@ using System.Windows.Forms;
 namespace AngelControl.Views {
     public partial class ControlRfid : UserControl {
         private AngelControl.Menu.RfidMenu rfidMenu;
-        public Views.ControlNutrition nutrition;
-        public Views.ControlStudy study;
-        public Views.ControlMonitor monitor;
+        public Views.ControlRfidNutrition nutrition;
+        public Views.ControlRfidStudy study;
+        public Views.ControlRfidMonitor monitor;
 
         public ControlRfid() {
             InitializeComponent();
-            nutrition = new Views.ControlNutrition(); nutrition.Dock = DockStyle.Fill;
-            study = new Views.ControlStudy(); study.Dock = DockStyle.Fill;
-            monitor = new Views.ControlMonitor(); monitor.Dock = DockStyle.Fill;
+            nutrition = new Views.ControlRfidNutrition(); nutrition.Dock = DockStyle.Fill;
+            study = new Views.ControlRfidStudy(); study.Dock = DockStyle.Fill;
+            monitor = new Views.ControlRfidMonitor(); monitor.Dock = DockStyle.Fill;
             LoadRdifMenu();
         }
 
