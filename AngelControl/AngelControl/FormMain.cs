@@ -1,4 +1,5 @@
 ﻿using AngelControl.Data;
+using AngelControl.Data.Class;
 using AngelControl.Reader;
 using AngelControl.Security;
 using MySql.Data.MySqlClient;
@@ -18,13 +19,13 @@ namespace AngelControl {
     public partial class FormMain : Form {
 
         private Menu.MainMenu mainMenu;
-        private Views.ControlReg reg;
-        private Views.ControlRfid rfid;
+        private Views.ControlReg controlReg;
+        private Views.ControlRfid controlRfid;
 
         public FormMain() {
             InitializeComponent();
-            reg = new Views.ControlReg { Dock = DockStyle.Fill }; 
-            rfid = new Views.ControlRfid { Dock = DockStyle.Fill };
+            controlReg = new Views.ControlReg { Dock = DockStyle.Fill };
+            controlRfid = new Views.ControlRfid { Dock = DockStyle.Fill };
             LoadMenu();
         }
 
@@ -35,12 +36,11 @@ namespace AngelControl {
             //Ssh connect
             if (Ssh.OpenSave()) {
                 //Test database connect
-                Database database = new Database();
-                if (database.OpenSave()) {
-                    database.Close();
-                } else {
-                    FormSsh formSsh = new FormSsh();
-                    formSsh.ShowDialog();
+                using (Database database = new Database()) {
+                    if (!database.OpenSave()) {
+                        FormSsh formSsh = new FormSsh();
+                        formSsh.ShowDialog();
+                    }
                 }
             } else {
                 FormSsh formSsh = new FormSsh();
@@ -51,6 +51,13 @@ namespace AngelControl {
                 FormRfidConnect formRfidConnect = new FormRfidConnect();
                 formRfidConnect.ShowDialog();
             }
+
+            //test select
+            using (Database database = new Database()) {
+                database.OpenSave();
+                Reg reg = database.GetRegByNumcard("0005550141");
+            }
+
         }
 
         protected override void WndProc(ref Message m) {
@@ -81,11 +88,11 @@ namespace AngelControl {
             panelContent.Controls.Clear();
             switch (index_new) {
                 case AngelControl.Menu.MainMenu.MenuIndex.reg:
-                    panelContent.Controls.Add(reg);
+                    panelContent.Controls.Add(controlReg);
                     panelMenuReg.BackColor = mainMenu.menuColorActive; 
                     break;
                 case AngelControl.Menu.MainMenu.MenuIndex.rfid:
-                    panelContent.Controls.Add(rfid);
+                    panelContent.Controls.Add(controlRfid);
                     panelMenuRfid.BackColor = mainMenu.menuColorActive; 
                     break;
             }

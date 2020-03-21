@@ -25,21 +25,21 @@ namespace AngelControl {
         }
 
         private void buttonSave_Click(object sender, EventArgs e) {
-            Database database = new Database();
-            if (database.Open(
+            using (Database database = new Database()) {
+                if (database.Open(
                     textBoxDatabaseServer.Text,
                     (uint)numericUpDownDatabasePort.Value,
                     textBoxDatabaseUserId.Text,
                     textBoxDatabasePassword.Text,
                     textBoxDatabaseName.Text)) {
-                database.Close();
-            } else {
-                if (MessageBox.Show(
-                        "Ошибка подключения к базе данных:\n'" + database.lastErrorMeassage + "'\nВсё равно сохранить?",
-                        "Тестовое подключение к базе данных",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Error) != DialogResult.Yes) {
-                    return;
+                } else {
+                    if (MessageBox.Show(
+                            "Ошибка подключения к базе данных:\n'" + database.lastErrorMeassage + "'\nВсё равно сохранить?",
+                            "Тестовое подключение к базе данных",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Error) != DialogResult.Yes) {
+                        return;
+                    }
                 }
             }
             Properties.Settings.Default.DatabaseServer = Encryption.EncryptString(textBoxDatabaseServer.Text);
