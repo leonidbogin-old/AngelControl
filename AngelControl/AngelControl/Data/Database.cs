@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AngelControl.Data {
-    public class Database {
+    public class Database : IDisposable {
 
         public string lastErrorMeassage = "";
         private MySqlConnection connect;
@@ -55,7 +55,51 @@ namespace AngelControl.Data {
             }
         }
 
-        //Selects//////////////////////////////////////////////////////////////////////////////////////
+        private bool disposed = false;
+
+        // реализация интерфейса IDisposable.
+        public void Dispose() {
+            Dispose(true);
+            // подавляем финализацию
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing) {
+            if (!disposed) {
+                if (disposing) {
+                    if (connect.State == System.Data.ConnectionState.Open) connect.Close();
+                    connect.Dispose();
+                }
+                // освобождаем неуправляемые объекты
+                disposed = true;
+            }
+        }
+
+        // Деструктор
+        ~Database() {
+            Dispose(false);
+        }
+
+        //Selects////////////////////////////////////////////////////////////////////////////////////// 
+        public Data.Class.Reg GetRegByNumcard (string whereNumcard) {
+            Data.Class.Reg reg = null;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = connect;
+            cmd.CommandText = $@"SELECT id, lname, fname, pname FROM reg WHERE numcard = '{whereNumcard}'";
+            using (DbDataReader reader = cmd.ExecuteReader()) {
+                if (reader.HasRows) {
+                    reader.Read();
+                    reg = new Data.Class.Reg() {
+                        Id = reader.GetInt32(0),
+                        Numcard = whereNumcard,
+                        Lname = reader.GetString(1),
+                        Fname = reader.GetString(2),
+                        Pname = reader.GetString(3),
+                    };
+                }
+            }
+            return reg;
+        }
 
         public DbDataReader QueryEmployee(string sql) {//Select * from reg
             MySqlCommand cmd = new MySqlCommand();
@@ -64,25 +108,25 @@ namespace AngelControl.Data {
             return cmd.ExecuteReader();
         }
 
-        public User Login(string login, string password) {
-            User user = null;
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = connect;
-            cmd.CommandText = $@"Select userType, userPassword From user Where userLogin = '{login}'";
-            using (DbDataReader reader = cmd.ExecuteReader()) {
-                if (reader.HasRows) {
-                    while (reader.Read()) {
-                        if (Security.Hash.VerifyHashedPassword(reader.GetValue(1).ToString(), password)) {
-                            user = new Class.User() {
-                                UserType = Convert.ToByte(reader.GetValue(0)),
-                                UserLogin = login,
-                            };
-                            break;
-                        }
-                    }
-                }
-            }
-            return user;
-        }
+        //public User Login(string login, string password) {
+        //    User user = null;
+        //    MySqlCommand cmd = new MySqlCommand();
+        //    cmd.Connection = connect;
+        //    cmd.CommandText = $@"Select userType, userPassword From user Where userLogin = '{login}'";
+        //    using (DbDataReader reader = cmd.ExecuteReader()) {
+        //        if (reader.HasRows) {
+        //            while (reader.Read()) {
+        //                if (Security.Hash.VerifyHashedPassword(reader.GetValue(1).ToString(), password)) {
+        //                    user = new Class.User() {
+        //                        UserType = Convert.ToByte(reader.GetValue(0)),
+        //                        UserLogin = login,
+        //                    };
+        //                    break;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return user;
+        //}
     }
 }
