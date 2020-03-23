@@ -51,7 +51,7 @@ namespace AngelControl {
                 FormRfidConnect formRfidConnect = new FormRfidConnect();
                 formRfidConnect.ShowDialog();
             }
-            controlReg.Select();
+            controlReg.StartSelectRegs();
 
             //test select
             using (Database database = new Database()) {
@@ -154,21 +154,27 @@ namespace AngelControl {
             switch (status) {
                 case 1:
                     databaseError = false;
-                    pictureBoxDatabase.Image = Properties.Resources.database_search_icon;
-                    toolTipDatabase.ToolTipIcon = ToolTipIcon.Info;
-                    toolTipDatabase.SetToolTip(pictureBoxDatabase, "База данных работает");
+                    pictureBoxDatabase.Invoke(new Action(() => {
+                        pictureBoxDatabase.Image = Properties.Resources.database_search_icon;
+                        toolTipDatabase.ToolTipIcon = ToolTipIcon.Info;
+                        toolTipDatabase.SetToolTip(pictureBoxDatabase, "База данных работает");
+                    }));
                     break;
                 case 2:
                     databaseError = false;
-                    pictureBoxDatabase.Image = Properties.Resources.database_ok_icon;
-                    toolTipDatabase.ToolTipIcon = ToolTipIcon.Info;
-                    toolTipDatabase.SetToolTip(pictureBoxDatabase, "База данных в спящем режиме");
+                    pictureBoxDatabase.Invoke(new Action(() => {
+                        pictureBoxDatabase.Image = Properties.Resources.database_ok_icon;
+                        toolTipDatabase.ToolTipIcon = ToolTipIcon.Info;
+                        toolTipDatabase.SetToolTip(pictureBoxDatabase, "База данных в спящем режиме");
+                    }));
                     break;
                 default:
                     databaseError = true;
-                    pictureBoxDatabase.Image = Properties.Resources.database_error_icon;
-                    toolTipDatabase.ToolTipIcon = ToolTipIcon.Error;
-                    toolTipDatabase.SetToolTip(pictureBoxDatabase, "Ошибка базы данных");
+                    pictureBoxDatabase.Invoke(new Action(() => {
+                        pictureBoxDatabase.Image = Properties.Resources.database_error_icon;
+                        toolTipDatabase.ToolTipIcon = ToolTipIcon.Error;
+                        toolTipDatabase.SetToolTip(pictureBoxDatabase, "Ошибка базы данных");
+                    }));
                     break;
             }
         }

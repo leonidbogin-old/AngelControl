@@ -11,7 +11,19 @@ namespace AngelControl.Data.Class {
         public string Lname { get; set; }
         public string Fname { get; set; }
         public string Pname { get; set; }
+        public DateTime? Birthday { get; set; }
+        public int? Age { get; set; }
 
-
+        public static int? GetAge(DateTime? bithday) {
+            if (bithday.HasValue) {
+                DateTime now = DateTime.Today;
+                int age = now.Year - bithday.Value.Year;
+                if (bithday > now.AddYears(-age)) age--;
+                return age;
+            } else {
+                return (int?)null;
+            }
+                
+        }
     }
 }

@@ -68,8 +68,10 @@ namespace AngelControl.Data {
         protected virtual void Dispose(bool disposing) {
             if (!disposed) {
                 if (disposing) {
-                    if (connect.State == System.Data.ConnectionState.Open) Close();
-                    connect.Dispose();
+                    if (connect != null && connect.State == System.Data.ConnectionState.Open) {
+                        Close();
+                        connect.Dispose();
+                    }
                 }
                 // освобождаем неуправляемые объекты
                 disposed = true;
@@ -112,22 +114,39 @@ namespace AngelControl.Data {
             List<Reg> regs = new List<Reg>();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = connect;
-            cmd.CommandText = $@"SELECT id, numcard, lname, fname, pname FROM reg " + where;
+            cmd.CommandText = $@"SELECT id, numcard, lname, fname, pname, birthday FROM reg " + where;
             using (DbDataReader reader = cmd.ExecuteReader()) {
                 if (reader.HasRows) {
                     while (reader.Read()) {
+                        object birthday = reader.GetValue(5);
                         Reg reg = new Reg() {
                             Id = reader.GetInt32(0),
                             Numcard = reader.GetValue(1).ToString(),
                             Lname = reader.GetValue(2).ToString(),
                             Fname = reader.GetValue(3).ToString(),
-                            Pname = reader.GetValue(4).ToString(),  //gc
+                            Pname = reader.GetValue(4).ToString(),  
+                            Birthday = reader.GetValue(5) != DBNull.Value ? reader.GetDateTime(5) : (DateTime?)null,
+                            Age = reader.GetValue(5) != DBNull.Value ? Reg.GetAge(reader.GetDateTime(5)) : null,
                         };
                         regs.Add(reg);
                     }
                 }
             }
             return regs;
+        }
+
+        public int CountRegs() {
+            int count = 0;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = connect;
+            cmd.CommandText = $@"SELECT COUNT(id) FROM reg";
+            using (DbDataReader reader = cmd.ExecuteReader()) {
+                if (reader.HasRows) {
+                    reader.Read();
+                    count = reader.GetInt32(0);
+                }
+            }
+            return count;
         }
 
         public DbDataReader QueryEmployee(string sql) {//Select * from reg
