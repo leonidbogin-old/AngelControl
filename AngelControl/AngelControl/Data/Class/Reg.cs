@@ -11,8 +11,13 @@ namespace AngelControl.Data.Class {
         public string Lname { get; set; }
         public string Fname { get; set; }
         public string Pname { get; set; }
+        public string Phone { get; set; }
         public DateTime? Birthday { get; set; }
         public int? Age { get; set; }
+        public int StayWhereId { get; set; }
+        public string StayWhere { get; set; }
+        public string StayLengthId { get; set; }
+        public string StayLength { get; set; }
 
         public static int? GetAge(DateTime? bithday) {
             if (bithday.HasValue) {

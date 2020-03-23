@@ -106,27 +106,34 @@ namespace AngelControl.Data {
 
         public List<Reg> GetRegs(Reg selectParameters) {
             string where = "";
-            if (selectParameters.Lname != null) where += $@" UPPER(lname) LIKE '{selectParameters.Lname.ToUpper()}%'";
-            if (selectParameters.Fname != null) where += $@" UPPER(fname) LIKE '{selectParameters.Fname.ToUpper()}%'";
-            if (selectParameters.Pname != null) where += $@" UPPER(pname) LIKE '{selectParameters.Pname.ToUpper()}%'";
-            if (where.Length > 0) where = "WHERE " + where;
+            if (selectParameters.Lname != null) where += $@" UPPER(r.lname) LIKE '{selectParameters.Lname.ToUpper()}%'";
+            if (selectParameters.Fname != null) {
+                if (where.Length > 0) where += " AND";
+                where += $@" UPPER(r.fname) LIKE '{selectParameters.Fname.ToUpper()}%'";
+            }
+            if (selectParameters.Pname != null) {
+                if (where.Length > 0) where += " AND";
+                where += $@" UPPER(r.pname) LIKE '{selectParameters.Pname.ToUpper()}%'";
+            }
+            if (where.Length > 0) where = " WHERE " + where;
 
             List<Reg> regs = new List<Reg>();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = connect;
-            cmd.CommandText = $@"SELECT id, numcard, lname, fname, pname, birthday FROM reg " + where;
+            cmd.CommandText = $@"SELECT r.id, r.numcard, r.lname, r.fname, r.pname, r.phone, r.birthday, sw.name FROM reg r LEFT JOIN stay_where sw ON r.stay_where_id = sw.id" + where;
             using (DbDataReader reader = cmd.ExecuteReader()) {
                 if (reader.HasRows) {
                     while (reader.Read()) {
-                        object birthday = reader.GetValue(5);
                         Reg reg = new Reg() {
                             Id = reader.GetInt32(0),
                             Numcard = reader.GetValue(1).ToString(),
                             Lname = reader.GetValue(2).ToString(),
                             Fname = reader.GetValue(3).ToString(),
-                            Pname = reader.GetValue(4).ToString(),  
-                            Birthday = reader.GetValue(5) != DBNull.Value ? reader.GetDateTime(5) : (DateTime?)null,
-                            Age = reader.GetValue(5) != DBNull.Value ? Reg.GetAge(reader.GetDateTime(5)) : null,
+                            Pname = reader.GetValue(4).ToString(),
+                            Phone = reader.GetValue(5).ToString(),
+                            Birthday = reader.GetValue(6) != DBNull.Value ? reader.GetDateTime(6) : (DateTime?)null,
+                            Age = reader.GetValue(6) != DBNull.Value ? Reg.GetAge(reader.GetDateTime(6)) : null,
+                            StayWhere = reader.GetValue(7).ToString(),
                         };
                         regs.Add(reg);
                     }

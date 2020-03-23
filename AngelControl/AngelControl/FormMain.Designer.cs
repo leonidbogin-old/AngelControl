@@ -34,17 +34,12 @@
             this.panelMainMenu = new System.Windows.Forms.Panel();
             this.panelBorder3 = new System.Windows.Forms.Panel();
             this.panelMenuRfid = new System.Windows.Forms.Panel();
-            this.pictureBoxMenuRfid = new System.Windows.Forms.PictureBox();
             this.panelBorder2 = new System.Windows.Forms.Panel();
             this.panelMenuReg = new System.Windows.Forms.Panel();
-            this.pictureBoxMenuReg = new System.Windows.Forms.PictureBox();
             this.panelBorder1 = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
             this.panelBottom = new System.Windows.Forms.Panel();
-            this.pictureBoxRfid = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDatabase = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSsh = new System.Windows.Forms.PictureBox();
             this.labelLog = new System.Windows.Forms.Label();
             this.contextMenuStripSshOpen = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemSshChange = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,19 +52,24 @@
             this.contextMenuStripRfidOpen = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemRfidChange = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemRfidClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBoxRfid = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDatabase = new System.Windows.Forms.PictureBox();
+            this.pictureBoxSsh = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMenuRfid = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMenuReg = new System.Windows.Forms.PictureBox();
             this.panelMainMenu.SuspendLayout();
             this.panelMenuRfid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuRfid)).BeginInit();
             this.panelMenuReg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReg)).BeginInit();
             this.panelMain.SuspendLayout();
             this.panelBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRfid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDatabase)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSsh)).BeginInit();
             this.contextMenuStripSshOpen.SuspendLayout();
             this.contextMenuStripDatabaseOpen.SuspendLayout();
             this.contextMenuStripRfidOpen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRfid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDatabase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSsh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuRfid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReg)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTop
@@ -114,20 +114,6 @@
             this.panelMenuRfid.Size = new System.Drawing.Size(80, 80);
             this.panelMenuRfid.TabIndex = 3;
             // 
-            // pictureBoxMenuRfid
-            // 
-            this.pictureBoxMenuRfid.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxMenuRfid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxMenuRfid.Image = global::AngelControl.Properties.Resources.MenuRfid;
-            this.pictureBoxMenuRfid.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxMenuRfid.Name = "pictureBoxMenuRfid";
-            this.pictureBoxMenuRfid.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxMenuRfid.TabIndex = 1;
-            this.pictureBoxMenuRfid.TabStop = false;
-            this.pictureBoxMenuRfid.Click += new System.EventHandler(this.pictureBoxMenuRfid_Click);
-            this.pictureBoxMenuRfid.MouseEnter += new System.EventHandler(this.pictureBoxMenuRfid_MouseEnter);
-            this.pictureBoxMenuRfid.MouseLeave += new System.EventHandler(this.pictureBoxMenuRfid_MouseLeave);
-            // 
             // panelBorder2
             // 
             this.panelBorder2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
@@ -146,20 +132,6 @@
             this.panelMenuReg.Name = "panelMenuReg";
             this.panelMenuReg.Size = new System.Drawing.Size(80, 80);
             this.panelMenuReg.TabIndex = 1;
-            // 
-            // pictureBoxMenuReg
-            // 
-            this.pictureBoxMenuReg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxMenuReg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxMenuReg.Image = global::AngelControl.Properties.Resources.MenuProfile;
-            this.pictureBoxMenuReg.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxMenuReg.Name = "pictureBoxMenuReg";
-            this.pictureBoxMenuReg.Size = new System.Drawing.Size(80, 80);
-            this.pictureBoxMenuReg.TabIndex = 0;
-            this.pictureBoxMenuReg.TabStop = false;
-            this.pictureBoxMenuReg.Click += new System.EventHandler(this.pictureBoxMenuReg_Click);
-            this.pictureBoxMenuReg.MouseEnter += new System.EventHandler(this.pictureBoxMenuReg_MouseEnter);
-            this.pictureBoxMenuReg.MouseLeave += new System.EventHandler(this.pictureBoxMenuReg_MouseLeave);
             // 
             // panelBorder1
             // 
@@ -202,43 +174,6 @@
             this.panelBottom.Name = "panelBottom";
             this.panelBottom.Size = new System.Drawing.Size(720, 30);
             this.panelBottom.TabIndex = 0;
-            // 
-            // pictureBoxRfid
-            // 
-            this.pictureBoxRfid.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxRfid.Image = global::AngelControl.Properties.Resources.rfid_close;
-            this.pictureBoxRfid.Location = new System.Drawing.Point(104, 7);
-            this.pictureBoxRfid.Name = "pictureBoxRfid";
-            this.pictureBoxRfid.Size = new System.Drawing.Size(23, 17);
-            this.pictureBoxRfid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxRfid.TabIndex = 3;
-            this.pictureBoxRfid.TabStop = false;
-            this.pictureBoxRfid.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxRfid_MouseDown);
-            // 
-            // pictureBoxDatabase
-            // 
-            this.pictureBoxDatabase.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxDatabase.Image = global::AngelControl.Properties.Resources.database_error_icon;
-            this.pictureBoxDatabase.Location = new System.Drawing.Point(71, 6);
-            this.pictureBoxDatabase.Name = "pictureBoxDatabase";
-            this.pictureBoxDatabase.Size = new System.Drawing.Size(25, 20);
-            this.pictureBoxDatabase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxDatabase.TabIndex = 2;
-            this.pictureBoxDatabase.TabStop = false;
-            this.pictureBoxDatabase.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDatabase_MouseDown);
-            // 
-            // pictureBoxSsh
-            // 
-            this.pictureBoxSsh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSsh.Image = global::AngelControl.Properties.Resources.ssh_icon_close;
-            this.pictureBoxSsh.Location = new System.Drawing.Point(12, 6);
-            this.pictureBoxSsh.Name = "pictureBoxSsh";
-            this.pictureBoxSsh.Size = new System.Drawing.Size(48, 20);
-            this.pictureBoxSsh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxSsh.TabIndex = 1;
-            this.pictureBoxSsh.TabStop = false;
-            this.pictureBoxSsh.Tag = "";
-            this.pictureBoxSsh.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSsh_MouseDown);
             // 
             // labelLog
             // 
@@ -329,6 +264,71 @@
             this.toolStripMenuItemRfidClose.Text = "Отключить RFID считыватель";
             this.toolStripMenuItemRfidClose.Click += new System.EventHandler(this.toolStripMenuItemCloseRfid_Click);
             // 
+            // pictureBoxRfid
+            // 
+            this.pictureBoxRfid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxRfid.Image = global::AngelControl.Properties.Resources.rfid_close;
+            this.pictureBoxRfid.Location = new System.Drawing.Point(104, 7);
+            this.pictureBoxRfid.Name = "pictureBoxRfid";
+            this.pictureBoxRfid.Size = new System.Drawing.Size(23, 17);
+            this.pictureBoxRfid.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxRfid.TabIndex = 3;
+            this.pictureBoxRfid.TabStop = false;
+            this.pictureBoxRfid.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxRfid_MouseDown);
+            // 
+            // pictureBoxDatabase
+            // 
+            this.pictureBoxDatabase.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxDatabase.Image = global::AngelControl.Properties.Resources.database_error_icon;
+            this.pictureBoxDatabase.Location = new System.Drawing.Point(71, 6);
+            this.pictureBoxDatabase.Name = "pictureBoxDatabase";
+            this.pictureBoxDatabase.Size = new System.Drawing.Size(25, 20);
+            this.pictureBoxDatabase.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxDatabase.TabIndex = 2;
+            this.pictureBoxDatabase.TabStop = false;
+            this.pictureBoxDatabase.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDatabase_MouseDown);
+            // 
+            // pictureBoxSsh
+            // 
+            this.pictureBoxSsh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxSsh.Image = global::AngelControl.Properties.Resources.ssh_icon_close;
+            this.pictureBoxSsh.Location = new System.Drawing.Point(12, 6);
+            this.pictureBoxSsh.Name = "pictureBoxSsh";
+            this.pictureBoxSsh.Size = new System.Drawing.Size(48, 20);
+            this.pictureBoxSsh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxSsh.TabIndex = 1;
+            this.pictureBoxSsh.TabStop = false;
+            this.pictureBoxSsh.Tag = "";
+            this.pictureBoxSsh.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSsh_MouseDown);
+            // 
+            // pictureBoxMenuRfid
+            // 
+            this.pictureBoxMenuRfid.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxMenuRfid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxMenuRfid.Image = global::AngelControl.Properties.Resources.MenuRfid;
+            this.pictureBoxMenuRfid.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxMenuRfid.Name = "pictureBoxMenuRfid";
+            this.pictureBoxMenuRfid.Size = new System.Drawing.Size(80, 80);
+            this.pictureBoxMenuRfid.TabIndex = 1;
+            this.pictureBoxMenuRfid.TabStop = false;
+            this.pictureBoxMenuRfid.Click += new System.EventHandler(this.pictureBoxMenuRfid_Click);
+            this.pictureBoxMenuRfid.MouseEnter += new System.EventHandler(this.pictureBoxMenuRfid_MouseEnter);
+            this.pictureBoxMenuRfid.MouseLeave += new System.EventHandler(this.pictureBoxMenuRfid_MouseLeave);
+            // 
+            // pictureBoxMenuReg
+            // 
+            this.pictureBoxMenuReg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxMenuReg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxMenuReg.Image = global::AngelControl.Properties.Resources.MenuProfile;
+            this.pictureBoxMenuReg.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxMenuReg.Name = "pictureBoxMenuReg";
+            this.pictureBoxMenuReg.Size = new System.Drawing.Size(80, 80);
+            this.pictureBoxMenuReg.TabIndex = 0;
+            this.pictureBoxMenuReg.TabStop = false;
+            this.pictureBoxMenuReg.Click += new System.EventHandler(this.pictureBoxMenuReg_Click);
+            this.pictureBoxMenuReg.MouseEnter += new System.EventHandler(this.pictureBoxMenuReg_MouseEnter);
+            this.pictureBoxMenuReg.MouseLeave += new System.EventHandler(this.pictureBoxMenuReg_MouseLeave);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,18 +348,18 @@
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.panelMainMenu.ResumeLayout(false);
             this.panelMenuRfid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuRfid)).EndInit();
             this.panelMenuReg.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReg)).EndInit();
             this.panelMain.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);
             this.panelBottom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRfid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDatabase)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSsh)).EndInit();
             this.contextMenuStripSshOpen.ResumeLayout(false);
             this.contextMenuStripDatabaseOpen.ResumeLayout(false);
             this.contextMenuStripRfidOpen.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRfid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDatabase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSsh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuRfid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuReg)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -200,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <None Include="Resources\ok-icon15.png" />
     <None Include="Resources\edit-icon15.png" />
     <None Include="Resources\edit-icon.png" />
     <None Include="Resources\rfid-close.png" />

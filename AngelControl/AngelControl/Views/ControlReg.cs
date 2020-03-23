@@ -42,23 +42,43 @@ namespace AngelControl.Views {
                             int rowIndex = this.dataGridViewReg.Rows.Add();
                             var row = this.dataGridViewReg.Rows[rowIndex];
                             row.Cells["ColumnId"].Value = reg.Id < 10 ? "00" + reg.Id : (reg.Id < 100 ? "0" + reg.Id : reg.Id.ToString());
+                            row.Cells["ColumnReg"].Value = Properties.Resources.ok_icon15;
+                            row.Cells["ColumnReg"].ToolTipText = "Завершить регистрацию";
                             row.Cells["ColumnEdit"].Value = Properties.Resources.edit_icon15;
+                            row.Cells["ColumnEdit"].ToolTipText = "Редактировать регистрацию";
                             row.Cells["ColumnLname"].Value = reg.Lname;
                             row.Cells["ColumnFname"].Value = reg.Fname;
                             row.Cells["ColumnPname"].Value = reg.Pname;
+                            row.Cells["ColumnPhone"].Value = reg.Phone;
+                            if (reg.Phone == null || reg.Phone.Length == 0) {
+                                row.Cells["ColumnPhone"].Style.BackColor = Color.Red;
+                            }
                             row.Cells["ColumnBirthday"].Value = reg.Birthday.HasValue ? reg.Birthday.Value.ToShortDateString() : null;
                             row.Cells["ColumnAge"].Value = reg.Age.HasValue ? reg.Age : null;
                             if (reg.Age.HasValue && reg.Age < 10) {
                                 row.Cells["ColumnAge"].Style.BackColor = Color.OrangeRed;
+                                row.Cells["ColumnAge"].Style.SelectionBackColor = Color.OrangeRed;
+                                row.Cells["ColumnAge"].Style.SelectionForeColor = Color.Black;
                             } else {
                                 if (reg.Age.HasValue && reg.Age < 18) {
                                     row.Cells["ColumnAge"].Style.BackColor = Color.Yellow;
+                                    row.Cells["ColumnAge"].Style.SelectionBackColor = Color.Yellow;
+                                    row.Cells["ColumnAge"].Style.SelectionForeColor = Color.Black;
                                 }
                             }
-                        
+                            
+                            row.Cells["ColumnStayWhereId"].Value = reg.StayWhereId;
+                            row.Cells["ColumnStayWhere"].Value = reg.StayWhere;
+                            if (reg.StayWhere == null || reg.StayWhere == "Нет")
+                                row.Cells["ColumnStayWhere"].Style.BackColor = Color.OrangeRed;
+                            else
+                                if (reg.StayWhere == "В личной палатке") 
+                                    row.Cells["ColumnStayWhere"].Style.BackColor = Color.Yellow;
+                                else if (reg.StayWhere == "В корпусе (ребенок, общее койко-место с родителем)")
+                                    row.Cells["ColumnStayWhere"].Style.BackColor = Color.Yellow;
                         }
                         tabPageReg.Text = $@"Регистрация ({regs.Count} из {database.CountRegs()})";
-                        this.Cursor = System.Windows.Forms.Cursors.Default;
+                        this.Cursor = Cursors.Default;
                     }));
                 }
             }
@@ -66,7 +86,11 @@ namespace AngelControl.Views {
 
         private void CellClick(object sender, DataGridViewCellEventArgs e) {
             if (e.ColumnIndex == 1) {
-                MessageBox.Show("You have selected in image in " + dataGridViewReg.Rows[e.RowIndex].Cells[0].Value.ToString() + " row.");
+                MessageBox.Show("ok " + dataGridViewReg.Rows[e.RowIndex].Cells[0].Value.ToString());
+            } else {
+                if (e.ColumnIndex == 2) {
+                    MessageBox.Show("edit " + dataGridViewReg.Rows[e.RowIndex].Cells[0].Value.ToString());
+                }
             }
         }
 
@@ -125,7 +149,7 @@ namespace AngelControl.Views {
 
         private void dataGridViewReg_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
             if (dataGridViewReg.Rows.Count > 0 && e.RowIndex >= 0) {
-                MessageBox.Show("You have selected in " + dataGridViewReg.Rows[e.RowIndex].Cells[0].Value.ToString() + " row.");
+                MessageBox.Show("edit " + dataGridViewReg.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
         }
     }
