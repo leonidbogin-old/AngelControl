@@ -79,6 +79,8 @@
   <ItemGroup>
     <Compile Include="Config.cs" />
     <Compile Include="Data\Class\Reg.cs" />
+    <Compile Include="Data\Class\StayLength.cs" />
+    <Compile Include="Data\Class\StayWhere.cs" />
     <Compile Include="Data\Database.cs" />
     <Compile Include="Data\Ssh.cs" />
     <Compile Include="FormDatabase.cs">
@@ -104,6 +106,9 @@
     <Compile Include="Reader\RfidParameters.cs" />
     <Compile Include="Security\Encryption.cs" />
     <Compile Include="Security\Hash.cs" />
+    <Compile Include="System\Windows\Forms\DataGridViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\ControlRfidMonitor.cs">
       <SubType>UserControl</SubType>
     </Compile>

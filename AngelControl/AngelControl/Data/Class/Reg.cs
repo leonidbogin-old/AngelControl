@@ -16,8 +16,11 @@ namespace AngelControl.Data.Class {
         public int? Age { get; set; }
         public int StayWhereId { get; set; }
         public string StayWhere { get; set; }
-        public string StayLengthId { get; set; }
+        public int StayLengthId { get; set; }
         public string StayLength { get; set; }
+        public string Country { get; set; }
+        public string City { get; set; }
+
 
         public static int? GetAge(DateTime? bithday) {
             if (bithday.HasValue) {

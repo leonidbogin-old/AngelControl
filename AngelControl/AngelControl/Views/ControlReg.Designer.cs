@@ -1,5 +1,4 @@
-﻿namespace AngelControl.Views
-{
+﻿namespace AngelControl.Views {
     partial class ControlReg
     {
         /// <summary> 
@@ -30,12 +29,23 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelSearch = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxSelectPhone = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBoxSelectStayWhere = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxSelectPname = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxSelectFname = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxSelectLname = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPname = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,9 +54,15 @@
             this.textBoxLname = new System.Windows.Forms.TextBox();
             this.tabControlReg = new System.Windows.Forms.TabControl();
             this.tabPageReg = new System.Windows.Forms.TabPage();
-            this.dataGridViewReg = new System.Windows.Forms.DataGridView();
             this.tabPageRegCompleted = new System.Windows.Forms.TabPage();
             this.timerChange = new System.Windows.Forms.Timer(this.components);
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxSelectStayLength = new System.Windows.Forms.ComboBox();
+            this.dataGridViewReg = new System.Windows.Forms.DataGridViewEx();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxSelectCity = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxSelectCountry = new System.Windows.Forms.TextBox();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnReg = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnEdit = new System.Windows.Forms.DataGridViewImageColumn();
@@ -55,11 +71,14 @@
             this.ColumnPname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAge = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStayWhereId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStayWhere = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnStayLengthId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStayLength = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnBirthday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelSearch.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabControlReg.SuspendLayout();
             this.tabPageReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReg)).BeginInit();
@@ -68,6 +87,9 @@
             // panelSearch
             // 
             this.panelSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.panelSearch.Controls.Add(this.panel1);
+            this.panelSearch.Controls.Add(this.label4);
+            this.panelSearch.Controls.Add(this.comboBox1);
             this.panelSearch.Controls.Add(this.label3);
             this.panelSearch.Controls.Add(this.textBoxPname);
             this.panelSearch.Controls.Add(this.label2);
@@ -79,6 +101,153 @@
             this.panelSearch.Name = "panelSearch";
             this.panelSearch.Size = new System.Drawing.Size(243, 437);
             this.panelSearch.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.textBoxSelectCountry);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.textBoxSelectCity);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.comboBoxSelectStayLength);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.textBoxSelectPhone);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.comboBoxSelectStayWhere);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.textBoxSelectPname);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.textBoxSelectFname);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.textBoxSelectLname);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(243, 437);
+            this.panel1.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(9, 258);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(61, 16);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Телефон";
+            // 
+            // textBoxSelectPhone
+            // 
+            this.textBoxSelectPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxSelectPhone.Location = new System.Drawing.Point(12, 277);
+            this.textBoxSelectPhone.Name = "textBoxSelectPhone";
+            this.textBoxSelectPhone.Size = new System.Drawing.Size(216, 26);
+            this.textBoxSelectPhone.TabIndex = 8;
+            this.textBoxSelectPhone.TextChanged += new System.EventHandler(this.textBoxSelectPhone_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(9, 306);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 16);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Где ночует";
+            // 
+            // comboBoxSelectStayWhere
+            // 
+            this.comboBoxSelectStayWhere.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSelectStayWhere.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.comboBoxSelectStayWhere.FormattingEnabled = true;
+            this.comboBoxSelectStayWhere.Location = new System.Drawing.Point(12, 325);
+            this.comboBoxSelectStayWhere.Name = "comboBoxSelectStayWhere";
+            this.comboBoxSelectStayWhere.Size = new System.Drawing.Size(216, 26);
+            this.comboBoxSelectStayWhere.TabIndex = 6;
+            this.comboBoxSelectStayWhere.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectStayWhere_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(9, 99);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 16);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Отчество";
+            // 
+            // textBoxSelectPname
+            // 
+            this.textBoxSelectPname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxSelectPname.Location = new System.Drawing.Point(12, 118);
+            this.textBoxSelectPname.Name = "textBoxSelectPname";
+            this.textBoxSelectPname.Size = new System.Drawing.Size(216, 26);
+            this.textBoxSelectPname.TabIndex = 4;
+            this.textBoxSelectPname.TextChanged += new System.EventHandler(this.textBoxSelectPname_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(9, 53);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(33, 16);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Имя";
+            // 
+            // textBoxSelectFname
+            // 
+            this.textBoxSelectFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxSelectFname.Location = new System.Drawing.Point(12, 72);
+            this.textBoxSelectFname.Name = "textBoxSelectFname";
+            this.textBoxSelectFname.Size = new System.Drawing.Size(216, 26);
+            this.textBoxSelectFname.TabIndex = 2;
+            this.textBoxSelectFname.TextChanged += new System.EventHandler(this.textBoxSelectFname_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(9, 7);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 16);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Фамилия";
+            // 
+            // textBoxSelectLname
+            // 
+            this.textBoxSelectLname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.textBoxSelectLname.Location = new System.Drawing.Point(12, 26);
+            this.textBoxSelectLname.Name = "textBoxSelectLname";
+            this.textBoxSelectLname.Size = new System.Drawing.Size(216, 26);
+            this.textBoxSelectLname.TabIndex = 0;
+            this.textBoxSelectLname.TextChanged += new System.EventHandler(this.textBoxSelectLname_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(9, 231);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 16);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Где ночует";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(12, 250);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(216, 28);
+            this.comboBox1.TabIndex = 6;
             // 
             // label3
             // 
@@ -93,12 +262,10 @@
             // 
             // textBoxPname
             // 
-            this.textBoxPname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxPname.Location = new System.Drawing.Point(12, 118);
+            this.textBoxPname.Location = new System.Drawing.Point(0, 0);
             this.textBoxPname.Name = "textBoxPname";
-            this.textBoxPname.Size = new System.Drawing.Size(216, 26);
-            this.textBoxPname.TabIndex = 4;
-            this.textBoxPname.TextChanged += new System.EventHandler(this.textBoxPname_TextChanged);
+            this.textBoxPname.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPname.TabIndex = 9;
             // 
             // label2
             // 
@@ -113,12 +280,10 @@
             // 
             // textBoxFname
             // 
-            this.textBoxFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxFname.Location = new System.Drawing.Point(12, 72);
+            this.textBoxFname.Location = new System.Drawing.Point(0, 0);
             this.textBoxFname.Name = "textBoxFname";
-            this.textBoxFname.Size = new System.Drawing.Size(216, 26);
-            this.textBoxFname.TabIndex = 2;
-            this.textBoxFname.TextChanged += new System.EventHandler(this.textBoxFname_TextChanged);
+            this.textBoxFname.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFname.TabIndex = 10;
             // 
             // label1
             // 
@@ -133,12 +298,10 @@
             // 
             // textBoxLname
             // 
-            this.textBoxLname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.textBoxLname.Location = new System.Drawing.Point(12, 26);
+            this.textBoxLname.Location = new System.Drawing.Point(0, 0);
             this.textBoxLname.Name = "textBoxLname";
-            this.textBoxLname.Size = new System.Drawing.Size(216, 26);
-            this.textBoxLname.TabIndex = 0;
-            this.textBoxLname.TextChanged += new System.EventHandler(this.textBoxLname_TextChanged);
+            this.textBoxLname.Size = new System.Drawing.Size(100, 20);
+            this.textBoxLname.TabIndex = 11;
             // 
             // tabControlReg
             // 
@@ -162,6 +325,43 @@
             this.tabPageReg.TabIndex = 0;
             this.tabPageReg.Text = "Регистрация";
             this.tabPageReg.UseVisualStyleBackColor = true;
+            // 
+            // tabPageRegCompleted
+            // 
+            this.tabPageRegCompleted.Location = new System.Drawing.Point(4, 22);
+            this.tabPageRegCompleted.Margin = new System.Windows.Forms.Padding(0);
+            this.tabPageRegCompleted.Name = "tabPageRegCompleted";
+            this.tabPageRegCompleted.Size = new System.Drawing.Size(464, 411);
+            this.tabPageRegCompleted.TabIndex = 1;
+            this.tabPageRegCompleted.Text = "Зарегистрированные";
+            this.tabPageRegCompleted.UseVisualStyleBackColor = true;
+            // 
+            // timerChange
+            // 
+            this.timerChange.Interval = 300;
+            this.timerChange.Tick += new System.EventHandler(this.timerChange_Tick);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(9, 353);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(103, 16);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Сколько ночует";
+            // 
+            // comboBoxSelectStayLength
+            // 
+            this.comboBoxSelectStayLength.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSelectStayLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.comboBoxSelectStayLength.FormattingEnabled = true;
+            this.comboBoxSelectStayLength.Location = new System.Drawing.Point(12, 372);
+            this.comboBoxSelectStayLength.Name = "comboBoxSelectStayLength";
+            this.comboBoxSelectStayLength.Size = new System.Drawing.Size(216, 26);
+            this.comboBoxSelectStayLength.TabIndex = 10;
+            this.comboBoxSelectStayLength.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectStayLength_SelectedIndexChanged);
             // 
             // dataGridViewReg
             // 
@@ -189,18 +389,20 @@
             this.ColumnPname,
             this.ColumnPhone,
             this.ColumnAge,
+            this.ColumnCountry,
+            this.ColumnCity,
             this.ColumnStayWhereId,
             this.ColumnStayWhere,
-            this.ColumnStayLength,
-            this.ColumnBirthday});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewReg.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ColumnStayLengthId,
+            this.ColumnStayLength});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewReg.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewReg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewReg.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewReg.Margin = new System.Windows.Forms.Padding(0);
@@ -214,20 +416,45 @@
             this.dataGridViewReg.TabIndex = 3;
             this.dataGridViewReg.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewReg_CellDoubleClick);
             // 
-            // tabPageRegCompleted
+            // label11
             // 
-            this.tabPageRegCompleted.Location = new System.Drawing.Point(4, 22);
-            this.tabPageRegCompleted.Margin = new System.Windows.Forms.Padding(0);
-            this.tabPageRegCompleted.Name = "tabPageRegCompleted";
-            this.tabPageRegCompleted.Size = new System.Drawing.Size(464, 411);
-            this.tabPageRegCompleted.TabIndex = 1;
-            this.tabPageRegCompleted.Text = "Зарегистрированные";
-            this.tabPageRegCompleted.UseVisualStyleBackColor = true;
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(9, 210);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(43, 16);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Город";
             // 
-            // timerChange
+            // textBoxSelectCity
             // 
-            this.timerChange.Interval = 300;
-            this.timerChange.Tick += new System.EventHandler(this.timerChange_Tick);
+            this.textBoxSelectCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxSelectCity.Location = new System.Drawing.Point(12, 229);
+            this.textBoxSelectCity.Name = "textBoxSelectCity";
+            this.textBoxSelectCity.Size = new System.Drawing.Size(216, 26);
+            this.textBoxSelectCity.TabIndex = 12;
+            this.textBoxSelectCity.TextChanged += new System.EventHandler(this.textBoxSelectCity_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(9, 162);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 16);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Страна";
+            // 
+            // textBoxSelectCountry
+            // 
+            this.textBoxSelectCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxSelectCountry.Location = new System.Drawing.Point(12, 181);
+            this.textBoxSelectCountry.Name = "textBoxSelectCountry";
+            this.textBoxSelectCountry.Size = new System.Drawing.Size(216, 26);
+            this.textBoxSelectCountry.TabIndex = 14;
+            this.textBoxSelectCountry.TextChanged += new System.EventHandler(this.textBoxSelectCountry_TextChanged);
             // 
             // ColumnId
             // 
@@ -298,6 +525,19 @@
             this.ColumnAge.ReadOnly = true;
             this.ColumnAge.Width = 5;
             // 
+            // ColumnCountry
+            // 
+            this.ColumnCountry.HeaderText = "Страна";
+            this.ColumnCountry.Name = "ColumnCountry";
+            this.ColumnCountry.ReadOnly = true;
+            // 
+            // ColumnCity
+            // 
+            this.ColumnCity.HeaderText = "Город";
+            this.ColumnCity.Name = "ColumnCity";
+            this.ColumnCity.ReadOnly = true;
+            this.ColumnCity.Width = 150;
+            // 
             // ColumnStayWhereId
             // 
             this.ColumnStayWhereId.HeaderText = "StayWhereId";
@@ -307,28 +547,25 @@
             // 
             // ColumnStayWhere
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnStayWhere.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnStayWhere.HeaderText = "Где ночует";
             this.ColumnStayWhere.Name = "ColumnStayWhere";
             this.ColumnStayWhere.ReadOnly = true;
             this.ColumnStayWhere.Width = 130;
             // 
+            // ColumnStayLengthId
+            // 
+            this.ColumnStayLengthId.HeaderText = "StayLengthId";
+            this.ColumnStayLengthId.Name = "ColumnStayLengthId";
+            this.ColumnStayLengthId.ReadOnly = true;
+            this.ColumnStayLengthId.Visible = false;
+            // 
             // ColumnStayLength
             // 
+            this.ColumnStayLength.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
             this.ColumnStayLength.HeaderText = "Сколько ночует";
             this.ColumnStayLength.Name = "ColumnStayLength";
             this.ColumnStayLength.ReadOnly = true;
-            // 
-            // ColumnBirthday
-            // 
-            this.ColumnBirthday.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnBirthday.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ColumnBirthday.HeaderText = "ДР";
-            this.ColumnBirthday.Name = "ColumnBirthday";
-            this.ColumnBirthday.ReadOnly = true;
-            this.ColumnBirthday.Width = 5;
+            this.ColumnStayLength.Width = 5;
             // 
             // ControlReg
             // 
@@ -342,6 +579,8 @@
             this.Load += new System.EventHandler(this.Reg_Load);
             this.panelSearch.ResumeLayout(false);
             this.panelSearch.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabControlReg.ResumeLayout(false);
             this.tabPageReg.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewReg)).EndInit();
@@ -361,8 +600,27 @@
         private System.Windows.Forms.TabControl tabControlReg;
         private System.Windows.Forms.TabPage tabPageReg;
         private System.Windows.Forms.TabPage tabPageRegCompleted;
-        private System.Windows.Forms.DataGridView dataGridViewReg;
+        private System.Windows.Forms.DataGridViewEx dataGridViewReg;
         private System.Windows.Forms.Timer timerChange;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBoxSelectPhone;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBoxSelectStayWhere;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxSelectPname;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxSelectFname;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxSelectLname;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox comboBoxSelectStayLength;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBoxSelectCountry;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBoxSelectCity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnId;
         private System.Windows.Forms.DataGridViewImageColumn ColumnReg;
         private System.Windows.Forms.DataGridViewImageColumn ColumnEdit;
@@ -371,9 +629,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPname;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAge;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCountry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCity;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStayWhereId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStayWhere;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStayLengthId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStayLength;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBirthday;
     }
 }

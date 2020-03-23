@@ -51,7 +51,7 @@ namespace AngelControl {
                 FormRfidConnect formRfidConnect = new FormRfidConnect();
                 formRfidConnect.ShowDialog();
             }
-            controlReg.StartSelectRegs();
+            controlReg.StartLoad();
 
             //test select
             using (Database database = new Database()) {

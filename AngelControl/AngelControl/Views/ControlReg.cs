@@ -19,6 +19,7 @@ namespace AngelControl.Views {
 
         public ControlReg() {
             InitializeComponent();
+            //dataGridViewReg.Sort(dataGridViewReg.Columns[0], ListSortDirection.Ascending);
         }
 
         private void Reg_Load(object sender, EventArgs e) {
@@ -28,9 +29,14 @@ namespace AngelControl.Views {
         public void SelectRegs() {
             Reg selectParameters = new Reg();
             textBoxLname.Invoke(new Action(() => {
-                if (textBoxLname.Text.Length > 0) selectParameters.Lname = textBoxLname.Text;
-                if (textBoxFname.Text.Length > 0) selectParameters.Fname = textBoxFname.Text;
-                if (textBoxPname.Text.Length > 0) selectParameters.Pname = textBoxPname.Text;
+                if (textBoxSelectLname.Text.Length > 0) selectParameters.Lname = textBoxSelectLname.Text;
+                if (textBoxSelectFname.Text.Length > 0) selectParameters.Fname = textBoxSelectFname.Text;
+                if (textBoxSelectPname.Text.Length > 0) selectParameters.Pname = textBoxSelectPname.Text;
+                if (textBoxSelectCountry.Text.Length > 0) selectParameters.Country = textBoxSelectCountry.Text;
+                if (textBoxSelectCity.Text.Length > 0) selectParameters.City = textBoxSelectCity.Text;
+                if (textBoxSelectPhone.Text.Length > 0) selectParameters.Phone = textBoxSelectPhone.Text;
+                if (comboBoxSelectStayWhere.Text.Length > 0) selectParameters.StayWhere = comboBoxSelectStayWhere.Text;
+                if (comboBoxSelectStayLength.Text.Length > 0) selectParameters.StayLength = comboBoxSelectStayLength.Text;
             }));
             using (Database database = new Database()) {
                 if (database.OpenSave()) {
@@ -53,7 +59,7 @@ namespace AngelControl.Views {
                             if (reg.Phone == null || reg.Phone.Length == 0) {
                                 row.Cells["ColumnPhone"].Style.BackColor = Color.Red;
                             }
-                            row.Cells["ColumnBirthday"].Value = reg.Birthday.HasValue ? reg.Birthday.Value.ToShortDateString() : null;
+                            //row.Cells["ColumnBirthday"].Value = reg.Birthday.HasValue ? reg.Birthday.Value.ToShortDateString() : null;
                             row.Cells["ColumnAge"].Value = reg.Age.HasValue ? reg.Age : null;
                             if (reg.Age.HasValue && reg.Age < 10) {
                                 row.Cells["ColumnAge"].Style.BackColor = Color.OrangeRed;
@@ -66,16 +72,31 @@ namespace AngelControl.Views {
                                     row.Cells["ColumnAge"].Style.SelectionForeColor = Color.Black;
                                 }
                             }
-                            
+                            row.Cells["ColumnCountry"].Value = reg.Country;
+                            if (reg.Country != null && reg.Country != "Беларусь") {
+                                row.Cells["ColumnCountry"].Style.BackColor = Color.Yellow;
+                                row.Cells["ColumnCountry"].Style.SelectionBackColor = Color.Yellow;
+                                row.Cells["ColumnCountry"].Style.SelectionForeColor = Color.Black;
+                            }
+                            row.Cells["ColumnCity"].Value = reg.City;
                             row.Cells["ColumnStayWhereId"].Value = reg.StayWhereId;
                             row.Cells["ColumnStayWhere"].Value = reg.StayWhere;
-                            if (reg.StayWhere == null || reg.StayWhere == "Нет")
+                            if (reg.StayWhere == null || reg.StayWhere == "Нет") {
+                                row.Cells["ColumnStayWhere"].Style.BackColor = Color.Red;
+                                row.Cells["ColumnStayWhere"].Style.SelectionBackColor = Color.Red;
+                                row.Cells["ColumnStayWhere"].Style.SelectionForeColor = Color.Black;
+                            } else
+                                if (reg.StayWhere == "В личной палатке") {
+                                row.Cells["ColumnStayWhere"].Style.BackColor = Color.Yellow;
+                                row.Cells["ColumnStayWhere"].Style.SelectionBackColor = Color.Yellow;
+                                row.Cells["ColumnStayWhere"].Style.SelectionForeColor = Color.Black;
+                            } else if (reg.StayWhere == "В корпусе (ребенок, общее койко-место с родителем)") {
                                 row.Cells["ColumnStayWhere"].Style.BackColor = Color.OrangeRed;
-                            else
-                                if (reg.StayWhere == "В личной палатке") 
-                                    row.Cells["ColumnStayWhere"].Style.BackColor = Color.Yellow;
-                                else if (reg.StayWhere == "В корпусе (ребенок, общее койко-место с родителем)")
-                                    row.Cells["ColumnStayWhere"].Style.BackColor = Color.Yellow;
+                                row.Cells["ColumnStayWhere"].Style.SelectionBackColor = Color.OrangeRed;
+                                row.Cells["ColumnStayWhere"].Style.SelectionForeColor = Color.Black;
+                            }
+                            row.Cells["ColumnStayLengthId"].Value = reg.StayLengthId;
+                            row.Cells["ColumnStayLength"].Value = reg.StayLength;
                         }
                         tabPageReg.Text = $@"Регистрация ({regs.Count} из {database.CountRegs()})";
                         this.Cursor = Cursors.Default;
@@ -94,56 +115,89 @@ namespace AngelControl.Views {
             }
         }
 
-        private void textBoxLname_TextChanged(object sender, EventArgs e) {
-            if (!CheckSelectRelevance()) {
-                timerChange.Stop();
-                timerChange.Start();
-            } else timerChange.Stop();
-        }
-
-        private void textBoxFname_TextChanged(object sender, EventArgs e) {
-            if (!CheckSelectRelevance()) {
-                timerChange.Stop();
-                timerChange.Start();
-            } else timerChange.Stop();
-        }
-
-        private void textBoxPname_TextChanged(object sender, EventArgs e) {
-            if (!CheckSelectRelevance()) {
-                timerChange.Stop();
-                timerChange.Start();
-            } else timerChange.Stop();
-        }
-
         private bool CheckSelectRelevance() {
             if (selectLastParameters.Lname == null) {
-                if (textBoxLname.Text.Length > 0) return false;
+                if (textBoxSelectLname.Text.Length > 0) return false;
             } else {
-                if (!selectLastParameters.Lname.Equals(textBoxLname.Text)) return false;
+                if (!selectLastParameters.Lname.Equals(textBoxSelectLname.Text)) return false;
             }
+
             if (selectLastParameters.Fname == null) {
-                if (textBoxFname.Text.Length > 0) return false;
+                if (textBoxSelectFname.Text.Length > 0) return false;
             } else {
-                if (!selectLastParameters.Fname.Equals(textBoxFname.Text)) return false;
+                if (!selectLastParameters.Fname.Equals(textBoxSelectFname.Text)) return false;
             }
+
             if (selectLastParameters.Pname == null) {
-                if (textBoxPname.Text.Length > 0) return false;
+                if (textBoxSelectPname.Text.Length > 0) return false;
             } else {
-                if (!selectLastParameters.Pname.Equals(textBoxPname.Text)) return false;
+                if (!selectLastParameters.Pname.Equals(textBoxSelectPname.Text)) return false;
             }
+
+            if (selectLastParameters.Country == null) {
+                if (textBoxSelectCountry.Text.Length > 0) return false;
+            } else {
+                if (!selectLastParameters.Country.Equals(textBoxSelectCountry.Text)) return false;
+            }
+
+            if (selectLastParameters.City == null) {
+                if (textBoxSelectCity.Text.Length > 0) return false;
+            } else {
+                if (!selectLastParameters.City.Equals(textBoxSelectCity.Text)) return false;
+            }
+
+            if (selectLastParameters.Phone == null) {
+                if (textBoxSelectPhone.Text.Length > 0) return false;
+            } else {
+                if (!selectLastParameters.Phone.Equals(textBoxSelectPhone.Text)) return false;
+            }
+
+            if (selectLastParameters.StayWhere == null) {
+                if (comboBoxSelectStayWhere.Text.Length > 0) return false;
+            } else {
+                if (!selectLastParameters.StayWhere.Equals(comboBoxSelectStayWhere.Text)) return false;
+            }
+
+            if (selectLastParameters.StayLength == null) {
+                if (comboBoxSelectStayLength.Text.Length > 0) return false;
+            } else {
+                if (!selectLastParameters.StayLength.Equals(comboBoxSelectStayLength.Text)) return false;
+            }
+
             return true;
         }
 
-        public void StartSelectRegs() {
+        public void StartLoad() {
+            using (Database database = new Database()) {
+                if (database.OpenSave()) {
+                    List<StayWhere> stayWheres = database.GetStayWheres();
+                    comboBoxSelectStayWhere.Items.Clear();
+                    comboBoxSelectStayWhere.Items.Add("");
+                    foreach (StayWhere stayWhere in stayWheres) {
+                        comboBoxSelectStayWhere.Items.Add(stayWhere.Name);
+                    }
+
+                    List<StayLength> stayLengths = database.GetStayLengths();
+                    comboBoxSelectStayLength.Items.Clear();
+                    comboBoxSelectStayLength.Items.Add("");
+                    foreach (StayLength stayLength in stayLengths) {
+                        comboBoxSelectStayLength.Items.Add(stayLength.Name);
+                    }
+                }
+            }
+            StartSelectRegs();
+        }
+
+        private void StartSelectRegs() {
             this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             if (threadSelect != null && threadSelect.ThreadState == ThreadState.Running) threadSelect.Abort();
             threadSelect = new Thread(SelectRegs);
             threadSelect.Priority = ThreadPriority.Highest;
             threadSelect.Start();
-            timerChange.Stop();
         }
 
         private void timerChange_Tick(object sender, EventArgs e) {
+            timerChange.Stop();
             StartSelectRegs();
         }
 
@@ -151,6 +205,62 @@ namespace AngelControl.Views {
             if (dataGridViewReg.Rows.Count > 0 && e.RowIndex >= 0) {
                 MessageBox.Show("edit " + dataGridViewReg.Rows[e.RowIndex].Cells[0].Value.ToString());
             }
+        }
+
+        private void textBoxSelectLname_TextChanged(object sender, EventArgs e) {
+            if (!CheckSelectRelevance()) {
+                timerChange.Stop();
+                timerChange.Start();
+            } else timerChange.Stop();
+        }
+
+        private void textBoxSelectFname_TextChanged(object sender, EventArgs e) {
+            if (!CheckSelectRelevance()) {
+                timerChange.Stop();
+                timerChange.Start();
+            } else timerChange.Stop();
+        }
+
+        private void textBoxSelectPname_TextChanged(object sender, EventArgs e) {
+            if (!CheckSelectRelevance()) {
+                timerChange.Stop();
+                timerChange.Start();
+            } else timerChange.Stop();
+        }
+
+        private void textBoxSelectPhone_TextChanged(object sender, EventArgs e) {
+            if (!CheckSelectRelevance()) {
+                timerChange.Stop();
+                timerChange.Start();
+            } else timerChange.Stop();
+        }
+
+        private void comboBoxSelectStayWhere_SelectedIndexChanged(object sender, EventArgs e) {
+            if (!CheckSelectRelevance()) {
+                timerChange.Stop();
+                StartSelectRegs();
+            } else timerChange.Stop();
+        }
+
+        private void comboBoxSelectStayLength_SelectedIndexChanged(object sender, EventArgs e) {
+            if (!CheckSelectRelevance()) {
+                timerChange.Stop();
+                StartSelectRegs();
+            } else timerChange.Stop();
+        }
+
+        private void textBoxSelectCountry_TextChanged(object sender, EventArgs e) {
+            if (!CheckSelectRelevance()) {
+                timerChange.Stop();
+                timerChange.Start();
+            } else timerChange.Stop();
+        }
+
+        private void textBoxSelectCity_TextChanged(object sender, EventArgs e) {
+            if (!CheckSelectRelevance()) {
+                timerChange.Stop();
+                timerChange.Start();
+            } else timerChange.Stop();
         }
     }
 }
