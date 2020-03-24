@@ -63,29 +63,9 @@ namespace AngelControl.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Database {
-            get {
-                object obj = ResourceManager.GetObject("Database", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap database_error_icon {
             get {
                 object obj = ResourceManager.GetObject("database_error_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap database_icon {
-            get {
-                object obj = ResourceManager.GetObject("database-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,16 +176,6 @@ namespace AngelControl.Properties {
         internal static System.Drawing.Bitmap rfid_open {
             get {
                 object obj = ResourceManager.GetObject("rfid-open", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap RfidRed {
-            get {
-                object obj = ResourceManager.GetObject("RfidRed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
