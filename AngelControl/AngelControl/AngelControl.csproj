@@ -56,6 +56,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Reader\RS232.cs" />
+    <Compile Include="Reader\RS232Parameters.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -100,6 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\MenuRfid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\rfid-open.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

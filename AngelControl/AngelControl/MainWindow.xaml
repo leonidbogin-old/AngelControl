@@ -62,6 +62,41 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="ButtonStyleStatus" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="#FF5B5B5B"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="True" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#FF595959"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#FF4283DE"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#FF4283DE"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
     </Window.Resources>
     <Grid>
@@ -79,10 +114,15 @@
         <Rectangle Grid.Column="1" Fill="#FF4D4D4D" Margin="0" Grid.Row="2"/>
         <DockPanel LastChildFill="False" Margin="0" Grid.Row="1" VerticalAlignment="Top">
             <Button x:Name="buttonMenuReg" Cursor="Hand" VerticalAlignment="Top" Width="80" Height="80" Padding="0" Style="{DynamicResource ButtonStyleMainMenu}" DockPanel.Dock="Top" >
-                <Image Source="Resources/MenuProfile.png" Stretch="Fill"/>
+                <Image Source="Resources/MenuProfile.png" UseLayoutRounding="False" Stretch="UniformToFill"/>
             </Button>
             <Button x:Name="buttonMenuRfid" Cursor="Hand" VerticalAlignment="Top" Width="80" Height="80" Padding="0" Style="{DynamicResource ButtonStyleMainMenu}" DockPanel.Dock="Top" >
-                <Image Source="Resources/MenuRfid.png" Stretch="Fill"/>
+                <Image Source="Resources/MenuRfid.png" Stretch="UniformToFill"/>
+            </Button>
+        </DockPanel>
+        <DockPanel Grid.Column="1" LastChildFill="False" Margin="0" Grid.Row="2">
+            <Button Width="30" Padding="5,5,4.5,4.5" BorderThickness="0,0,1,0" Background="Transparent" Style="{DynamicResource ButtonStyleStatus}">
+                <Image Source="Resources/rfid-open.png" Stretch="Fill" Margin="0"/>
             </Button>
         </DockPanel>
 

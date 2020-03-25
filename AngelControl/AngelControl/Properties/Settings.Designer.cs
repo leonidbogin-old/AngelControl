@@ -9,17 +9,113 @@
 //------------------------------------------------------------------------------
 
 namespace AngelControl.Properties {
-
-
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.4.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
+        
         public static Settings Default {
             get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("COM5")]
+        public string RS232PortName {
+            get {
+                return ((string)(this["RS232PortName"]));
+            }
+            set {
+                this["RS232PortName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("9600")]
+        public int RS232BaudRate {
+            get {
+                return ((int)(this["RS232BaudRate"]));
+            }
+            set {
+                this["RS232BaudRate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("8")]
+        public int RS232DataBits {
+            get {
+                return ((int)(this["RS232DataBits"]));
+            }
+            set {
+                this["RS232DataBits"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public global::System.IO.Ports.Handshake RS232Handshake {
+            get {
+                return ((global::System.IO.Ports.Handshake)(this["RS232Handshake"]));
+            }
+            set {
+                this["RS232Handshake"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public global::System.IO.Ports.Parity RS232Parity {
+            get {
+                return ((global::System.IO.Ports.Parity)(this["RS232Parity"]));
+            }
+            set {
+                this["RS232Parity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("One")]
+        public global::System.IO.Ports.StopBits RS232StopBits {
+            get {
+                return ((global::System.IO.Ports.StopBits)(this["RS232StopBits"]));
+            }
+            set {
+                this["RS232StopBits"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        public int RS232ReadTimeout {
+            get {
+                return ((int)(this["RS232ReadTimeout"]));
+            }
+            set {
+                this["RS232ReadTimeout"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1000")]
+        public int RS232WriteTimeout {
+            get {
+                return ((int)(this["RS232WriteTimeout"]));
+            }
+            set {
+                this["RS232WriteTimeout"] = value;
             }
         }
     }
