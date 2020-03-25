@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29519.87
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngelControl", "AngelControl\AngelControl.csproj", "{C3372B62-9A5C-4BCB-8028-659E65ABCFE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngelControl", "AngelControl\AngelControl.csproj", "{30FF4BF5-0CA2-41B4-9E0D-2639840B3ABC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C3372B62-9A5C-4BCB-8028-659E65ABCFE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3372B62-9A5C-4BCB-8028-659E65ABCFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3372B62-9A5C-4BCB-8028-659E65ABCFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3372B62-9A5C-4BCB-8028-659E65ABCFE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30FF4BF5-0CA2-41B4-9E0D-2639840B3ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30FF4BF5-0CA2-41B4-9E0D-2639840B3ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30FF4BF5-0CA2-41B4-9E0D-2639840B3ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30FF4BF5-0CA2-41B4-9E0D-2639840B3ABC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FD7C4B90-F9DD-43E9-B5B3-7F2E1CE7EDCF}
+		SolutionGuid = {30DE6AA1-B5AD-42DC-80E2-41592DD246CD}
 	EndGlobalSection
 EndGlobal
