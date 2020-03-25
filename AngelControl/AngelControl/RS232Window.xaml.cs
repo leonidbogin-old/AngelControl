@@ -10,21 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AngelControl {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for RS232Window.xaml
     /// </summary>
-    public partial class MainWindow : Window {
-        public MainWindow() {
+    public partial class RS232Window : Window {
+        public RS232Window() {
             InitializeComponent();
-        }
-
-        private void WindowMain_Loaded(object sender, RoutedEventArgs e) {
-            RS232Window rS232Window = new RS232Window();
-            rS232Window.ShowDialog();
         }
     }
 }
