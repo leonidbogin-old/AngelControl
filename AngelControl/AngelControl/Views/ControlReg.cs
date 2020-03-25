@@ -97,6 +97,8 @@ namespace AngelControl.Views {
                             }
                             row.Cells["ColumnStayLengthId"].Value = reg.StayLengthId;
                             row.Cells["ColumnStayLength"].Value = reg.StayLength;
+                            row.Cells["ColumnMealId"].Value = reg.NutritionId;
+                            row.Cells["ColumnMeal"].Value = reg.Nutrition;
                         }
                         tabPageReg.Text = $@"Регистрация ({regs.Count} из {database.CountRegs()})";
                         this.Cursor = Cursors.Default;

@@ -142,10 +142,11 @@ namespace AngelControl.Data {
             List<Reg> regs = new List<Reg>();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = connect;
-            cmd.CommandText = $@"SELECT r.id, r.numcard, r.lname, r.fname, r.pname, r.phone, r.birthday, sw.id, sw.name, sl.id, sl.name, r.country, r.city" + 
+            cmd.CommandText = $@"SELECT r.id, r.numcard, r.lname, r.fname, r.pname, r.phone, r.birthday, sw.id, sw.name, sl.id, sl.name, r.country, r.city, n.id, n.name" + 
                 " FROM reg r" +
                 " LEFT JOIN stay_where sw ON r.stay_where_id = sw.id" +
-                " LEFT JOIN stay_length sl ON r.stay_length_id = sl.id" + 
+                " LEFT JOIN stay_length sl ON r.stay_length_id = sl.id" +
+                " LEFT JOIN nutrition n ON r.nutrition_id = n.id" +
                 where +
                 " ORDER BY r.id";
             using (DbDataReader reader = cmd.ExecuteReader()) {
@@ -162,10 +163,12 @@ namespace AngelControl.Data {
                             Age = reader.GetValue(6) != DBNull.Value ? Reg.GetAge(reader.GetDateTime(6)) : null,
                             StayWhereId = reader.GetValue(7) != DBNull.Value ? reader.GetInt32(7) : 0,
                             StayWhere = reader.GetValue(8).ToString(),
-                            StayLengthId = reader.GetValue(9) != DBNull.Value ? reader.GetInt32(7) : 9,
+                            StayLengthId = reader.GetValue(9) != DBNull.Value ? reader.GetInt32(7) : 0,
                             StayLength = reader.GetValue(10).ToString(),
                             Country = reader.GetValue(11).ToString(),
                             City = reader.GetValue(12).ToString(),
+                            NutritionId = reader.GetValue(13) != DBNull.Value ? reader.GetInt32(7) : 0,
+                            Nutrition = reader.GetValue(14).ToString(),
                         };
                         regs.Add(reg);
                     }

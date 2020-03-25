@@ -20,6 +20,9 @@ namespace AngelControl.Data.Class {
         public string StayLength { get; set; }
         public string Country { get; set; }
         public string City { get; set; }
+        public int NutritionId { get; set; }
+        public string Nutrition { get; set; }
+
 
 
         public static int? GetAge(DateTime? bithday) {

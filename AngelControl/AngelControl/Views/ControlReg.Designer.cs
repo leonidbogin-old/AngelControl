@@ -34,6 +34,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelSearch = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBoxSelectCountry = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBoxSelectCity = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBoxSelectStayLength = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxSelectPhone = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -54,15 +60,9 @@
             this.textBoxLname = new System.Windows.Forms.TextBox();
             this.tabControlReg = new System.Windows.Forms.TabControl();
             this.tabPageReg = new System.Windows.Forms.TabPage();
+            this.dataGridViewReg = new System.Windows.Forms.DataGridViewEx();
             this.tabPageRegCompleted = new System.Windows.Forms.TabPage();
             this.timerChange = new System.Windows.Forms.Timer(this.components);
-            this.label10 = new System.Windows.Forms.Label();
-            this.comboBoxSelectStayLength = new System.Windows.Forms.ComboBox();
-            this.dataGridViewReg = new System.Windows.Forms.DataGridViewEx();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBoxSelectCity = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBoxSelectCountry = new System.Windows.Forms.TextBox();
             this.ColumnId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnReg = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnEdit = new System.Windows.Forms.DataGridViewImageColumn();
@@ -77,6 +77,16 @@
             this.ColumnStayWhere = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStayLengthId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStayLength = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnMealId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnMeal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnBreakfast1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnLunch1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnDinner1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnColumnBreakfast2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnLunch2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnDinner2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnColumnBreakfast3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnLunch3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelSearch.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControlReg.SuspendLayout();
@@ -126,6 +136,68 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(243, 437);
             this.panel1.TabIndex = 8;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(9, 162);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 16);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Страна";
+            // 
+            // textBoxSelectCountry
+            // 
+            this.textBoxSelectCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxSelectCountry.Location = new System.Drawing.Point(12, 181);
+            this.textBoxSelectCountry.Name = "textBoxSelectCountry";
+            this.textBoxSelectCountry.Size = new System.Drawing.Size(216, 26);
+            this.textBoxSelectCountry.TabIndex = 14;
+            this.textBoxSelectCountry.TextChanged += new System.EventHandler(this.textBoxSelectCountry_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(9, 210);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(43, 16);
+            this.label11.TabIndex = 13;
+            this.label11.Text = "Город";
+            // 
+            // textBoxSelectCity
+            // 
+            this.textBoxSelectCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxSelectCity.Location = new System.Drawing.Point(12, 229);
+            this.textBoxSelectCity.Name = "textBoxSelectCity";
+            this.textBoxSelectCity.Size = new System.Drawing.Size(216, 26);
+            this.textBoxSelectCity.TabIndex = 12;
+            this.textBoxSelectCity.TextChanged += new System.EventHandler(this.textBoxSelectCity_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(9, 353);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(103, 16);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Сколько ночует";
+            // 
+            // comboBoxSelectStayLength
+            // 
+            this.comboBoxSelectStayLength.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSelectStayLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.comboBoxSelectStayLength.FormattingEnabled = true;
+            this.comboBoxSelectStayLength.Location = new System.Drawing.Point(12, 372);
+            this.comboBoxSelectStayLength.Name = "comboBoxSelectStayLength";
+            this.comboBoxSelectStayLength.Size = new System.Drawing.Size(216, 26);
+            this.comboBoxSelectStayLength.TabIndex = 10;
+            this.comboBoxSelectStayLength.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectStayLength_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -326,43 +398,6 @@
             this.tabPageReg.Text = "Регистрация";
             this.tabPageReg.UseVisualStyleBackColor = true;
             // 
-            // tabPageRegCompleted
-            // 
-            this.tabPageRegCompleted.Location = new System.Drawing.Point(4, 22);
-            this.tabPageRegCompleted.Margin = new System.Windows.Forms.Padding(0);
-            this.tabPageRegCompleted.Name = "tabPageRegCompleted";
-            this.tabPageRegCompleted.Size = new System.Drawing.Size(464, 411);
-            this.tabPageRegCompleted.TabIndex = 1;
-            this.tabPageRegCompleted.Text = "Зарегистрированные";
-            this.tabPageRegCompleted.UseVisualStyleBackColor = true;
-            // 
-            // timerChange
-            // 
-            this.timerChange.Interval = 300;
-            this.timerChange.Tick += new System.EventHandler(this.timerChange_Tick);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(9, 353);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 16);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Сколько ночует";
-            // 
-            // comboBoxSelectStayLength
-            // 
-            this.comboBoxSelectStayLength.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSelectStayLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.comboBoxSelectStayLength.FormattingEnabled = true;
-            this.comboBoxSelectStayLength.Location = new System.Drawing.Point(12, 372);
-            this.comboBoxSelectStayLength.Name = "comboBoxSelectStayLength";
-            this.comboBoxSelectStayLength.Size = new System.Drawing.Size(216, 26);
-            this.comboBoxSelectStayLength.TabIndex = 10;
-            this.comboBoxSelectStayLength.SelectedIndexChanged += new System.EventHandler(this.comboBoxSelectStayLength_SelectedIndexChanged);
-            // 
             // dataGridViewReg
             // 
             this.dataGridViewReg.AllowUserToAddRows = false;
@@ -394,7 +429,17 @@
             this.ColumnStayWhereId,
             this.ColumnStayWhere,
             this.ColumnStayLengthId,
-            this.ColumnStayLength});
+            this.ColumnStayLength,
+            this.ColumnMealId,
+            this.ColumnMeal,
+            this.ColumnBreakfast1,
+            this.ColumnLunch1,
+            this.ColumnDinner1,
+            this.ColumnColumnBreakfast2,
+            this.ColumnLunch2,
+            this.ColumnDinner2,
+            this.ColumnColumnBreakfast3,
+            this.ColumnLunch3});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
@@ -416,45 +461,20 @@
             this.dataGridViewReg.TabIndex = 3;
             this.dataGridViewReg.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewReg_CellDoubleClick);
             // 
-            // label11
+            // tabPageRegCompleted
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(9, 210);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(43, 16);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Город";
+            this.tabPageRegCompleted.Location = new System.Drawing.Point(4, 22);
+            this.tabPageRegCompleted.Margin = new System.Windows.Forms.Padding(0);
+            this.tabPageRegCompleted.Name = "tabPageRegCompleted";
+            this.tabPageRegCompleted.Size = new System.Drawing.Size(464, 411);
+            this.tabPageRegCompleted.TabIndex = 1;
+            this.tabPageRegCompleted.Text = "Зарегистрированные";
+            this.tabPageRegCompleted.UseVisualStyleBackColor = true;
             // 
-            // textBoxSelectCity
+            // timerChange
             // 
-            this.textBoxSelectCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxSelectCity.Location = new System.Drawing.Point(12, 229);
-            this.textBoxSelectCity.Name = "textBoxSelectCity";
-            this.textBoxSelectCity.Size = new System.Drawing.Size(216, 26);
-            this.textBoxSelectCity.TabIndex = 12;
-            this.textBoxSelectCity.TextChanged += new System.EventHandler(this.textBoxSelectCity_TextChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Yandex-UI-Icons-Private", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(9, 162);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 16);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Страна";
-            // 
-            // textBoxSelectCountry
-            // 
-            this.textBoxSelectCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxSelectCountry.Location = new System.Drawing.Point(12, 181);
-            this.textBoxSelectCountry.Name = "textBoxSelectCountry";
-            this.textBoxSelectCountry.Size = new System.Drawing.Size(216, 26);
-            this.textBoxSelectCountry.TabIndex = 14;
-            this.textBoxSelectCountry.TextChanged += new System.EventHandler(this.textBoxSelectCountry_TextChanged);
+            this.timerChange.Interval = 300;
+            this.timerChange.Tick += new System.EventHandler(this.timerChange_Tick);
             // 
             // ColumnId
             // 
@@ -567,6 +587,79 @@
             this.ColumnStayLength.ReadOnly = true;
             this.ColumnStayLength.Width = 5;
             // 
+            // ColumnMealId
+            // 
+            this.ColumnMealId.HeaderText = "MealId";
+            this.ColumnMealId.Name = "ColumnMealId";
+            this.ColumnMealId.ReadOnly = true;
+            this.ColumnMealId.Visible = false;
+            // 
+            // ColumnMeal
+            // 
+            this.ColumnMeal.HeaderText = "Как питается";
+            this.ColumnMeal.Name = "ColumnMeal";
+            this.ColumnMeal.ReadOnly = true;
+            // 
+            // ColumnBreakfast1
+            // 
+            this.ColumnBreakfast1.HeaderText = "З-1";
+            this.ColumnBreakfast1.Name = "ColumnBreakfast1";
+            this.ColumnBreakfast1.ReadOnly = true;
+            this.ColumnBreakfast1.Width = 35;
+            // 
+            // ColumnLunch1
+            // 
+            this.ColumnLunch1.HeaderText = "Об-1";
+            this.ColumnLunch1.Name = "ColumnLunch1";
+            this.ColumnLunch1.ReadOnly = true;
+            this.ColumnLunch1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnLunch1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnLunch1.Width = 35;
+            // 
+            // ColumnDinner1
+            // 
+            this.ColumnDinner1.HeaderText = "Уж-1";
+            this.ColumnDinner1.Name = "ColumnDinner1";
+            this.ColumnDinner1.ReadOnly = true;
+            this.ColumnDinner1.Width = 35;
+            // 
+            // ColumnColumnBreakfast2
+            // 
+            this.ColumnColumnBreakfast2.HeaderText = "З-2";
+            this.ColumnColumnBreakfast2.Name = "ColumnColumnBreakfast2";
+            this.ColumnColumnBreakfast2.ReadOnly = true;
+            this.ColumnColumnBreakfast2.Width = 35;
+            // 
+            // ColumnLunch2
+            // 
+            this.ColumnLunch2.HeaderText = "Об-2";
+            this.ColumnLunch2.Name = "ColumnLunch2";
+            this.ColumnLunch2.ReadOnly = true;
+            this.ColumnLunch2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnLunch2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnLunch2.Width = 35;
+            // 
+            // ColumnDinner2
+            // 
+            this.ColumnDinner2.HeaderText = "Уж-2";
+            this.ColumnDinner2.Name = "ColumnDinner2";
+            this.ColumnDinner2.ReadOnly = true;
+            this.ColumnDinner2.Width = 35;
+            // 
+            // ColumnColumnBreakfast3
+            // 
+            this.ColumnColumnBreakfast3.HeaderText = "З-3";
+            this.ColumnColumnBreakfast3.Name = "ColumnColumnBreakfast3";
+            this.ColumnColumnBreakfast3.ReadOnly = true;
+            this.ColumnColumnBreakfast3.Width = 35;
+            // 
+            // ColumnLunch3
+            // 
+            this.ColumnLunch3.HeaderText = "Об-3";
+            this.ColumnLunch3.Name = "ColumnLunch3";
+            this.ColumnLunch3.ReadOnly = true;
+            this.ColumnLunch3.Width = 35;
+            // 
             // ControlReg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,5 +728,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStayWhere;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStayLengthId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnStayLength;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMealId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnMeal;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnBreakfast1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnLunch1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnDinner1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnColumnBreakfast2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnLunch2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnDinner2;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnColumnBreakfast3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnLunch3;
     }
 }
