@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AngelControl"
         mc:Ignorable="d"
-        Title="Настройка считывателя (RS232)" Height="228.994" Width="357.988" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Настройка считывателя (RS232)" Height="151.994" Width="459.988" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FF4D4D4D">
     <Grid>
+        <Label Content="COM-порт" HorizontalAlignment="Left" Margin="21,19,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <ComboBox Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,22,0,0" VerticalAlignment="Top" Width="120" Background="#FF4D4D4D" IsReadOnly="True"/>
 
     </Grid>
 </Window>
