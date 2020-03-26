@@ -5,10 +5,81 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AngelControl"
         mc:Ignorable="d"
-        Title="Настройка считывателя (RS232)" Height="151.994" Width="459.988" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FF4D4D4D">
+        Title="Настройка считывателя (RS232)" Height="432" Width="280" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FF4D4D4D" Topmost="True" MinWidth="280" MinHeight="432" Icon="Resources/Ico/rfid-open.ico" Loaded="Window_Loaded">
     <Grid>
-        <Label Content="COM-порт" HorizontalAlignment="Left" Margin="21,19,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <ComboBox Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,22,0,0" VerticalAlignment="Top" Width="120" Background="#FF4D4D4D" IsReadOnly="True"/>
-
+        <Label Content="COM-порт" HorizontalAlignment="Left" Margin="0,22,0,0" VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Right" Width="96"/>
+        <ComboBox x:Name="comboBoxPorts" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,23,0,0" VerticalAlignment="Top" Width="33" Background="#FF4D4D4D" IsReadOnly="True"/>
+        <Image x:Name="imagePortRefresh" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Height="18" Margin="230,27,0,0" VerticalAlignment="Top" Width="18" Source="Resources/port-refresh.png" StretchDirection="DownOnly" Stretch="Fill" MouseDown="ImagePortRefresh_MouseDown">
+            <Image.RenderTransform>
+                <RotateTransform x:Name="AnimatedRotateTransform" Angle="0" />
+            </Image.RenderTransform>
+            <Image.Triggers>
+                <EventTrigger RoutedEvent="Image.MouseDown">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="AnimatedRotateTransform"
+                                 Storyboard.TargetProperty="Angle" From="0"
+                                To="720" Duration="0:0:2" >
+                                    <DoubleAnimation.EasingFunction>
+                                        <ElasticEase EasingMode="EaseOut" Oscillations="1" Springiness="10" />
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Image.Triggers>
+        </Image>
+        <Label Content="Parity" HorizontalAlignment="Left" Margin="0,62,0,0" VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Right" Width="95"/>
+        <ComboBox x:Name="comboBoxParity" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,63,0,0" VerticalAlignment="Top" Width="120" Background="#FF4D4D4D" IsReadOnly="True" Foreground="White" Padding="0">
+            <ComboBoxItem Content="Even" Cursor="Hand"/>
+            <ComboBoxItem Content="Mark" Cursor="Hand"/>
+            <ComboBoxItem Content="None" Cursor="Hand"/>
+            <ComboBoxItem Content="Odd" Cursor="Hand"/>
+            <ComboBoxItem Content="Space" Cursor="Hand"/>
+        </ComboBox>
+        <Label Content="StopBits" HorizontalAlignment="Left" Margin="0,102,0,0" VerticalAlignment="Top" Foreground="White" Width="94" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="comboBoxStopBits" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,103,0,0" VerticalAlignment="Top" Width="120" Background="#FF4D4D4D" IsReadOnly="True" Foreground="White" Padding="0">
+            <ComboBoxItem Content="None" Cursor="Hand"/>
+            <ComboBoxItem Content="One" Cursor="Hand"/>
+            <ComboBoxItem Content="OnepointFive" Cursor="Hand"/>
+            <ComboBoxItem Content="Two" Cursor="Hand"/>
+        </ComboBox>
+        <Button x:Name="buttonOpen" Style="{DynamicResource ButtonStyleDefault}" Content="Подключить" HorizontalAlignment="Left" Margin="10,349,0,0" VerticalAlignment="Top" Width="245" Height="36" Background="#FF5D5D5D" BorderBrush="#FFB2B2B2" FontSize="14" Foreground="White"/>
+        <Label Content="Handshake" HorizontalAlignment="Left" Margin="0,141,0,0" VerticalAlignment="Top" Foreground="White" Width="94" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="comboBoxHandshake" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,142,0,0" VerticalAlignment="Top" Width="120" Background="#FF4D4D4D" IsReadOnly="True" Foreground="White" Padding="0">
+            <ComboBoxItem Content="None" Cursor="Hand"/>
+            <ComboBoxItem Content="RequestToSend" Cursor="Hand"/>
+            <ComboBoxItem Content="RequestToSendXOnXOff" Cursor="Hand"/>
+            <ComboBoxItem Content="XOnXOff" Cursor="Hand"/>
+        </ComboBox>
+        <Label Content="BaudRate" HorizontalAlignment="Left" Margin="0,181,0,0" VerticalAlignment="Top" Foreground="White" Width="94" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="comboBoxBaudRate" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,182,0,0" VerticalAlignment="Top" Width="120" Background="#FF4D4D4D" IsReadOnly="True" Foreground="White" Padding="0" MaxDropDownHeight="150" IsEditable="True">
+            <ComboBoxItem Content="1200" Cursor="Hand"/>
+            <ComboBoxItem Content="2400" Cursor="Hand"/>
+            <ComboBoxItem Content="4800" Cursor="Hand"/>
+            <ComboBoxItem Content="9600" Cursor="Hand"/>
+            <ComboBoxItem Content="14400" Cursor="Hand"/>
+            <ComboBoxItem Content="19200" Cursor="Hand"/>
+            <ComboBoxItem Content="28900" Cursor="Hand"/>
+            <ComboBoxItem Content="38400" Cursor="Hand"/>
+            <ComboBoxItem Content="56000" Cursor="Hand"/>
+            <ComboBoxItem Content="57600" Cursor="Hand"/>
+            <ComboBoxItem Content="115200" Cursor="Hand"/>
+            <ComboBoxItem Content="128000" Cursor="Hand"/>
+        </ComboBox>
+        <Label Content="DataBits" HorizontalAlignment="Left" Margin="0,220,0,0" VerticalAlignment="Top" Foreground="White" Width="94" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="comboBoxDataBits" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,221,0,0" VerticalAlignment="Top" Width="120" Background="#FF4D4D4D" IsReadOnly="True" Foreground="White" Padding="0" MaxDropDownHeight="150" IsEditable="True">
+            <ComboBoxItem Content="8" Cursor="Hand"/>
+        </ComboBox>
+        <Label Content="ReadTime" HorizontalAlignment="Left" Margin="0,259,0,0" VerticalAlignment="Top" Foreground="White" Width="94" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="comboBoxReadTime" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,260,0,0" VerticalAlignment="Top" Width="120" Background="#FF4D4D4D" IsReadOnly="True" Foreground="White" Padding="0" MaxDropDownHeight="150" IsEditable="True">
+            <ComboBoxItem Content="1000" Cursor="Hand"/>
+        </ComboBox>
+        <Label Content="WriteTime" HorizontalAlignment="Left" Margin="0,299,0,0" VerticalAlignment="Top" Foreground="White" Width="94" HorizontalContentAlignment="Right"/>
+        <ComboBox x:Name="comboBoxWriteTime" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,300,0,0" VerticalAlignment="Top" Width="120" Background="#FF4D4D4D" IsReadOnly="True" Foreground="White" Padding="0" MaxDropDownHeight="150" IsEditable="True">
+            <ComboBoxItem Content="1000" Cursor="Hand"/>
+        </ComboBox>
     </Grid>
 </Window>

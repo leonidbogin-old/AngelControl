@@ -19,6 +19,37 @@ namespace AngelControl {
     public partial class RS232Window : Window {
         public RS232Window() {
             InitializeComponent();
+            EditEnable(true);
+        }
+
+        public RS232Window(bool enable) {
+            InitializeComponent();
+            EditEnable(enable);
+        }
+
+        private void ImagePortRefresh_MouseDown(object sender, MouseButtonEventArgs e) {
+            //MessageBox.Show("");
+            //RotateTransform rotate = new RotateTransform(360);
+            //imagePortRefresh.RenderTransform = rotate;
+        }
+
+        private void EditEnable(bool enable) {
+            buttonOpen.IsEnabled = enable;
+            comboBoxPorts.IsEnabled = enable;
+            comboBoxParity.IsEnabled = enable;
+            comboBoxStopBits.IsEnabled = enable;
+            comboBoxHandshake.IsEnabled = enable;
+            comboBoxBaudRate.IsEnabled = enable;
+            comboBoxReadTime.IsEnabled = enable;
+            comboBoxWriteTime.IsEnabled = enable;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e) {
+
+        }
+
+        public void PortsUpdate() {
+
         }
     }
 }

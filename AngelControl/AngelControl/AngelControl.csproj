@@ -113,5 +113,11 @@
   <ItemGroup>
     <Resource Include="Resources\rfid-open.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\port-refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Ico\rfid-open.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

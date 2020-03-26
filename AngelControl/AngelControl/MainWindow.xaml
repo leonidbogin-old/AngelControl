@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AngelControl"
         mc:Ignorable="d"
-        Title="Контроль учений ПСО «Ангел»" Height="450" Width="800" Loaded="WindowMain_Loaded">
+        Title="Контроль учений ПСО «Ангел»" Height="450" Width="800" Loaded="WindowMain_Loaded" WindowState="Maximized">
     <Window.Resources>
 
         <Style x:Key="FocusVisual">
