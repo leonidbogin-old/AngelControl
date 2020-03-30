@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AngelControl"
         mc:Ignorable="d"
-        Title="Контроль учений ПСО «Ангел»" Height="450" Width="800" Loaded="WindowMain_Loaded" WindowState="Maximized">
+        Title="Контроль учений ПСО «Ангел»" Height="450" Width="800" Loaded="WindowMain_Loaded" WindowState="Maximized" Closed="WindowMain_Closed">
     <Window.Resources>
 
         <Style x:Key="FocusVisual">
@@ -121,7 +121,7 @@
             </Button>
         </DockPanel>
         <DockPanel Grid.Column="1" LastChildFill="False" Margin="0" Grid.Row="2">
-            <Button Width="30" Padding="5,5,4.5,4.5" BorderThickness="0,0,1,0" Background="Transparent" Style="{DynamicResource ButtonStyleStatus}">
+            <Button x:Name="buttonRS232Status" Width="30" Padding="5,5,4.5,4.5" BorderThickness="0,0,1,0" Background="Transparent" Style="{DynamicResource ButtonStyleStatus}" Click="ButtonRS232Status_Click" RenderTransformOrigin="0.1,0.5">
                 <Image Source="Resources/rfid-open.png" Stretch="Fill" Margin="0"/>
             </Button>
         </DockPanel>

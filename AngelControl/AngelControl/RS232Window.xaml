@@ -8,7 +8,7 @@
         Title="Настройка считывателя (RS232)" Height="432" Width="280" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FF4D4D4D" Topmost="True" MinWidth="280" MinHeight="432" Icon="Resources/Ico/rfid-open.ico" Loaded="Window_Loaded">
     <Grid>
         <Label Content="COM-порт" HorizontalAlignment="Left" Margin="0,22,0,0" VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Right" Width="96"/>
-        <ComboBox x:Name="comboBoxPorts" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,23,0,0" VerticalAlignment="Top" Width="33" Background="#FF4D4D4D" IsReadOnly="True"/>
+        <ComboBox x:Name="comboBoxPorts" Cursor="Hand" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,23,0,0" VerticalAlignment="Top" Width="33" Background="#FF4D4D4D" IsReadOnly="True" Foreground="White"/>
         <Image x:Name="imagePortRefresh" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Height="18" Margin="230,27,0,0" VerticalAlignment="Top" Width="18" Source="Resources/port-refresh.png" StretchDirection="DownOnly" Stretch="Fill" MouseDown="ImagePortRefresh_MouseDown">
             <Image.RenderTransform>
                 <RotateTransform x:Name="AnimatedRotateTransform" Angle="0" />
@@ -32,7 +32,7 @@
             </Image.Triggers>
         </Image>
         <Label Content="Parity" HorizontalAlignment="Left" Margin="0,62,0,0" VerticalAlignment="Top" Foreground="White" HorizontalContentAlignment="Right" Width="95"/>
-        <ComboBox x:Name="comboBoxParity" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,63,0,0" VerticalAlignment="Top" Width="120" Background="#FF4D4D4D" IsReadOnly="True" Foreground="White" Padding="0">
+        <ComboBox x:Name="comboBoxParity" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,63,0,0" VerticalAlignment="Top" Width="120" Background="#FF4D4D4D" IsReadOnly="True" Foreground="White" Padding="0" Cursor="Hand">
             <ComboBoxItem Content="Even" Cursor="Hand"/>
             <ComboBoxItem Content="Mark" Cursor="Hand"/>
             <ComboBoxItem Content="None" Cursor="Hand"/>
@@ -46,7 +46,7 @@
             <ComboBoxItem Content="OnepointFive" Cursor="Hand"/>
             <ComboBoxItem Content="Two" Cursor="Hand"/>
         </ComboBox>
-        <Button x:Name="buttonOpen" Style="{DynamicResource ButtonStyleDefault}" Content="Подключить" HorizontalAlignment="Left" Margin="10,349,0,0" VerticalAlignment="Top" Width="245" Height="36" Background="#FF5D5D5D" BorderBrush="#FFB2B2B2" FontSize="14" Foreground="White"/>
+        <Button x:Name="buttonOpen" Style="{DynamicResource ButtonStyleDefault}" Content="Подключить" HorizontalAlignment="Left" Margin="10,349,0,0" VerticalAlignment="Top" Width="245" Height="36" Background="#FF5D5D5D" BorderBrush="#FFB2B2B2" FontSize="14" Foreground="White" Click="ButtonOpen_Click"/>
         <Label Content="Handshake" HorizontalAlignment="Left" Margin="0,141,0,0" VerticalAlignment="Top" Foreground="White" Width="94" HorizontalContentAlignment="Right"/>
         <ComboBox x:Name="comboBoxHandshake" Style="{DynamicResource ComboBoxNew}" HorizontalAlignment="Left" Margin="101,142,0,0" VerticalAlignment="Top" Width="120" Background="#FF4D4D4D" IsReadOnly="True" Foreground="White" Padding="0">
             <ComboBoxItem Content="None" Cursor="Hand"/>

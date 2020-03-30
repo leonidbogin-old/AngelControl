@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AngelControl.Reader;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,18 @@ namespace AngelControl {
         }
 
         private void WindowMain_Loaded(object sender, RoutedEventArgs e) {
-            RS232Window rS232Window = new RS232Window();
+            if (!RS232.OpenLast()) {
+                RS232Window rS232Window = new RS232Window();
+                rS232Window.ShowDialog();
+            }
+        }
+
+        private void WindowMain_Closed(object sender, EventArgs e) {
+            RS232.AppClose();
+        }
+
+        private void ButtonRS232Status_Click(object sender, RoutedEventArgs e) {
+            RS232Window rS232Window = new RS232Window(!RS232.isOpen());
             rS232Window.ShowDialog();
         }
     }

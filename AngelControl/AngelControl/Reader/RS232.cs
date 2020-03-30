@@ -45,10 +45,10 @@ namespace AngelControl.Reader {
                 Connect.DataReceived += new SerialDataReceivedEventHandler(Read);
                 Connect.Open();
                 Save(param);
-                OnChangeRS232(true);
+                //OnChangeRS232(true);
                 return true;
             } catch {
-                OnChangeRS232(false);
+                //OnChangeRS232(false);
                 return false;
             }
         }
@@ -80,7 +80,7 @@ namespace AngelControl.Reader {
 
         public static void Close() {
             Connect.Close();
-            OnChangeRS232(false);
+            //OnChangeRS232(false);
         }
 
         public static void AppClose() {

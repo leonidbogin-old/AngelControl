@@ -38,7 +38,10 @@
         <Color x:Key="DisabledBorderLightColor">#FFAAAAAA</Color>
         <Color x:Key="DisabledBorderDarkColor">#FF888888</Color>
 
+        <Color x:Key="DisabledColor">#FFAAAAAA</Color>
+
         <Color x:Key="DefaultBorderBrushDarkColor">White</Color>
+        
 
         <!--Control-specific resources.-->
         <Color x:Key="HeaderTopColor">#FFC5CBF9</Color>
@@ -98,24 +101,12 @@
                         <VisualState x:Name="Pressed" />
                         <VisualState x:Name="Disabled">
                             <Storyboard>
-                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).
-                (GradientBrush.GradientStops)[1].(GradientStop.Color)"
-                                          Storyboard.TargetName="Border">
+                                <ColorAnimationUsingKeyFrames Storyboard.TargetName="Border"
+                                                Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)">
                                     <EasingColorKeyFrame KeyTime="0"
-                                   Value="{StaticResource DisabledControlDarkColor}" />
+                                                Value="{StaticResource DisabledColor}" />
                                 </ColorAnimationUsingKeyFrames>
-                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).
-                (SolidColorBrush.Color)"
-                                          Storyboard.TargetName="Arrow">
-                                    <EasingColorKeyFrame KeyTime="0"
-                                   Value="{StaticResource DisabledForegroundColor}" />
-                                </ColorAnimationUsingKeyFrames>
-                                <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).
-                (GradientBrush.GradientStops)[1].(GradientStop.Color)"
-                                          Storyboard.TargetName="Border">
-                                    <EasingColorKeyFrame KeyTime="0"
-                                   Value="{StaticResource DisabledBorderDarkColor}" />
-                                </ColorAnimationUsingKeyFrames>
+                                
                             </Storyboard>
                         </VisualState>
                     </VisualStateGroup>
@@ -180,20 +171,13 @@
           BorderThickness="2"/>
         </ControlTemplate>
         <Style x:Key="ComboBoxNew" TargetType="{x:Type ComboBox}">
-            <Setter Property="SnapsToDevicePixels"
-          Value="true" />
-            <Setter Property="OverridesDefaultStyle"
-          Value="true" />
-            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility"
-          Value="Auto" />
-            <Setter Property="ScrollViewer.VerticalScrollBarVisibility"
-          Value="Auto" />
-            <Setter Property="ScrollViewer.CanContentScroll"
-          Value="true" />
-            <Setter Property="MinWidth"
-          Value="120" />
-            <Setter Property="MinHeight"
-          Value="20" />
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true" />
+            <Setter Property="MinWidth" Value="120" />
+            <Setter Property="MinHeight" Value="20" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type ComboBox}">
@@ -205,10 +189,9 @@
                                     <VisualState x:Name="Disabled">
                                         <Storyboard>
                                             <ColorAnimationUsingKeyFrames Storyboard.TargetName="PART_EditableTextBox"
-                                                Storyboard.TargetProperty="(TextElement.Foreground).
-                      (SolidColorBrush.Color)">
+                                                Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)">
                                                 <EasingColorKeyFrame KeyTime="0"
-                                         Value= "{StaticResource DisabledForegroundColor}" />
+                                                Value="{StaticResource DisabledForegroundColor}" />
                                             </ColorAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualState>
@@ -233,41 +216,41 @@
                                 </VisualStateGroup>
                             </VisualStateManager.VisualStateGroups>
                             <ToggleButton x:Name="ToggleButton"
-                        Template="{StaticResource ComboBoxToggleButton}"
-                        Grid.Column="2"
-                        Focusable="false"
-                        ClickMode="Press"
-                        IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                Template="{StaticResource ComboBoxToggleButton}"
+                                Grid.Column="2"
+                                Focusable="false"
+                                ClickMode="Press"
+                                IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
                             <ContentPresenter x:Name="ContentSite"
-                            IsHitTestVisible="False"
-                            Content="{TemplateBinding SelectionBoxItem}"
-                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
-                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
-                            Margin="7,4,0,3"
-                            VerticalAlignment="Stretch"
-                            HorizontalAlignment="Left">
+                                IsHitTestVisible="False"
+                                Content="{TemplateBinding SelectionBoxItem}"
+                                ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                                Margin="7,4,0,3"
+                                VerticalAlignment="Stretch"
+                                HorizontalAlignment="Left">
                             </ContentPresenter>
                             <TextBox x:Name="PART_EditableTextBox"
-                   Style="{x:Null}"
-                   Template="{StaticResource ComboBoxTextBox}"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Bottom"
-                   Margin="3,3,0,3"
-                   Focusable="True"
-                   Background="Transparent"
-                   Visibility="Hidden" Foreground="White" IsReadOnly="False" CaretBrush="White" />
+                                Style="{x:Null}"
+                                Template="{StaticResource ComboBoxTextBox}"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Bottom"
+                                Margin="3,3,0,3"
+                                Focusable="True"
+                                Background="Transparent"
+                                Visibility="Hidden" Foreground="White" IsReadOnly="False" CaretBrush="White" />
                             <Popup x:Name="Popup"
-                 Placement="Bottom"
-                 IsOpen="{TemplateBinding IsDropDownOpen}"
-                 AllowsTransparency="True"
-                 Focusable="False"
-                 PopupAnimation="Slide">
-                                <Grid x:Name="DropDown"
-                  SnapsToDevicePixels="True"
-                  MinWidth="{TemplateBinding ActualWidth}"
-                  MaxHeight="{TemplateBinding MaxDropDownHeight}">
-                                    <Border x:Name="DropDownBorder"
-                      BorderThickness="1">
+                                Placement="Bottom"
+                                IsOpen="{TemplateBinding IsDropDownOpen}"
+                                AllowsTransparency="True"
+                                Focusable="False"
+                                PopupAnimation="Slide">
+                            <Grid x:Name="DropDown"
+                                SnapsToDevicePixels="True"
+                                MinWidth="{TemplateBinding ActualWidth}"
+                                MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <Border x:Name="DropDownBorder"
+                                     BorderThickness="1">
                                         <Border.BorderBrush>
                                             <SolidColorBrush Color="{DynamicResource BorderMediumColor}" />
                                         </Border.BorderBrush>
@@ -284,26 +267,15 @@
                             </Popup>
                         </Grid>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="HasItems"
-                   Value="false">
-                                <Setter TargetName="DropDownBorder"
-                    Property="MinHeight"
-                    Value="95" />
+                            <Trigger Property="HasItems" Value="false">
+                                <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95" />
                             </Trigger>
-                            <Trigger Property="IsGrouping"
-                   Value="true">
-                                <Setter Property="ScrollViewer.CanContentScroll"
-                    Value="false" />
+                            <Trigger Property="IsGrouping" Value="true">
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false" />
                             </Trigger>
-                            <Trigger SourceName="Popup"
-                   Property="AllowsTransparency"
-                   Value="true">
-                                <Setter TargetName="DropDownBorder"
-                    Property="CornerRadius"
-                    Value="0" />
-                                <Setter TargetName="DropDownBorder"
-                    Property="Margin"
-                    Value="0,0,0,0" />
+                            <Trigger SourceName="Popup" Property="AllowsTransparency" Value="true">
+                                <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0" />
+                                <Setter TargetName="DropDownBorder" Property="Margin" Value="0,0,0,0" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
